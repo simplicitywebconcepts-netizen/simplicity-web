@@ -5,8 +5,9 @@ import { staggerContainer, fadeInUp } from "@/lib/animations";
 import { values } from "@/lib/data";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import SectionLabel from "@/components/ui/SectionLabel";
+import { ReactNode } from "react";
 
-const valueIcons: Record<string, JSX.Element> = {
+const valueIcons: Record<string, ReactNode> = {
   lightbulb: (
     <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
       <path d="M9 18h6" />

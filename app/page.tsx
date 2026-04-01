@@ -13,7 +13,7 @@ export default function HomePage() {
       <FAQ />
 
       {/* CTA Section */}
-      <section className="py-24 bg-gradient-to-br from-foreground via-gray-900 to-foreground text-white relative overflow-hidden">
+      <section data-section="cta" className="py-24 bg-foreground/95 text-white relative overflow-hidden">
         {/* Decorative shapes */}
         <div className="absolute inset-0 pointer-events-none opacity-10">
           <div className="absolute top-10 left-10 w-40 h-40 rounded-full bg-primary/30 blur-3xl" />

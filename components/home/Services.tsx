@@ -6,7 +6,9 @@ import { services } from "@/lib/data";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import SectionLabel from "@/components/ui/SectionLabel";
 
-const iconPaths: Record<string, JSX.Element> = {
+import { type ReactNode } from "react";
+
+const iconPaths: Record<string, ReactNode> = {
   cloud: (
     <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
       <path d="M18 10h-1.26A8 8 0 109 20h9a5 5 0 000-10z" />
@@ -41,7 +43,7 @@ const iconPaths: Record<string, JSX.Element> = {
 
 export default function Services() {
   return (
-    <section className="py-24 bg-section-bg relative overflow-hidden">
+    <section data-section="services" className="py-24 bg-section-bg/85 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         <AnimatedSection className="text-center mb-16">
           <SectionLabel label="What We Do" className="justify-center" />

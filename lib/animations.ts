@@ -219,7 +219,7 @@ export const imageHover = {
   },
 };
 
-export const buttonHover = {
+export const buttonHover: Variants = {
   rest: { scale: 1 },
   hover: {
     scale: 1.05,

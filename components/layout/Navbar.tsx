@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, ReactNode } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -203,7 +203,7 @@ export default function Navbar() {
 }
 
 function SocialIcon({ name }: { name: string }) {
-  const iconMap: Record<string, JSX.Element> = {
+  const iconMap: Record<string, ReactNode> = {
     facebook: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
         <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />

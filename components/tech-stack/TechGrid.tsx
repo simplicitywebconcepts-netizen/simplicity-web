@@ -4,9 +4,10 @@ import { motion } from "framer-motion";
 import { staggerContainer, staggerContainerFast, fadeInUp, scaleIn } from "@/lib/animations";
 import { techStack } from "@/lib/data";
 import AnimatedSection from "@/components/ui/AnimatedSection";
+import { ReactNode } from "react";
 
 // Tech icon SVGs — simplified representations
-const techIcons: Record<string, JSX.Element> = {
+const techIcons: Record<string, ReactNode> = {
   aws: (
     <div className="flex flex-col items-center">
       <svg width="32" height="32" viewBox="0 0 24 24" fill="none" className="text-[#FF9900]">
