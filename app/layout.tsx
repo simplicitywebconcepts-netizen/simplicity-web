@@ -3,6 +3,8 @@ import { Inter, Outfit } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import { ScrollProvider } from "@/components/canvas/ScrollProvider";
+import { CrystalCanvas } from "@/components/canvas/CrystalCanvas";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -16,11 +18,11 @@ const outfit = Outfit({
 
 export const metadata: Metadata = {
   title: {
-    default: "Simplicity | Web Innovation Studio",
-    template: "%s | Simplicity",
+    default: "SIMPLICITY WEB INC | Web Innovation Studio",
+    template: "%s | SIMPLICITY WEB INC",
   },
   description:
-    "Simplicity is a premier technology company specializing in cloud infrastructure, software development, cybersecurity, and IoT solutions.",
+    "SIMPLICITY WEB INC is a premier technology company specializing in cloud infrastructure, software development, cybersecurity, and IoT solutions.",
   keywords: [
     "cloud solutions",
     "software development",
@@ -41,10 +43,17 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} ${outfit.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">
-        <Navbar />
-        {children}
-        <Footer />
+      <body className="min-h-full flex flex-col bg-background text-foreground">
+        <ScrollProvider>
+          <CrystalCanvas />
+          <Navbar />
+          <div className="relative z-10 flex-grow">
+            {children}
+          </div>
+          <div className="relative z-10">
+            <Footer />
+          </div>
+        </ScrollProvider>
       </body>
     </html>
   );

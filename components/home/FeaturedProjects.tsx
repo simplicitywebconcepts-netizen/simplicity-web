@@ -11,7 +11,7 @@ export default function FeaturedProjects() {
   const featured = projects.slice(0, 4);
 
   return (
-    <section className="py-24 relative overflow-hidden">
+    <section data-section="projects" className="py-24 bg-section-bg/70 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         <AnimatedSection className="text-center mb-16">
           <SectionLabel label="Recent Work" className="justify-center" />
@@ -36,7 +36,7 @@ export default function FeaturedProjects() {
               key={project.id}
               variants={fadeInUp}
               whileHover={{ y: -5 }}
-              className="group rounded-xl overflow-hidden border border-border bg-white hover:shadow-xl hover:shadow-primary/5 transition-shadow duration-500"
+              className="group rounded-xl overflow-hidden border border-border bg-card-bg hover:border-primary/50 hover:shadow-xl hover:shadow-primary/5 transition-all duration-500"
             >
               {/* Project image */}
               <div className="relative h-48 bg-gradient-to-br from-primary/5 to-accent/5 overflow-hidden">
@@ -63,7 +63,7 @@ export default function FeaturedProjects() {
                 </div>
                 {/* Category badge */}
                 <div className="absolute top-4 left-4">
-                  <span className="text-[10px] font-semibold tracking-wider uppercase bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full border border-primary/10 text-primary">
+                  <span className="text-[10px] font-semibold tracking-wider uppercase bg-card-bg/90 backdrop-blur-sm px-3 py-1 rounded-full border border-primary/20 text-primary">
                     {project.category}
                   </span>
                 </div>
@@ -86,7 +86,7 @@ export default function FeaturedProjects() {
         </motion.div>
 
         <AnimatedSection className="text-center mt-12">
-          <Button href="/projects" variant="outline" size="lg">
+          <Button href="/works" variant="outline" size="lg">
             View All Projects
           </Button>
         </AnimatedSection>

@@ -9,7 +9,7 @@ import SectionLabel from "@/components/ui/SectionLabel";
 const faqs = [
   {
     id: 1,
-    question: "What services does Simplicity offer?",
+    question: "What services does Simplicity Web Inc offer?",
     answer:
       "We deliver end-to-end technology solutions including cloud infrastructure, custom software development, cybersecurity, and IoT integration. Our team works closely with you to understand your unique challenges and craft solutions that drive measurable business results.",
   },
@@ -123,7 +123,7 @@ export default function FAQ() {
   };
 
   return (
-    <section className="py-24 bg-white relative overflow-hidden">
+    <section data-section="faq" className="py-24 bg-card-bg/85 relative overflow-hidden">
       {/* Decorative background elements */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-20 right-0 w-72 h-72 rounded-full bg-primary/[0.03] blur-3xl" />

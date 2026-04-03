@@ -4,12 +4,14 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { navLinks, footerLinks, contactInfo } from "@/lib/data";
 import AnimatedSection from "@/components/ui/AnimatedSection";
+import Logo from "@/components/ui/Logo";
+import { ReactNode } from "react";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-white border-t border-border mt-auto">
+    <footer className="bg-card-bg border-t border-border mt-auto">
       <div className="max-w-7xl mx-auto px-6 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Contact Info */}
@@ -112,7 +114,7 @@ export default function Footer() {
             viewport={{ once: true }}
             className="text-xs text-muted"
           >
-            Powered by Simplicity
+            Powered by Simplicity Web Inc
           </motion.p>
           <motion.div
             initial={{ opacity: 0 }}
@@ -120,11 +122,11 @@ export default function Footer() {
             viewport={{ once: true }}
             className="flex items-center gap-2"
           >
-            <div className="w-6 h-6 bg-foreground rounded flex items-center justify-center">
-              <span className="text-white text-[8px] font-bold">S</span>
+            <div className="w-6 h-6 flex items-center justify-center grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+              <Logo className="w-full h-full" />
             </div>
             <span className="text-[10px] text-muted tracking-widest uppercase">
-              Simplicity
+              SIMPLICITY WEB INC
             </span>
           </motion.div>
         </div>
@@ -135,7 +137,7 @@ export default function Footer() {
 
 function FooterSocialIcon({ name }: { name: string }) {
   const size = 14;
-  const icons: Record<string, JSX.Element> = {
+  const icons: Record<string, ReactNode> = {
     facebook: (
       <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
         <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />

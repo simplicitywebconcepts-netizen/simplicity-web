@@ -25,8 +25,8 @@ export default function ProjectGrid() {
             whileTap={{ scale: 0.95 }}
             className={`px-5 py-2.5 text-xs font-semibold tracking-wider uppercase rounded-full border transition-all duration-300 cursor-pointer ${
               activeCategory === category
-                ? "bg-foreground text-white border-foreground"
-                : "bg-white text-muted border-border hover:border-foreground hover:text-foreground"
+                ? "bg-foreground text-background border-foreground"
+                : "bg-card-bg text-muted border-border hover:border-foreground hover:text-foreground"
             }`}
           >
             {category}
@@ -50,7 +50,7 @@ export default function ProjectGrid() {
               variants={fadeInUp}
               layout
               whileHover={{ y: -5 }}
-              className="group rounded-xl overflow-hidden border border-border bg-white hover:shadow-xl hover:shadow-primary/5 transition-shadow duration-500 cursor-pointer"
+              className="group rounded-xl overflow-hidden border border-border bg-card-bg hover:border-primary/50 hover:shadow-xl hover:shadow-primary/5 transition-all duration-500 cursor-pointer"
             >
               {/* Image area */}
               <div className="relative h-44 bg-gradient-to-br from-primary/5 to-accent/5 overflow-hidden">
@@ -78,7 +78,7 @@ export default function ProjectGrid() {
 
                 {/* Category tag */}
                 <div className="absolute top-3 left-3">
-                  <span className="text-[9px] font-bold tracking-wider uppercase bg-white/90 backdrop-blur-sm px-2.5 py-1 rounded-full text-primary border border-primary/10">
+                  <span className="text-[9px] font-bold tracking-wider uppercase bg-card-bg/90 backdrop-blur-sm px-2.5 py-1 rounded-full text-primary border border-primary/20">
                     {project.category}
                   </span>
                 </div>

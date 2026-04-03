@@ -4,9 +4,10 @@ import { motion } from "framer-motion";
 import { staggerContainer, staggerContainerFast, fadeInUp, scaleIn } from "@/lib/animations";
 import { techStack } from "@/lib/data";
 import AnimatedSection from "@/components/ui/AnimatedSection";
+import { ReactNode } from "react";
 
 // Tech icon SVGs — simplified representations
-const techIcons: Record<string, JSX.Element> = {
+const techIcons: Record<string, ReactNode> = {
   aws: (
     <div className="flex flex-col items-center">
       <svg width="32" height="32" viewBox="0 0 24 24" fill="none" className="text-[#FF9900]">
@@ -208,7 +209,7 @@ export default function TechGrid() {
                   boxShadow: "0 10px 30px rgba(124, 58, 237, 0.1)",
                   borderColor: "rgba(124, 58, 237, 0.2)",
                 }}
-                className="flex items-center justify-center p-5 rounded-xl bg-white border border-border hover:border-primary/20 transition-all duration-300 cursor-default aspect-square"
+                className="flex items-center justify-center p-5 rounded-xl bg-card-bg border border-border hover:border-primary/50 transition-all duration-300 cursor-default aspect-square"
               >
                 {techIcons[item.icon] || (
                   <div className="flex flex-col items-center">
