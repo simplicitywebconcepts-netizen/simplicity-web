@@ -12,6 +12,7 @@ import {
   menuItemVariants,
 } from "@/lib/animations";
 import Button from "@/components/ui/Button";
+import Logo from "@/components/ui/Logo";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -52,23 +53,21 @@ export default function Navbar() {
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           isScrolled
             ? "glass shadow-lg shadow-primary/5 py-3"
-            : "bg-white/95 py-4"
+            : "bg-background/95 py-4"
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 group">
+          <Link href="/" className="flex items-center gap-3 group">
             <div className="relative">
-              <div className="w-10 h-10 bg-foreground rounded-lg flex items-center justify-center group-hover:bg-primary transition-colors duration-300">
-                <span className="text-white font-bold text-lg">S</span>
-              </div>
+              <Logo className="w-10 h-10 drop-shadow-md group-hover:scale-110 transition-transform duration-300" />
             </div>
             <div className="flex flex-col leading-none">
               <span className="font-bold text-sm tracking-widest uppercase">
-                Simplicity
+                SIMPLICITY
               </span>
               <span className="text-[8px] tracking-[0.3em] uppercase text-muted">
-                Made Inc
+                WEB INC
               </span>
             </div>
           </Link>
@@ -145,7 +144,7 @@ export default function Navbar() {
             initial="closed"
             animate="open"
             exit="closed"
-            className="fixed inset-0 z-40 bg-foreground/95 backdrop-blur-md flex flex-col items-center justify-center"
+            className="fixed inset-0 z-40 bg-card-bg/95 backdrop-blur-md flex flex-col items-center justify-center"
           >
             <motion.nav
               variants={menuStaggerContainer}
@@ -161,7 +160,7 @@ export default function Navbar() {
                     className={`text-2xl font-light tracking-wide transition-colors duration-300 ${
                       pathname === link.href
                         ? "text-primary-light"
-                        : "text-white/80 hover:text-white"
+                        : "text-foreground/80 hover:text-foreground"
                     }`}
                     onClick={() => setIsMenuOpen(false)}
                   >
@@ -170,7 +169,7 @@ export default function Navbar() {
                 </motion.div>
               ))}
               <motion.div variants={menuItemVariants} className="mt-4">
-                <Button href="/contact" variant="outline" className="!border-white !text-white hover:!bg-white hover:!text-foreground">
+                <Button href="/contact" variant="outline" className="!border-foreground !text-foreground hover:!bg-foreground hover:!text-background">
                   Get a Quote
                 </Button>
               </motion.div>
@@ -184,7 +183,7 @@ export default function Navbar() {
                   <a
                     key={social}
                     href="#"
-                    className="text-white/50 hover:text-white transition-colors duration-300"
+                    className="text-foreground/50 hover:text-foreground transition-colors duration-300"
                     aria-label={social}
                   >
                     <SocialIcon name={social} />

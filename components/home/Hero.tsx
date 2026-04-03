@@ -48,14 +48,14 @@ export default function Hero() {
               variants={fadeInUp}
               className="text-lg text-muted leading-relaxed mb-8"
             >
-              Simplicity is a premier technology company specializing in cloud
+              Simplicity Web Inc is a premier technology company specializing in cloud
               infrastructure, software development, and IoT solutions. We
               transform ambitious ideas into scalable, secure, and elegant
               digital products.
             </motion.p>
 
             <motion.div variants={fadeInUp} className="flex flex-wrap gap-4">
-              <Button href="/projects" variant="primary" size="lg">
+              <Button href="/works" variant="primary" size="lg">
                 View Our Work
               </Button>
               <Button href="/contact" variant="outline" size="lg">

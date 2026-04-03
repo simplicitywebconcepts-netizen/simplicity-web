@@ -13,7 +13,7 @@ export default function HomePage() {
       <FAQ />
 
       {/* CTA Section */}
-      <section data-section="cta" className="py-24 bg-foreground/95 text-white relative overflow-hidden">
+      <section data-section="cta" className="py-24 bg-card-bg text-foreground border-t border-border relative overflow-hidden">
         {/* Decorative shapes */}
         <div className="absolute inset-0 pointer-events-none opacity-10">
           <div className="absolute top-10 left-10 w-40 h-40 rounded-full bg-primary/30 blur-3xl" />
@@ -28,19 +28,19 @@ export default function HomePage() {
             </span>
           </h2>
           <p className="text-white/60 text-lg mb-10 max-w-2xl mx-auto">
-            Let&apos;s discuss your next project and explore how Simplicity can
+            Let&apos;s discuss your next project and explore how Simplicity Web Inc can
             transform your digital presence with cutting-edge technology.
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
             <a
               href="/contact"
-              className="inline-flex items-center justify-center px-8 py-4 text-xs font-bold tracking-widest uppercase rounded-sm bg-white text-foreground hover:bg-primary hover:text-white transition-all duration-300"
+              className="inline-flex items-center justify-center px-8 py-4 text-xs font-bold tracking-widest uppercase rounded-sm bg-foreground text-background hover:bg-primary hover:text-white transition-all duration-300"
             >
               Get in Touch
             </a>
             <a
-              href="/projects"
-              className="inline-flex items-center justify-center px-8 py-4 text-xs font-bold tracking-widest uppercase rounded-sm border-2 border-white/30 text-white hover:border-white hover:bg-white/10 transition-all duration-300"
+              href="/works"
+              className="inline-flex items-center justify-center px-8 py-4 text-xs font-bold tracking-widest uppercase rounded-sm border-2 border-foreground/30 text-foreground hover:border-foreground hover:bg-foreground/10 transition-all duration-300"
             >
               View Our Work
             </a>

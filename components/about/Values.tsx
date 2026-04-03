@@ -56,7 +56,7 @@ export default function Values() {
                 y: -8,
                 boxShadow: "0 20px 40px rgba(124, 58, 237, 0.1)",
               }}
-              className="bg-white rounded-xl p-6 border border-border text-center group hover:border-primary/20 transition-all duration-300 cursor-default"
+              className="bg-card-bg rounded-xl p-6 border border-border text-center group hover:border-primary/50 transition-all duration-300 cursor-default"
             >
               <div className="w-16 h-16 rounded-xl bg-primary/5 flex items-center justify-center text-primary mx-auto mb-5 group-hover:bg-primary group-hover:text-white transition-all duration-300">
                 {valueIcons[value.icon]}

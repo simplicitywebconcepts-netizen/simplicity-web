@@ -52,7 +52,7 @@ export default function ContactForm() {
               }
               required
               placeholder="Your full name"
-              className="w-full px-4 py-3 rounded-lg border border-border bg-white text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/10 transition-all duration-300"
+              className="w-full px-4 py-3 rounded-lg border border-border bg-card-bg text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/10 transition-all duration-300"
             />
           </motion.div>
 
@@ -72,7 +72,7 @@ export default function ContactForm() {
               }
               required
               placeholder="your@email.com"
-              className="w-full px-4 py-3 rounded-lg border border-border bg-white text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/10 transition-all duration-300"
+              className="w-full px-4 py-3 rounded-lg border border-border bg-card-bg text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/10 transition-all duration-300"
             />
           </motion.div>
 
@@ -92,7 +92,7 @@ export default function ContactForm() {
               }
               required
               placeholder="Tell us about your project..."
-              className="w-full px-4 py-3 rounded-lg border border-border bg-white text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/10 transition-all duration-300 resize-none"
+              className="w-full px-4 py-3 rounded-lg border border-border bg-card-bg text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/10 transition-all duration-300 resize-none"
             />
           </motion.div>
 

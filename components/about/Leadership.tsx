@@ -45,7 +45,7 @@ export default function Leadership() {
                   </div>
                 </div>
                 {/* Online indicator */}
-                <div className="absolute bottom-0 right-1 w-4 h-4 bg-green-400 rounded-full border-2 border-white" />
+                <div className="absolute bottom-0 right-1 w-4 h-4 bg-green-400 rounded-full border-2 border-section-bg" />
               </div>
 
               <h4 className="font-semibold text-sm group-hover:text-primary transition-colors">

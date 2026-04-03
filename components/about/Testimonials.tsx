@@ -45,10 +45,10 @@ export default function Testimonials() {
   }, []);
 
   return (
-    <section className="relative isolate overflow-hidden bg-white px-6 py-24 sm:py-32 lg:px-8">
+    <section className="relative isolate overflow-hidden bg-section-bg px-6 py-24 sm:py-32 lg:px-8">
       {/* Decorative backgrounds inspired by Tailwind UI simple centered */}
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(45rem_50rem_at_top,var(--primary-light),transparent)] opacity-20"></div>
-      <div className="absolute inset-y-0 right-1/2 -z-10 mr-16 w-[200%] origin-bottom-left skew-x-[-30deg] bg-white ring-1 ring-primary/10 shadow-xl shadow-primary/5 sm:mr-28 lg:mr-0 xl:mr-16 xl:origin-center"></div>
+      <div className="absolute inset-y-0 right-1/2 -z-10 mr-16 w-[200%] origin-bottom-left skew-x-[-30deg] bg-card-bg ring-1 ring-primary/10 shadow-xl shadow-primary/5 sm:mr-28 lg:mr-0 xl:mr-16 xl:origin-center"></div>
       
       <div className="mx-auto max-w-2xl lg:max-w-4xl">
         <AnimatedSection className="text-center mb-10 flex flex-col items-center">
@@ -96,14 +96,14 @@ export default function Testimonials() {
           <div className="flex items-center justify-between absolute top-[60%] -translate-y-1/2 left-0 right-0 -mx-4 sm:-mx-16 lg:-mx-20 pointer-events-none">
              <button 
                 onClick={handlePrev} 
-                className="p-3 rounded-full border border-border bg-white text-muted hover:text-primary hover:border-primary/50 transition-all shadow-md hover:shadow-lg focus:outline-none pointer-events-auto"
+                className="p-3 rounded-full border border-border bg-card-bg text-muted hover:text-primary hover:border-primary/50 transition-all shadow-md hover:shadow-lg focus:outline-none pointer-events-auto"
                 aria-label="Previous testimonial"
               >
                <ChevronLeft className="w-5 h-5" />
              </button>
              <button 
                 onClick={handleNext} 
-                className="p-3 rounded-full border border-border bg-white text-muted hover:text-primary hover:border-primary/50 transition-all shadow-md hover:shadow-lg focus:outline-none pointer-events-auto"
+                className="p-3 rounded-full border border-border bg-card-bg text-muted hover:text-primary hover:border-primary/50 transition-all shadow-md hover:shadow-lg focus:outline-none pointer-events-auto"
                 aria-label="Next testimonial"
               >
                <ChevronRight className="w-5 h-5" />

@@ -18,11 +18,11 @@ const outfit = Outfit({
 
 export const metadata: Metadata = {
   title: {
-    default: "Simplicity | Web Innovation Studio",
-    template: "%s | Simplicity",
+    default: "SIMPLICITY WEB INC | Web Innovation Studio",
+    template: "%s | SIMPLICITY WEB INC",
   },
   description:
-    "Simplicity is a premier technology company specializing in cloud infrastructure, software development, cybersecurity, and IoT solutions.",
+    "SIMPLICITY WEB INC is a premier technology company specializing in cloud infrastructure, software development, cybersecurity, and IoT solutions.",
   keywords: [
     "cloud solutions",
     "software development",
@@ -43,7 +43,7 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} ${outfit.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-[#f0f2fa]">
+      <body className="min-h-full flex flex-col bg-background text-foreground">
         <ScrollProvider>
           <CrystalCanvas />
           <Navbar />

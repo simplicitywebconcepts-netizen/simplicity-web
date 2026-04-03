@@ -209,7 +209,7 @@ export default function TechGrid() {
                   boxShadow: "0 10px 30px rgba(124, 58, 237, 0.1)",
                   borderColor: "rgba(124, 58, 237, 0.2)",
                 }}
-                className="flex items-center justify-center p-5 rounded-xl bg-white border border-border hover:border-primary/20 transition-all duration-300 cursor-default aspect-square"
+                className="flex items-center justify-center p-5 rounded-xl bg-card-bg border border-border hover:border-primary/50 transition-all duration-300 cursor-default aspect-square"
               >
                 {techIcons[item.icon] || (
                   <div className="flex flex-col items-center">

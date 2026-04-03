@@ -1,18 +1,18 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #0a0a0a;
+  --background: #050505;
+  --foreground: #ffffff;
   --primary: #7c3aed;
   --primary-light: #a78bfa;
   --primary-dark: #5b21b6;
   --accent: #8b5cf6;
-  --muted: #6b7280;
-  --muted-light: #9ca3af;
-  --border: #e5e7eb;
-  --card-bg: #f9fafb;
-  --card-border: #e5e7eb;
-  --section-bg: #f3f4f6;
+  --muted: #a3a3a3;
+  --muted-light: #d4d4d4;
+  --border: #262626;
+  --card-bg: #121212;
+  --card-border: #262626;
+  --section-bg: #0a0a0a;
   --nav-height: 80px;
 }
 
@@ -79,10 +79,10 @@ body {
 
 /* Glassmorphism utility */
 .glass {
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(18, 18, 18, 0.7);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 /* Gradient text */

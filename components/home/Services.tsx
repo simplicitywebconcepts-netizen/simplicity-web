@@ -72,7 +72,7 @@ export default function Services() {
                 boxShadow: "0 20px 40px rgba(124, 58, 237, 0.1)",
               }}
               transition={{ duration: 0.3 }}
-              className="bg-white rounded-xl p-6 border border-border hover:border-primary/20 transition-colors duration-300 group cursor-pointer"
+              className="bg-card-bg rounded-xl p-6 border border-border hover:border-primary/50 transition-colors duration-300 group cursor-pointer"
             >
               <div className="w-14 h-14 rounded-lg bg-primary/5 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-300 mb-5">
                 {iconPaths[service.icon]}

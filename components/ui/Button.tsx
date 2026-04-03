@@ -29,9 +29,9 @@ export default function Button({
 
   const variantStyles = {
     primary:
-      "bg-foreground text-white hover:bg-primary border-2 border-foreground hover:border-primary",
+      "bg-foreground text-background hover:bg-primary border-2 border-foreground hover:border-primary hover:text-white",
     outline:
-      "bg-transparent text-foreground border-2 border-foreground hover:bg-foreground hover:text-white",
+      "bg-transparent text-foreground border-2 border-foreground hover:bg-foreground hover:text-background",
     ghost:
       "bg-transparent text-foreground hover:text-primary border-2 border-transparent",
   };
