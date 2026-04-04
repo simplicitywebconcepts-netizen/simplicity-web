@@ -32,7 +32,7 @@ const valueIcons: Record<string, ReactNode> = {
 
 export default function Values() {
   return (
-    <section className="py-24 bg-section-bg">
+    <section className="py-24 bg-section-bg/85 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         <AnimatedSection className="text-center mb-16">
           <SectionLabel label="Our Values" className="justify-center" />

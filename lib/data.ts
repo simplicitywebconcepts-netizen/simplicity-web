@@ -243,7 +243,79 @@ export const navLinks = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About Us" },
   { href: "/works", label: "Works" },
+  { href: "/careers", label: "Careers" },
   { href: "/contact", label: "Contact Us" },
+];
+
+// ---- Careers ----
+export interface JobPosition {
+  id: string;
+  title: string;
+  department: string;
+  location: string;
+  type: string;
+  description: string;
+}
+
+export const openPositions: JobPosition[] = [
+  {
+    id: "jp-1",
+    title: "Senior Full Stack Developer",
+    department: "Engineering",
+    location: "Remote (North America)",
+    type: "Full-Time",
+    description: "Join our core engineering team to build scalable cloud-native applications using React, Next.js, and Node.js. Minimum 5 years experience required. You'll architect high-performance data pipelines and work closely with our design team."
+  },
+  {
+    id: "jp-2",
+    title: "Product Designer",
+    department: "Design",
+    location: "Toronto, ON / Remote",
+    type: "Full-Time",
+    description: "Shape the future of our premium web experiences. Strong portfolio showcasing UI/UX in Framer Motion, Figma, and modern web apps is essential. Help us create dynamic, highly aesthetic interfaces that wow users."
+  },
+  {
+    id: "jp-3",
+    title: "Cloud Architect",
+    department: "Infrastructure",
+    location: "Remote",
+    type: "Full-Time",
+    description: "Lead our cloud infrastructure and containerization efforts. Experience with Kubernetes, Terraform, AWS, and GCP is a must. You will own the strategic direction of our cloud services."
+  }
+];
+
+export interface Perk {
+  id: number;
+  title: string;
+  description: string;
+  icon: string;
+}
+
+export const perks: Perk[] = [
+  {
+    id: 1,
+    title: "Work From Anywhere",
+    description: "We are a remote-first company. Work from the comfort of your home or any place with a good WiFi connection.",
+    icon: "globe"
+  },
+  {
+    id: 2,
+    title: "Continuous Learning",
+    description: "Annual education stipend for conferences, courses, and certifications to keep your skills sharp.",
+    icon: "book"
+  },
+  {
+    id: 3,
+    title: "Health & Wellness",
+    description: "Comprehensive health coverage, plus mental health support and a monthly wellness budget.",
+    icon: "heart"
+  },
+  {
+    id: 4,
+    title: "Flexible Hours",
+    description: "We care about results, not the specific hours you log. Create a schedule that works best for your life.",
+    icon: "clock"
+  }
 ];
 
 // ---- Footer ----
@@ -255,6 +327,7 @@ export const footerLinks = {
   ],
   helpLinks: [
     { label: "About", href: "/about" },
+    { label: "Careers", href: "/careers" },
     { label: "Contact", href: "/contact" },
   ],
   sitemapLinks: [
@@ -266,8 +339,8 @@ export const footerLinks = {
 };
 
 export const contactInfo = {
-  phone: "+67 803 0978 acros",
-  email: "info@simplicity.com",
-  website: "simplicityweb.com",
-  address: "11 Baltimore, Carstairs la Oliv, Westberry, D1 13555",
+  phone: "+1 (905)429-9506",
+  email: "info@simplicityweb.ca",
+  website: "simplicityweb.ca",
+  address: "Toronto, Ontario",
 };

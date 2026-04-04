@@ -20,7 +20,14 @@ export default function Footer() {
               Contact Info
             </h4>
             <ul className="space-y-2 text-sm text-muted">
-              <li>{contactInfo.phone}</li>
+              <li>
+                <a
+                  href={`tel:${contactInfo.phone}`}
+                  className="hover:text-primary transition-colors"
+                >
+                  {contactInfo.phone}
+                </a>
+              </li>
               <li>
                 <a
                   href={`mailto:${contactInfo.email}`}

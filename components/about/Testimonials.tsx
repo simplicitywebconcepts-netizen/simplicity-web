@@ -45,7 +45,7 @@ export default function Testimonials() {
   }, []);
 
   return (
-    <section className="relative isolate overflow-hidden bg-section-bg px-6 py-24 sm:py-32 lg:px-8">
+    <section className="relative isolate overflow-hidden bg-section-bg/85 px-6 py-24 sm:py-32 lg:px-8">
       {/* Decorative backgrounds inspired by Tailwind UI simple centered */}
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(45rem_50rem_at_top,var(--primary-light),transparent)] opacity-20"></div>
       <div className="absolute inset-y-0 right-1/2 -z-10 mr-16 w-[200%] origin-bottom-left skew-x-[-30deg] bg-card-bg ring-1 ring-primary/10 shadow-xl shadow-primary/5 sm:mr-28 lg:mr-0 xl:mr-16 xl:origin-center"></div>

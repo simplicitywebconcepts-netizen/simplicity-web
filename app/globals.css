@@ -93,6 +93,20 @@ body {
   background-clip: text;
 }
 
+.gradient-text-blue {
+  background: linear-gradient(135deg, rgb(23, 130, 214) 0%, #3ba8ed 50%, #6dc8fc 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-purple {
+  background: linear-gradient(135deg, rgb(82, 44, 207) 0%, #8b5cf6 50%, #a78bfa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
 /* Section divider line */
 .section-line {
   width: 40px;
