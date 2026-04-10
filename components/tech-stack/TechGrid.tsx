@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { staggerContainer, staggerContainerFast, fadeInUp, scaleIn } from "@/lib/animations";
+import { staggerContainerFast, scaleIn } from "@/lib/animations";
 import { techStack } from "@/lib/data";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import { ReactNode } from "react";

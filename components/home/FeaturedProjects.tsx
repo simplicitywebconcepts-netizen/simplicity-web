@@ -11,7 +11,7 @@ export default function FeaturedProjects() {
   const featured = projects.slice(0, 4);
 
   return (
-    <section data-section="projects" className="py-24 bg-section-bg/70 relative overflow-hidden">
+    <section data-section="projects" className="py-24 bg-card-bg/85 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         <AnimatedSection className="text-center mb-16">
           <SectionLabel label="Recent Work" className="justify-center" />

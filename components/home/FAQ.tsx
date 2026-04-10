@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Script from "next/script";
 import { staggerContainer, fadeInUp } from "@/lib/animations";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import SectionLabel from "@/components/ui/SectionLabel";
@@ -9,39 +10,39 @@ import SectionLabel from "@/components/ui/SectionLabel";
 const faqs = [
   {
     id: 1,
-    question: "What services does Simplicity Web Inc offer?",
+    question: "What makes Simplicity Web Inc different from other agencies?",
     answer:
-      "We deliver end-to-end technology solutions including cloud infrastructure, custom software development, cybersecurity, and IoT integration. Our team works closely with you to understand your unique challenges and craft solutions that drive measurable business results.",
+      "We combine polished WordPress development with SEO expertise and a clear focus on conversion. Our process is built for startups and growing companies that need results without unnecessary complexity.",
   },
   {
     id: 2,
-    question: "How does the project engagement process work?",
+    question: "How long does a WordPress website project take?",
     answer:
-      "Our process begins with a discovery phase where we deeply understand your goals and technical landscape. From there, we create a detailed roadmap, move into iterative development sprints, and maintain transparent communication at every stage — from concept through launch and ongoing support.",
+      "Most WordPress development projects are completed in 4–8 weeks, depending on scope. We provide a transparent timeline after the discovery phase.",
   },
   {
     id: 3,
-    question: "What industries do you specialize in?",
+    question: "Do you offer local SEO services in Toronto?",
     answer:
-      "We've delivered solutions across fintech, healthcare, e-commerce, SaaS, logistics, and enterprise sectors. Our cross-industry experience allows us to bring proven patterns and fresh perspectives to every engagement, regardless of your domain.",
+      "Yes. Our SEO services include local optimization, keyword strategy, and content improvements tailored to Toronto and Canadian markets.",
   },
   {
     id: 4,
-    question: "How long does a typical project take?",
+    question: "Can you support custom web development beyond WordPress?",
     answer:
-      "Timelines vary based on scope and complexity. A focused MVP can be delivered in 6–8 weeks, while larger enterprise solutions may span 3–6 months. We always provide a clear timeline estimate during our discovery phase so there are no surprises.",
+      "Absolutely. We build custom web applications, API integrations, and business tools when a standard WordPress site isn't enough.",
   },
   {
     id: 5,
-    question: "Do you offer ongoing support and maintenance?",
+    question: "Do you offer mobile app development services?",
     answer:
-      "Absolutely. We offer flexible support plans including 24/7 monitoring, proactive maintenance, performance optimization, and feature enhancements. Our team stays engaged long after launch to ensure your product evolves with your business.",
+      "Yes. We extend your business with mobile apps designed for engagement and retention. We build cross-platform apps using Flutter and native technologies.",
   },
   {
     id: 6,
-    question: "What technologies do you work with?",
+    question: "How do I get started?",
     answer:
-      "Our stack includes React, Next.js, Node.js, Python, Go, AWS, GCP, Kubernetes, and more. We're technology-agnostic and select the best tools for each project based on performance requirements, scalability needs, and your existing ecosystem.",
+      "Reach out for a free consultation and strategy review. We'll discuss your goals, challenges, and the best path to grow your online presence.",
   },
 ];
 
@@ -123,7 +124,27 @@ export default function FAQ() {
   };
 
   return (
-    <section data-section="faq" className="py-24 bg-card-bg/85 relative overflow-hidden">
+    <section data-section="faq" className="py-24 bg-section-bg/85 relative overflow-hidden">
+      {/* FAQ Schema Markup */}
+      <Script
+        id="faq-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: faqs.map((faq) => ({
+              "@type": "Question",
+              name: faq.question,
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: faq.answer,
+              },
+            })),
+          }),
+        }}
+      />
+
       {/* Decorative background elements */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-20 right-0 w-72 h-72 rounded-full bg-primary/[0.03] blur-3xl" />

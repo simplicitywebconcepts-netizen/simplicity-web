@@ -9,25 +9,25 @@ import SectionLabel from "@/components/ui/SectionLabel";
 const testimonials = [
   {
     id: 1,
-    content: "Working with Simplicity has completely transformed how we approach our digital infrastructure. Their team's technical depth and strategic vision are unmatched. They didn't just build a product; they built a scalable foundation for our future.",
-    author: "Sarah Jenkins",
-    role: "CTO of TechFlow",
+    content: "Simplicity Web Inc transformed our outdated website into a modern, SEO-optimized platform using WordPress. Their expertise in web development helped us improve our Google rankings by 40% and attract 60% more customers. The team's dedication to our startup's growth is evident in every detail.",
+    author: "Alex Thompson",
+    role: "Founder of TechStart",
     avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
     logo: "https://tailwindui.com/plus-assets/img/logos/workcation-logo-indigo-600.svg"
   },
   {
     id: 2,
-    content: "The level of professionalism and the elegant codebase they delivered exceeded our expectations. Our platform's performance improved by 40%, and our development cadence is faster than ever thanks to their architectural choices.",
-    author: "Marcus Chen",
-    role: "VP of Engineering at NexaCorp",
+    content: "As a growing business, we needed a reliable partner for mobile app development and SEO services. Simplicity Web Inc delivered a seamless app that integrates perfectly with our WordPress site, resulting in 50% more downloads. Their strategic approach to digital solutions has been instrumental in our expansion.",
+    author: "Maria Gonzalez",
+    role: "CEO of InnovateCo",
     avatar: "https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
     logo: "https://tailwindui.com/plus-assets/img/logos/tuple-logo-indigo-600.svg"
   },
   {
     id: 3,
-    content: "Simplicity brought a rare mix of modern design sensibilities and hardcore engineering to our project. They communicated clearly throughout the entire lifecycle and delivered a product our customers absolutely love.",
-    author: "Elena Rodriguez",
-    role: "Founder of Elevate",
+    content: "The web development company we chose made all the difference. Simplicity Web Inc's focus on SEO-first design and WordPress expertise helped us establish a strong online presence. Their partnership mindset and transparent communication built the trust we needed for long-term success.",
+    author: "David Kim",
+    role: "Marketing Director at GrowthLabs",
     avatar: "https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
     logo: "https://tailwindui.com/plus-assets/img/logos/statamic-logo-indigo-600.svg"
   }
@@ -45,7 +45,7 @@ export default function Testimonials() {
   }, []);
 
   return (
-    <section className="relative isolate overflow-hidden bg-section-bg px-6 py-24 sm:py-32 lg:px-8">
+    <section className="relative isolate overflow-hidden bg-card-bg/85 px-6 py-24 sm:py-32 lg:px-8">
       {/* Decorative backgrounds inspired by Tailwind UI simple centered */}
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(45rem_50rem_at_top,var(--primary-light),transparent)] opacity-20"></div>
       <div className="absolute inset-y-0 right-1/2 -z-10 mr-16 w-[200%] origin-bottom-left skew-x-[-30deg] bg-card-bg ring-1 ring-primary/10 shadow-xl shadow-primary/5 sm:mr-28 lg:mr-0 xl:mr-16 xl:origin-center"></div>

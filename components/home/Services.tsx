@@ -51,8 +51,8 @@ export default function Services() {
             Our Core <span className="gradient-text">Services</span>
           </h2>
           <p className="text-muted mt-4 max-w-2xl mx-auto">
-            We deliver end-to-end technology solutions that power businesses
-            across cloud, security, software, and connected devices.
+            We deliver WordPress development, SEO services, custom web applications, 
+            and mobile solutions that drive real business results and attract qualified leads.
           </p>
         </AnimatedSection>
 

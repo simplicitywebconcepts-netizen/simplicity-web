@@ -20,7 +20,7 @@ const linePositions = [
 
 export default function AboutHero() {
   return (
-    <section className="py-24 relative bg-network-pattern">
+    <section className="py-16 relative bg-network-pattern ring-1 ring-primary/20 rounded-lg overflow-hidden">
       {/* Decorative network */}
       <div className="absolute top-0 right-0 w-1/2 h-full pointer-events-none opacity-[0.03]">
         <svg width="100%" height="100%" viewBox="0 0 600 600">
@@ -50,21 +50,28 @@ export default function AboutHero() {
             variants={fadeInUp}
             className="text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] tracking-tight mb-8"
           >
-            MEET THE MINDS BEHIND{" "}
-            <span className="gradient-text">TECHVOLVE.</span>
+            About{" "}
+            <span className="gradient-text">Simplicity Web Inc</span>
           </motion.h1>
 
-          <motion.p variants={fadeInUp} className="text-lg text-muted leading-relaxed mb-4">
-            Techvolve is a company history that embraces the company&apos;s
-            embrace cultures, and multifaceted environments, subject
-            audiences and financially marketing.
+          <motion.p variants={fadeInUp} className="text-lg text-muted leading-relaxed mb-4 font-medium">
+            At Simplicity Web Inc, a <strong>Toronto-based</strong> web development company, we specialize in <strong>WordPress development</strong> and <strong>SEO services</strong>. With over a year of experience, we help startups and small businesses build exceptional websites and mobile apps that drive real growth.
           </motion.p>
 
-          <motion.p variants={fadeInUp} className="text-base text-muted leading-relaxed">
-            Our frontline agency community is made of infrastructure, cloud,
-            software, commerce, email, software, and focusing consulting for
-            ambitious businesses.
+          <motion.p variants={fadeInUp} className="text-base text-muted leading-relaxed font-medium">
+            Founded in Toronto, we&apos;ve grown from a startup to a trusted partner, committed to innovation and client success. We simplify digital transformation for growing companies seeking straightforward, effective web solutions.
           </motion.p>
+
+          <motion.div variants={fadeInUp} className="text-base text-muted leading-relaxed mt-4 font-medium">
+            We specialize in:
+            <ul className="list-disc list-inside mt-2 space-y-1">
+              <li><strong>WordPress development</strong></li>
+              <li><strong>Web application development</strong></li>
+              <li><strong>SEO services</strong></li>
+              <li><strong>Mobile app development</strong></li>
+            </ul>
+            <em className="block mt-2">Crafting digital tools that enhance visibility and user engagement for startups and small businesses.</em>
+          </motion.div>
         </motion.div>
       </div>
     </section>

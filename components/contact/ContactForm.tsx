@@ -183,7 +183,14 @@ export default function ContactForm() {
                 <p className="text-xs font-semibold uppercase tracking-wider text-muted mb-1">
                   Phone
                 </p>
-                <p className="text-sm">{contactInfo.phone}</p>
+                <p className="text-sm">
+                   <a
+                  href={`tel:${contactInfo.phone}`}
+                  className="text-sm text-primary hover:underline"
+                >
+                  {contactInfo.phone}
+                </a>
+              </p>
               </div>
             </div>
           </div>
