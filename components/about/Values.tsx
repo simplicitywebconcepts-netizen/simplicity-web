@@ -35,9 +35,9 @@ export default function Values() {
     <section className="py-24 bg-section-bg/85 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         <AnimatedSection className="text-center mb-16">
-          <SectionLabel label="Our Values" className="justify-center" />
+          <SectionLabel label="Our Mission & Vision" className="justify-center" />
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight mt-4">
-            OUR <span className="gradient-text">VALUES</span>
+            MISSION, VISION & <span className="gradient-text">APPROACH</span>
           </h2>
         </AnimatedSection>
 
