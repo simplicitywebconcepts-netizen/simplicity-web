@@ -56,96 +56,100 @@ export interface Project {
   description: string;
   category: string;
   image: string;
+  website?: string;
+  caseStudySlug?: string;
 }
 
 export const projects: Project[] = [
   {
     id: 1,
-    title: "Aviation IoT Platform",
-    description: "Automated containerized solutions for aviation industry with real-time monitoring.",
-    category: "Cloud",
-    image: "/projects/project-1.svg",
+    title: "Toronto Hypertension Clinic",
+    description: "A healthcare website built in WordPress to improve trust, clarity, and SEO visibility for patients.",
+    category: "Healthcare",
+    image: "/case-studies/toronto-hypertension-clinic-screenshot.png",
+    website: "https://torontohypertensionclinic.ca/",
+    caseStudySlug: "toronto-hypertension-clinic",
   },
   {
     id: 2,
     title: "FinTech App",
     description: "Automated containerized financial technology solutions for modern banking.",
     category: "Software",
-    image: "/projects/project-2.svg",
+    image: "",
   },
   {
     id: 3,
     title: "Software Development",
     description: "Automated containerized development platform with CI/CD integration.",
     category: "Software",
-    image: "/projects/project-3.svg",
+    image: "",
   },
   {
     id: 4,
     title: "Cloud Development",
     description: "Creating unprecedented solutions to the market infrastructure and contemporary businesses.",
     category: "Cloud",
-    image: "/projects/project-4.svg",
+    image: "",
   },
   {
     id: 5,
     title: "Aviation IoT Platform",
     description: "Automated containerized IoT monitoring systems for fleet management.",
     category: "Cloud",
-    image: "/projects/project-5.svg",
+    image: "",
   },
   {
     id: 6,
     title: "FinTech App",
     description: "Automated containerized payment processing and digital wallet solutions.",
     category: "Cyber Security",
-    image: "/projects/project-6.svg",
+    image: "",
   },
   {
     id: 7,
     title: "Software Development",
     description: "Automated containerized enterprise resource planning solutions.",
     category: "Software",
-    image: "/projects/project-7.svg",
+    image: "",
   },
   {
     id: 8,
     title: "Cloud Solutions",
     description: "Automated containerized cloud infrastructure management platform.",
     category: "Cloud",
-    image: "/projects/project-8.svg",
+    image: "",
   },
   {
     id: 9,
     title: "Aviation IoT Platform",
     description: "Automated containerized predictive maintenance solutions.",
     category: "Cloud",
-    image: "/projects/project-9.svg",
+    image: "",
   },
   {
     id: 10,
     title: "FinTech Developers",
     description: "Automated containerized developer tools for financial services.",
     category: "Software",
-    image: "/projects/project-10.svg",
+    image: "",
   },
   {
     id: 11,
     title: "Aviation IoT Platform",
     description: "Automated containerized air traffic optimization solutions.",
     category: "Cyber Security",
-    image: "/projects/project-11.svg",
+    image: "",
   },
   {
     id: 12,
     title: "FinTech App",
     description: "Automated containerized blockchain-based financial solutions.",
     category: "Cyber Security",
-    image: "/projects/project-12.svg",
+    image: "",
   },
 ];
 
-export const projectCategories = ["All", "Cloud", "Cyber Security", "Software"];
+export const projectCategories = ["All", "Healthcare", "Automotive", "Cloud", "Cyber Security", "Software"];
 
 // ---- Tech Stack ----
 export interface TechItem {

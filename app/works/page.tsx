@@ -4,9 +4,9 @@ import PageTransition from "@/components/ui/PageTransition";
 import SectionLabel from "@/components/ui/SectionLabel";
 
 export const metadata: Metadata = {
-  title: "Works",
+  title: "Works & Case Studies",
   description:
-    "Explore our comprehensive portfolio of cloud, cybersecurity, and software development projects. See our case studies and success stories.",
+    "Explore our portfolio and case studies across cloud, healthcare, automotive, and software development.",
 };
 
 export default function ProjectsPage() {

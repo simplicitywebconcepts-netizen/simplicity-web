@@ -1,12 +1,16 @@
 "use client";
 
+import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { staggerContainer, fadeInUp } from "@/lib/animations";
 import { projects, projectCategories } from "@/lib/data";
+import { caseStudies } from "@/lib/case-studies";
 
 export default function ProjectGrid() {
   const [activeCategory, setActiveCategory] = useState("All");
+  const defaultCaseStudySlug = caseStudies[0]?.slug ?? "toronto-hypertension-clinic";
 
   const filteredProjects =
     activeCategory === "All"
@@ -44,63 +48,78 @@ export default function ProjectGrid() {
           exit={{ opacity: 0, transition: { duration: 0.2 } }}
           className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"
         >
-          {filteredProjects.map((project) => (
-            <motion.div
-              key={project.id}
-              variants={fadeInUp}
-              layout
-              whileHover={{ y: -5 }}
-              className="group rounded-xl overflow-hidden border border-border bg-card-bg hover:border-primary/50 hover:shadow-xl hover:shadow-primary/5 transition-all duration-500 cursor-pointer"
-            >
-              {/* Image area */}
-              <div className="relative h-44 bg-gradient-to-br from-primary/5 to-accent/5 overflow-hidden">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <motion.div
-                    whileHover={{ scale: 1.15, rotate: 8 }}
-                    transition={{ duration: 0.4, ease: [0.25, 1, 0.5, 1] }}
-                    className="w-16 h-16 rounded-xl bg-gradient-to-br from-primary/20 to-accent/15 border border-primary/10 flex items-center justify-center"
-                  >
-                    <svg
-                      width="28"
-                      height="28"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="1.5"
-                      className="text-primary"
-                    >
-                      <rect x="3" y="3" width="18" height="18" rx="2" />
-                      <path d="M3 9h18" />
-                      <path d="M9 21V9" />
-                    </svg>
-                  </motion.div>
+          {filteredProjects.map((project) => {
+            const hasProjectImage = project.image.trim() !== "";
+
+            return (
+            <Link key={project.id} href={`/works/${project.caseStudySlug ?? defaultCaseStudySlug}`} className="block">
+              <motion.div
+                variants={fadeInUp}
+                layout
+                whileHover={{ y: -5 }}
+                className="group rounded-xl overflow-hidden border border-border bg-card-bg hover:border-primary/50 hover:shadow-xl hover:shadow-primary/5 transition-all duration-500 cursor-pointer"
+              >
+                {/* Image area */}
+                <div className="relative h-44 bg-gradient-to-br from-primary/5 to-accent/5 overflow-hidden">
+                  {hasProjectImage ? (
+                    <Image
+                      src={project.image}
+                      alt={`${project.title} project preview`}
+                      fill
+                      sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                      className="object-cover"
+                    />
+                  ) : (
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <motion.div
+                        whileHover={{ scale: 1.15, rotate: 8 }}
+                        transition={{ duration: 0.4, ease: [0.25, 1, 0.5, 1] }}
+                        className="w-16 h-16 rounded-xl bg-gradient-to-br from-primary/20 to-accent/15 border border-primary/10 flex items-center justify-center"
+                      >
+                        <svg
+                          width="28"
+                          height="28"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="1.5"
+                          className="text-primary"
+                        >
+                          <rect x="3" y="3" width="18" height="18" rx="2" />
+                          <path d="M3 9h18" />
+                          <path d="M9 21V9" />
+                        </svg>
+                      </motion.div>
+                    </div>
+                  )}
+
+                  {/* Category tag */}
+                  <div className="absolute top-3 left-3">
+                    <span className="text-[9px] font-bold tracking-wider uppercase bg-card-bg/90 backdrop-blur-sm px-2.5 py-1 rounded-full text-primary border border-primary/20">
+                      {project.category}
+                    </span>
+                  </div>
                 </div>
 
-                {/* Category tag */}
-                <div className="absolute top-3 left-3">
-                  <span className="text-[9px] font-bold tracking-wider uppercase bg-card-bg/90 backdrop-blur-sm px-2.5 py-1 rounded-full text-primary border border-primary/20">
-                    {project.category}
+                {/* Content */}
+                <div className="p-5">
+                  <h3 className="font-bold text-base mb-1.5 group-hover:text-primary transition-colors duration-300">
+                    {project.title}
+                  </h3>
+                  <p className="text-xs text-muted leading-relaxed mb-3">
+                    {project.description}
+                  </p>
+                  <span className="text-[10px] font-bold tracking-widest uppercase text-primary inline-flex items-center gap-1 group-hover:gap-2 transition-all duration-300">
+                    Case Study
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
                   </span>
                 </div>
-              </div>
-
-              {/* Content */}
-              <div className="p-5">
-                <h3 className="font-bold text-base mb-1.5 group-hover:text-primary transition-colors duration-300">
-                  {project.title}
-                </h3>
-                <p className="text-xs text-muted leading-relaxed mb-3">
-                  {project.description}
-                </p>
-                <span className="text-[10px] font-bold tracking-widest uppercase text-primary inline-flex items-center gap-1 group-hover:gap-2 transition-all duration-300">
-                  Case Study
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M5 12h14M12 5l7 7-7 7" />
-                  </svg>
-                </span>
-              </div>
-            </motion.div>
-          ))}
+              </motion.div>
+            </Link>
+            );
+          })}
         </motion.div>
       </AnimatePresence>
     </div>
