@@ -52,7 +52,7 @@ const iconPaths: Record<string, React.ReactNode> = {
 
 export default function WhyChooseUs() {
   return (
-    <section data-section="why-choose-us" className="py-24 bg-section-bg/85 relative overflow-hidden">
+    <section data-section="why-choose-us" className="py-24 bg-card-bg/85 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         <AnimatedSection className="text-center mb-16">
           <SectionLabel label="Why Choose Us" className="justify-center" />

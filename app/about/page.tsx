@@ -4,7 +4,7 @@ import Values from "@/components/about/Values";
 import Testimonials from "@/components/about/Testimonials";
 import Leadership from "@/components/about/Leadership";
 import WhatMakesUsDifferent from "@/components/about/WhatMakesUsDifferent";
-import CallToAction from "@/components/about/CallToAction";
+import CallToAction from "@/components/home/CallToAction";
 import PageTransition from "@/components/ui/PageTransition";
 
 export const metadata: Metadata = {
@@ -21,7 +21,19 @@ export default function AboutPage() {
       <Testimonials />
       <Leadership />
       <WhatMakesUsDifferent />
-      <CallToAction />
+      <CallToAction
+        bgClass="bg-section-bg/85"
+        heading={
+          <>
+            Ready to Grow Your <span className="gradient-text">Business?</span>
+          </>
+        }
+        description="Let's discuss how Simplicity Web Inc can help your startup or small business thrive online. Contact us today for a free consultation that includes an SEO audit and discover the difference a dedicated web development company can make."
+        primaryButtonText="Contact Us"
+        primaryButtonHref="/contact"
+        secondaryButtonText="View Our Work"
+        secondaryButtonHref="/works"
+      />
     </PageTransition>
   );
 }

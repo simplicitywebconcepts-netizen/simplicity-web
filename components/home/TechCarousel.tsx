@@ -20,7 +20,7 @@ export default function TechCarousel() {
   return (
     <section
       data-section="tech-carousel"
-      className="py-24 bg-card-bg/85 relative overflow-hidden"
+      className="py-24 bg-section-bg/85 relative overflow-hidden"
     >
       {/* Decorative elements */}
       <div className="absolute inset-0 pointer-events-none">

@@ -124,7 +124,7 @@ export default function FAQ() {
   };
 
   return (
-    <section data-section="faq" className="py-24 bg-card-bg/85 relative overflow-hidden">
+    <section data-section="faq" className="py-24 bg-section-bg/85 relative overflow-hidden">
       {/* FAQ Schema Markup */}
       <Script
         id="faq-schema"

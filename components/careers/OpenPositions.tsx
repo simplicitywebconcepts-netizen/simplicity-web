@@ -14,7 +14,7 @@ export default function OpenPositions() {
   };
 
   return (
-    <section id="open-positions" className="py-24 bg-background/85 relative z-10">
+    <section id="open-positions" className="py-24 bg-card-bg/85 relative z-10">
       <div className="max-w-4xl mx-auto px-6">
         <AnimatedSection delay={0}>
           <div className="text-center mb-16">
