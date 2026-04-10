@@ -2,13 +2,12 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { navLinks, footerLinks, contactInfo } from "@/lib/data";
+import { footerLinks, contactInfo } from "@/lib/data";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import Logo from "@/components/ui/Logo";
 import { ReactNode } from "react";
 
 export default function Footer() {
-  const currentYear = new Date().getFullYear();
 
   return (
     <footer className="bg-card-bg border-t border-border mt-auto">

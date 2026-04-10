@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { staggerContainer, fadeInUp, fadeInLeft, fadeInRight } from "@/lib/animations";
+import { staggerContainer, fadeInUp, fadeInRight } from "@/lib/animations";
 import Button from "@/components/ui/Button";
 import SectionLabel from "@/components/ui/SectionLabel";
 
@@ -32,26 +32,29 @@ export default function Hero() {
             className="max-w-xl"
           >
             <motion.div variants={fadeInUp}>
-              <SectionLabel label="Web Innovation Studio" />
+              <SectionLabel label="Toronto Web Development" />
             </motion.div>
 
             <motion.h1
               variants={fadeInUp}
               className="text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] tracking-tight mb-6"
             >
-              We Build{" "}
-              <span className="gradient-text">Digital Solutions</span>{" "}
-              That Matter.
+              Toronto Web Development & SEO Services for Growing Businesses
             </motion.h1>
+            <motion.p
+              variants={fadeInUp}
+              className="text-lg text-muted/80 mb-6 font-medium"
+            >
+              Powered by <span className="text-primary">Simplicity Web Inc</span>
+            </motion.p>
 
             <motion.p
               variants={fadeInUp}
               className="text-lg text-muted leading-relaxed mb-8"
             >
-              Simplicity Web Inc is a premier technology company specializing in cloud
-              infrastructure, software development, and IoT solutions. We
-              transform ambitious ideas into scalable, secure, and elegant
-              digital products.
+              We specialize in{" "}
+              <span className="font-semibold text-foreground">WordPress development</span>,{" "}
+              <span className="font-semibold text-foreground">SEO services</span>, Custom Web Applications, and Mobile App Development. We craft digital experiences that rank higher, attract leads, build authority, and convert visitors into customers.
             </motion.p>
 
             <motion.div variants={fadeInUp} className="flex flex-wrap gap-4">
@@ -69,8 +72,8 @@ export default function Hero() {
               className="flex gap-10 mt-12 pt-8 border-t border-border"
             >
               {[
-                { value: "150+", label: "Projects Delivered" },
-                { value: "50+", label: "Happy Clients" },
+                { value: "5+", label: "WordPress Sites Built" },
+                { value: "2", label: "Active SEO Clients" },
                 { value: "10+", label: "Years Experience" },
               ].map((stat) => (
                 <div key={stat.label}>

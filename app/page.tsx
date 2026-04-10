@@ -1,5 +1,7 @@
 import Hero from "@/components/home/Hero";
 import Services from "@/components/home/Services";
+import WhyChooseUs from "@/components/home/WhyChooseUs";
+import TechCarousel from "@/components/home/TechCarousel";
 import FeaturedProjects from "@/components/home/FeaturedProjects";
 import FAQ from "@/components/home/FAQ";
 import PageTransition from "@/components/ui/PageTransition";
@@ -9,6 +11,8 @@ export default function HomePage() {
     <PageTransition>
       <Hero />
       <Services />
+      <WhyChooseUs />
+      <TechCarousel />
       <FeaturedProjects />
       <FAQ />
 

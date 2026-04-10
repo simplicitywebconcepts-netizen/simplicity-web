@@ -160,41 +160,69 @@ export interface TechCategory {
 
 export const techStack: TechCategory[] = [
   {
-    title: "CLOUD MANUFACTURE",
+    title: "FRONTEND",
     items: [
-      { name: "AWS", icon: "aws" },
-      { name: "Azure", icon: "azure" },
-      { name: "Google Cloud", icon: "gcp" },
-      { name: "DigitalOcean", icon: "digitalocean" },
-    ],
-  },
-  {
-    title: "FRAMEWORKS & LANGUAGES",
-    items: [
-      { name: "React", icon: "react" },
+      { name: "React.js", icon: "react" },
       { name: "Next.js", icon: "nextjs" },
-      { name: "Node.js", icon: "nodejs" },
       { name: "TypeScript", icon: "typescript" },
-      { name: "Python", icon: "python" },
-      { name: "Go", icon: "go" },
+      { name: "JavaScript (ES6+)", icon: "javascript" },
+      { name: "Tailwind CSS", icon: "tailwind" },
     ],
   },
   {
-    title: "DATABASE & DATA",
+    title: "CMS & WEBSITE BUILDERS",
     items: [
+      { name: "WordPress", icon: "wordpress" },
+      { name: "Elementor", icon: "elementor" },
+      { name: "Gutenberg", icon: "gutenberg" },
+    ],
+  },
+  {
+    title: "BACKEND & APIs",
+    items: [
+      { name: "Node.js", icon: "nodejs" },
+      { name: "Express.js", icon: "express" },
+      { name: "NestJS", icon: "nestjs" },
+      { name: "PHP", icon: "php" },
+      { name: "Laravel", icon: "laravel" },
+    ],
+  },
+  {
+    title: "DATABASE & CACHE",
+    items: [
+      { name: "MySQL", icon: "mysql" },
       { name: "PostgreSQL", icon: "postgresql" },
       { name: "MongoDB", icon: "mongodb" },
       { name: "Redis", icon: "redis" },
-      { name: "Elasticsearch", icon: "elasticsearch" },
+    ],
+  },
+  {
+    title: "MOBILE DEVELOPMENT",
+    items: [
+      { name: "Flutter", icon: "flutter" },
+    ],
+  },
+  {
+    title: "CLOUD & HOSTING",
+    items: [
+      { name: "AWS", icon: "aws" },
+      { name: "Hostinger", icon: "hostinger" },
+      { name: "Vercel", icon: "vercel" },
+      { name: "cPanel", icon: "cpanel" },
     ],
   },
   {
     title: "DEVOPS & TOOLS",
     items: [
       { name: "Docker", icon: "docker" },
-      { name: "Kubernetes", icon: "kubernetes" },
-      { name: "Jenkins", icon: "jenkins" },
-      { name: "Terraform", icon: "terraform" },
+      { name: "Git & GitHub", icon: "github" },
+    ],
+  },
+  {
+    title: "SEO & ANALYTICS",
+    items: [
+      { name: "Google Analytics", icon: "analytics" },
+      { name: "Google Search Console", icon: "gsc" },
     ],
   },
 ];
@@ -210,30 +238,30 @@ export interface Service {
 export const services: Service[] = [
   {
     id: 1,
-    title: "Cloud Solutions",
+    title: "WordPress Development",
     description:
-      "Enterprise-grade cloud infrastructure design, migration, and management for scalable business operations.",
+      "Create a scalable, secure, and beautifully designed WordPress website. Custom themes, e-commerce, membership sites with fast loading times and mobile-first performance.",
     icon: "cloud",
   },
   {
     id: 2,
-    title: "Software Development",
+    title: "Custom Web Development",
     description:
-      "Custom software solutions built with cutting-edge technologies to transform your business processes.",
+      "Tailored web applications that solve real business challenges. From SaaS landing pages to interactive applications with API integrations and performance-focused architecture.",
     icon: "code",
   },
   {
     id: 3,
-    title: "Cyber Security",
+    title: "SEO Services",
     description:
-      "Comprehensive security solutions to protect your digital assets and ensure regulatory compliance.",
+      "Boost visibility and attract qualified traffic. Technical optimization, keyword strategy, local SEO for Toronto, and content optimization for conversion.",
     icon: "shield",
   },
   {
     id: 4,
-    title: "IoT Solutions",
+    title: "Mobile App Development",
     description:
-      "Connected device ecosystems with real-time monitoring, analytics, and predictive maintenance capabilities.",
+      "Extend your business with mobile apps designed for engagement and retention. Cross-platform design, Flutter development, and app store readiness.",
     icon: "cpu",
   },
 ];
