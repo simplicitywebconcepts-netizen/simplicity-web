@@ -63,93 +63,52 @@ export interface Project {
 export const projects: Project[] = [
   {
     id: 1,
+    title: "ACE Active Zone",
+    description: "A fitness membership website built with WordPress and SEO to drive signups and showcase community.",
+    category: "Fitness",
+    image: "/case-studies/aceactivezone-screenshot.png",
+    website: "https://aceactivezone.com",
+    caseStudySlug: "ace-active-zone",
+  },
+  {
+    id: 3,
+    title: "SHAMMY'S AUTO",
+    description: "An automotive services website built with WordPress and SEO to improve local visibility and booking conversions.",
+    category: "Automotive",
+    image: "/case-studies/shammysauto-screenshot.png",
+    website: "https://shammysauto.com",
+    caseStudySlug: "shammys-auto",
+  },
+  {
+    id: 2,
+    title: "Kerasoft",
+    description: "A beauty and personal care ecommerce website built with WordPress and SEO for product discovery and growth.",
+    category: "Beauty",
+    image: "/case-studies/kerasoft-screenshot.png",
+    website: "https://kerasoft.com",
+    caseStudySlug: "kerasoft",
+  },
+  {
+    id: 4,
+    title: "Sherfertility Solutions",
+    description: "A fertility healthcare website built with WordPress and SEO foundations for trust and conversions.",
+    category: "Healthcare",
+    image: "/case-studies/sherfertility-solutions-screenshot.png",
+    website: "https://sherfertilitysolutions.com",
+    caseStudySlug: "sherfertility-solutions",
+  },
+  {
+    id: 6,
     title: "Toronto Hypertension Clinic",
     description: "A healthcare website built in WordPress to improve trust, clarity, and SEO visibility for patients.",
     category: "Healthcare",
     image: "/case-studies/toronto-hypertension-clinic-screenshot.png",
     website: "https://torontohypertensionclinic.ca/",
     caseStudySlug: "toronto-hypertension-clinic",
-  },
-  {
-    id: 2,
-    title: "FinTech App",
-    description: "Automated containerized financial technology solutions for modern banking.",
-    category: "Software",
-    image: "",
-  },
-  {
-    id: 3,
-    title: "Software Development",
-    description: "Automated containerized development platform with CI/CD integration.",
-    category: "Software",
-    image: "",
-  },
-  {
-    id: 4,
-    title: "Cloud Development",
-    description: "Creating unprecedented solutions to the market infrastructure and contemporary businesses.",
-    category: "Cloud",
-    image: "",
-  },
-  {
-    id: 5,
-    title: "Aviation IoT Platform",
-    description: "Automated containerized IoT monitoring systems for fleet management.",
-    category: "Cloud",
-    image: "",
-  },
-  {
-    id: 6,
-    title: "FinTech App",
-    description: "Automated containerized payment processing and digital wallet solutions.",
-    category: "Cyber Security",
-    image: "",
-  },
-  {
-    id: 7,
-    title: "Software Development",
-    description: "Automated containerized enterprise resource planning solutions.",
-    category: "Software",
-    image: "",
-  },
-  {
-    id: 8,
-    title: "Cloud Solutions",
-    description: "Automated containerized cloud infrastructure management platform.",
-    category: "Cloud",
-    image: "",
-  },
-  {
-    id: 9,
-    title: "Aviation IoT Platform",
-    description: "Automated containerized predictive maintenance solutions.",
-    category: "Cloud",
-    image: "",
-  },
-  {
-    id: 10,
-    title: "FinTech Developers",
-    description: "Automated containerized developer tools for financial services.",
-    category: "Software",
-    image: "",
-  },
-  {
-    id: 11,
-    title: "Aviation IoT Platform",
-    description: "Automated containerized air traffic optimization solutions.",
-    category: "Cyber Security",
-    image: "",
-  },
-  {
-    id: 12,
-    title: "FinTech App",
-    description: "Automated containerized blockchain-based financial solutions.",
-    category: "Cyber Security",
-    image: "",
-  },
+  }
 ];
 
-export const projectCategories = ["All", "Healthcare", "Automotive", "Cloud", "Cyber Security", "Software"];
+export const projectCategories = ["All", "Healthcare", "Beauty", "Fitness", "Automotive"];
 
 // ---- Tech Stack ----
 export interface TechItem {

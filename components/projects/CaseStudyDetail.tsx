@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import Button from "@/components/ui/Button";
@@ -22,6 +23,23 @@ function SectionTitle({ label, title, description }: { label: string; title: str
 }
 
 export default function CaseStudyDetail({ caseStudy }: CaseStudyDetailProps) {
+  const [zoomedImage, setZoomedImage] = useState<{ src: string; alt: string } | null>(null);
+
+  useEffect(() => {
+    if (!zoomedImage) {
+      return;
+    }
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setZoomedImage(null);
+      }
+    };
+
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [zoomedImage]);
+
   return (
     <div className="bg-network-pattern min-h-screen">
       <section className="pt-24 pb-16">
@@ -33,15 +51,15 @@ export default function CaseStudyDetail({ caseStudy }: CaseStudyDetailProps) {
               animate="visible"
               className="space-y-8"
             >
-              <motion.div variants={fadeInUp}>
+              <motion.div variants={fadeInUp} className="max-w-3xl rounded-2xl bg-black/55 backdrop-blur-[2px] ring-1 ring-white/10 p-6 md:p-8">
                 <SectionLabel label="Case Study" />
-                <h1 className="mt-4 text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.05] max-w-4xl">
+                <h1 className="mt-4 text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.05] max-w-4xl text-white">
                   {caseStudy.title}
                 </h1>
-                <p className="mt-5 text-xl md:text-2xl text-foreground/90 max-w-2xl leading-relaxed">
+                <p className="mt-5 text-xl md:text-2xl text-white/90 max-w-2xl leading-relaxed">
                   {caseStudy.tagline}
                 </p>
-                <div className="mt-6 space-y-4 max-w-2xl text-lg text-muted leading-relaxed">
+                <div className="mt-6 space-y-4 max-w-2xl text-lg text-white/85 leading-relaxed">
                   {caseStudy.intro.map((paragraph) => (
                     <p key={paragraph}>{paragraph}</p>
                   ))}
@@ -50,9 +68,9 @@ export default function CaseStudyDetail({ caseStudy }: CaseStudyDetailProps) {
 
               <motion.div variants={fadeInUp} className="grid gap-4 sm:grid-cols-3">
                 {caseStudy.meta.map((item) => (
-                  <div key={item.label} className="rounded-2xl border border-border bg-card-bg/80 p-4">
-                    <p className="text-[10px] font-semibold tracking-[0.24em] uppercase text-muted">{item.label}</p>
-                    <p className="mt-2 text-sm font-medium text-foreground leading-snug">{item.value}</p>
+                  <div key={item.label} className="rounded-2xl border border-white/10 bg-black/55 backdrop-blur-[2px] ring-1 ring-white/10 p-4">
+                    <p className="text-[10px] font-semibold tracking-[0.24em] uppercase text-primary">{item.label}</p>
+                    <p className="mt-2 text-sm font-medium text-white leading-snug">{item.value}</p>
                   </div>
                 ))}
               </motion.div>
@@ -69,25 +87,32 @@ export default function CaseStudyDetail({ caseStudy }: CaseStudyDetailProps) {
               variants={fadeInUp}
               initial="hidden"
               animate="visible"
-              className="rounded-[2rem] border border-border bg-card-bg/80 p-3 shadow-[0_20px_80px_rgba(0,0,0,0.45)]"
+              className="rounded-[2rem] border border-white/10 bg-black/55 backdrop-blur-[2px] ring-1 ring-white/10 p-3 shadow-[0_20px_80px_rgba(0,0,0,0.45)]"
             >
-              <div className="relative aspect-[16/11] overflow-hidden rounded-[1.5rem] bg-section-bg">
+              <button
+                type="button"
+                onClick={() =>
+                  setZoomedImage({ src: caseStudy.screenshot.src, alt: caseStudy.screenshot.alt })
+                }
+                className="group relative w-full aspect-[16/11] overflow-hidden rounded-[1.5rem] bg-section-bg cursor-zoom-in"
+                aria-label="Zoom case study screenshot"
+              >
                 <Image
                   src={caseStudy.screenshot.src}
                   alt={caseStudy.screenshot.alt}
                   fill
                   priority
                   sizes="(min-width: 1024px) 48vw, 100vw"
-                  className="object-cover"
+                  className="object-cover transition-transform duration-300 group-hover:scale-[1.02]"
                 />
-              </div>
-              <div className="flex flex-wrap items-center justify-between gap-3 px-2 py-4 text-sm text-muted">
+              </button>
+              <div className="flex flex-wrap items-center justify-between gap-3 px-2 py-4 text-sm text-white/70">
                 <span>{caseStudy.client}</span>
                 <a
                   href={caseStudy.website}
                   target="_blank"
                   rel="noreferrer"
-                  className="font-medium text-foreground transition-colors hover:text-primary"
+                  className="font-medium text-white transition-colors hover:text-primary"
                 >
                   {caseStudy.website.replace(/^https?:\/\//, "")}
                 </a>
@@ -148,6 +173,33 @@ export default function CaseStudyDetail({ caseStudy }: CaseStudyDetailProps) {
             ))}
           </div>
         </section>
+
+        {caseStudy.landingPage ? (
+          <section>
+            <SectionTitle
+              label="Landing Page"
+              title="The final landing page is placed here as a mid-page visual highlight."
+            />
+            <div className="mt-8 rounded-[2rem] border border-border bg-card-bg/80 p-3 shadow-[0_20px_80px_rgba(0,0,0,0.45)] max-w-5xl mx-auto">
+              <button
+                type="button"
+                onClick={() =>
+                  setZoomedImage({ src: caseStudy.landingPage!.src, alt: caseStudy.landingPage!.alt })
+                }
+                className="group relative w-full aspect-[16/10] overflow-hidden rounded-[1.5rem] bg-section-bg cursor-zoom-in"
+                aria-label="Zoom case study landing page image"
+              >
+                <Image
+                  src={caseStudy.landingPage.src}
+                  alt={caseStudy.landingPage.alt}
+                  fill
+                  sizes="(min-width: 1280px) 70vw, (min-width: 768px) 85vw, 100vw"
+                  className="object-contain object-center transition-transform duration-300 group-hover:scale-[1.01]"
+                />
+              </button>
+            </div>
+          </section>
+        ) : null}
 
         <section>
           <SectionTitle
@@ -230,6 +282,35 @@ export default function CaseStudyDetail({ caseStudy }: CaseStudyDetailProps) {
           </div>
         </section>
       </div>
+
+      {zoomedImage ? (
+        <div
+          className="fixed inset-0 z-[100] bg-black/90 backdrop-blur-sm p-4 md:p-8"
+          onClick={() => setZoomedImage(null)}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Image zoom preview"
+        >
+          <button
+            type="button"
+            onClick={() => setZoomedImage(null)}
+            className="absolute top-4 right-4 rounded-full border border-white/20 bg-black/60 px-4 py-2 text-sm text-white hover:bg-black/80"
+            aria-label="Close zoom preview"
+          >
+            Close
+          </button>
+
+          <div className="relative h-full w-full max-w-7xl mx-auto" onClick={(event) => event.stopPropagation()}>
+            <Image
+              src={zoomedImage.src}
+              alt={zoomedImage.alt}
+              fill
+              sizes="100vw"
+              className="object-contain"
+            />
+          </div>
+        </div>
+      ) : null}
     </div>
   );
 }

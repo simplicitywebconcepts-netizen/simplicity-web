@@ -20,9 +20,12 @@ const linePositions = [
 
 export default function AboutHero() {
   return (
-    <section className="py-16 relative bg-network-pattern ring-1 ring-primary/20 rounded-lg overflow-hidden">
+    <section className="py-16 relative isolate bg-network-pattern ring-1 ring-primary/20 rounded-lg overflow-hidden">
+      {/* Contrast layer to keep hero copy readable over the global canvas */}
+      <div className="absolute inset-0 z-0 bg-gradient-to-r from-black/90 via-black/75 to-black/30 pointer-events-none" />
+
       {/* Decorative network */}
-      <div className="absolute top-0 right-0 w-1/2 h-full pointer-events-none opacity-[0.03]">
+      <div className="absolute top-0 right-0 z-10 w-1/2 h-full pointer-events-none opacity-[0.06] hidden md:block">
         <svg width="100%" height="100%" viewBox="0 0 600 600">
           <g stroke="currentColor" strokeWidth="0.5" fill="none">
             {circlePositions.map(([cx, cy], i) => (
@@ -35,12 +38,12 @@ export default function AboutHero() {
         </svg>
       </div>
 
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="relative z-20 max-w-7xl mx-auto px-6">
         <motion.div
           variants={staggerContainer}
           initial="hidden"
           animate="visible"
-          className="max-w-3xl"
+          className="max-w-3xl rounded-2xl bg-black/45 backdrop-blur-[2px] ring-1 ring-white/10 p-6 md:p-8"
         >
           <motion.div variants={fadeInUp}>
             <SectionLabel label="About Simplicity" />
@@ -48,21 +51,21 @@ export default function AboutHero() {
 
           <motion.h1
             variants={fadeInUp}
-            className="text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] tracking-tight mb-8"
+            className="text-4xl md:text-5xl lg:text-6xl text-white font-bold leading-[1.1] tracking-tight mb-8"
           >
             About{" "}
             <span className="gradient-text">Simplicity Web Inc</span>
           </motion.h1>
 
-          <motion.p variants={fadeInUp} className="text-lg text-muted leading-relaxed mb-4 font-medium">
+          <motion.p variants={fadeInUp} className="text-lg text-white/90 leading-relaxed mb-4 font-medium [&_strong]:text-white">
             At Simplicity Web Inc, a <strong>Toronto-based</strong> web development company, we specialize in <strong>WordPress development</strong> and <strong>SEO services</strong>. With over a year of experience, we help startups and small businesses build exceptional websites and mobile apps that drive real growth.
           </motion.p>
 
-          <motion.p variants={fadeInUp} className="text-base text-muted leading-relaxed font-medium">
+          <motion.p variants={fadeInUp} className="text-base text-white/85 leading-relaxed font-medium">
             Founded in Toronto, we&apos;ve grown from a startup to a trusted partner, committed to innovation and client success. We simplify digital transformation for growing companies seeking straightforward, effective web solutions.
           </motion.p>
 
-          <motion.div variants={fadeInUp} className="text-base text-muted leading-relaxed mt-4 font-medium">
+          <motion.div variants={fadeInUp} className="text-base text-white/85 leading-relaxed mt-4 font-medium [&_strong]:text-white">
             We specialize in:
             <ul className="list-disc list-inside mt-2 space-y-1">
               <li><strong>WordPress development</strong></li>
@@ -70,7 +73,7 @@ export default function AboutHero() {
               <li><strong>SEO services</strong></li>
               <li><strong>Mobile app development</strong></li>
             </ul>
-            <em className="block mt-2">Crafting digital tools that enhance visibility and user engagement for startups and small businesses.</em>
+            <em className="block mt-2 text-white/70">Crafting digital tools that enhance visibility and user engagement for startups and small businesses.</em>
           </motion.div>
         </motion.div>
       </div>
