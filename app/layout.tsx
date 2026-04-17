@@ -6,6 +6,7 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { ScrollProvider } from "@/components/canvas/ScrollProvider";
 import { CrystalCanvas } from "@/components/canvas/CrystalCanvas";
+import { contactInfo } from "@/lib/data";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -40,6 +41,13 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const websiteUrl = contactInfo.website.startsWith("http")
+    ? contactInfo.website
+    : `https://${contactInfo.website}`;
+  const [addressLocality = "Toronto", addressRegion = "ON"] = contactInfo.address
+    .split(",")
+    .map((part) => part.trim());
+
   return (
     <html
       lang="en"
@@ -55,18 +63,18 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "LocalBusiness",
               name: "Simplicity Web Inc",
-              image: "https://simplicityweb.ca/logo.svg",
+              image: `${websiteUrl}/logo.svg`,
               description:
                 "Toronto web development company specializing in WordPress development, SEO services, custom web applications, and mobile app development.",
               address: {
                 "@type": "PostalAddress",
-                addressLocality: "Toronto",
-                addressRegion: "ON",
+                addressLocality,
+                addressRegion,
                 addressCountry: "CA",
               },
-              telephone: "+1-905-429-9506",
-              email: "info@simplicityweb.ca",
-              url: "https://simplicityweb.ca",
+              telephone: contactInfo.phone,
+              email: contactInfo.email,
+              url: websiteUrl,
               sameAs: [
                 "https://facebook.com/simplicityweb",
                 "https://instagram.com/simplicityweb",
@@ -84,8 +92,8 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Organization",
               name: "Simplicity Web Inc",
-              url: "https://simplicityweb.ca",
-              logo: "https://simplicityweb.ca/logo.svg",
+              url: websiteUrl,
+              logo: `${websiteUrl}/logo.svg`,
               description:
                 "Toronto-based web development company offering WordPress development, SEO services, custom web applications, and mobile app development.",
               service: [
@@ -118,7 +126,10 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="min-h-full flex flex-col bg-background text-foreground">
+      <body
+        suppressHydrationWarning
+        className="min-h-full flex flex-col bg-background text-foreground"
+      >
         <ScrollProvider>
           <CrystalCanvas />
           <Navbar />

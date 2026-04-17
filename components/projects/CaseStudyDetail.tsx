@@ -5,6 +5,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import Button from "@/components/ui/Button";
 import SectionLabel from "@/components/ui/SectionLabel";
+import { ShowCase } from "@/components/showcase/ShowCase";
 import { fadeInUp, staggerContainer } from "@/lib/animations";
 import type { CaseStudy } from "@/lib/case-studies";
 
@@ -177,26 +178,11 @@ export default function CaseStudyDetail({ caseStudy }: CaseStudyDetailProps) {
         {caseStudy.landingPage ? (
           <section>
             <SectionTitle
-              label="Landing Page"
-              title="The final landing page is placed here as a mid-page visual highlight."
+              label="Design Showcase"
+              title="Interactive design experience with animated elements."
             />
-            <div className="mt-8 rounded-[2rem] border border-border bg-card-bg/80 p-3 shadow-[0_20px_80px_rgba(0,0,0,0.45)] max-w-5xl mx-auto">
-              <button
-                type="button"
-                onClick={() =>
-                  setZoomedImage({ src: caseStudy.landingPage!.src, alt: caseStudy.landingPage!.alt })
-                }
-                className="group relative w-full aspect-[16/10] overflow-hidden rounded-[1.5rem] bg-section-bg cursor-zoom-in"
-                aria-label="Zoom case study landing page image"
-              >
-                <Image
-                  src={caseStudy.landingPage.src}
-                  alt={caseStudy.landingPage.alt}
-                  fill
-                  sizes="(min-width: 1280px) 70vw, (min-width: 768px) 85vw, 100vw"
-                  className="object-contain object-center transition-transform duration-300 group-hover:scale-[1.01]"
-                />
-              </button>
+            <div className="mt-8">
+              <ShowCase src={caseStudy.landingPage.src} alt={caseStudy.landingPage.alt} />
             </div>
           </section>
         ) : null}

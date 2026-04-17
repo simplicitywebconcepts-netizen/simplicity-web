@@ -1,17 +1,28 @@
 export default function Logo({ className = "w-10 h-10" }: { className?: string }) {
   return (
-    <svg viewBox="0 0 100 116" className={className} fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg viewBox="0 0 516 532" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}
+    >
+      <path
+        d="M474 202.5L422.5 232V172L257.5 78.1806L95.0001 172V236.5L257.5 331.009L367.5 267.5V328L257.5 390.5L42.0001 267.5V140.5L257.5 17L474 140.5V202.5Z"
+        fill="url(#paint0_linear_1_474)"
+      />
+      <path
+        d="M42 330L93.5 300.5L93.5 360.5L258.5 454.319L421 360.5L421 296L258.5 201.492L148.5 265L148.5 204.5L258.5 142L474 265L474 392L258.5 515.5L42 392L42 330Z"
+        fill="url(#paint1_linear_1_474)"
+      />
       <defs>
-        <linearGradient id="logo-gradient" x1="0%" y1="100%" x2="100%" y2="0%">
-          <stop offset="0%" stopColor="#0089D6" /> {/* Vivid blue */}
-          <stop offset="40%" stopColor="#4A47D4" /> {/* Indigo blend */}
-          <stop offset="100%" stopColor="#7C3AED" /> {/* Purple */}
+        <linearGradient id="paint0_linear_1_474" x1="258" y1="17" x2="258" y2="451" gradientUnits="userSpaceOnUse"
+        >
+          <stop offset="0.144231" stopColor="#6B06CC" />
+          <stop offset="0.474654" stopColor="#493BD0" />
+          <stop offset="0.831731" stopColor="#2072D5" />
+        </linearGradient>
+        <linearGradient id="paint1_linear_1_474" x1="258" y1="142" x2="258" y2="515.5" gradientUnits="userSpaceOnUse"
+        >
+          <stop offset="0.120482" stopColor="#512BCC" />
+          <stop offset="1" stopColor="#0599D5" />
         </linearGradient>
       </defs>
-      <path 
-        fill="url(#logo-gradient)" 
-        d="M50 0 L93.3 25 V50 L50 25 L26.7 38.5 V63.5 L50 77 L93.3 52 V91 L50 116 L6.7 91 V66 L50 91 L73.3 77.5 V52.5 L50 39 L6.7 64 V25 Z" 
-      />
     </svg>
   );
 }

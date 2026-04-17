@@ -8,8 +8,6 @@ import SectionLabel from "@/components/ui/SectionLabel";
 export default function Hero() {
   return (
     <section data-section="hero" className="relative isolate min-h-[90vh] flex items-center overflow-hidden py-16">
-      {/* Contrast layer to keep hero copy readable over the global canvas */}
-      <div className="absolute inset-0 z-0 bg-gradient-to-r from-black/90 via-black/75 to-black/30 pointer-events-none" />
 
       {/* Decorative network dots */}
       <div className="absolute inset-0 z-10 pointer-events-none">

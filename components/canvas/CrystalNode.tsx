@@ -28,6 +28,7 @@ export function CrystalNode({
 }: CrystalNodeProps) {
   const groupRef = useRef<THREE.Group>(null);
   const meshRef = useRef<THREE.Mesh>(null);
+  const elapsedRef = useRef(0);
   
   const { activeSection } = useScrollData();
   const initialY = position[1];
@@ -93,10 +94,11 @@ export function CrystalNode({
   }, [geometry]);
 
   // Animation loop
-  useFrame(({ clock }) => {
+  useFrame((_, delta) => {
     if (!groupRef.current) return;
 
-    const time = clock.getElapsedTime();
+    elapsedRef.current += delta;
+    const time = elapsedRef.current;
 
     // 1. Rotation interpolation
     groupRef.current.rotation.x += rotationSpeed[0];
