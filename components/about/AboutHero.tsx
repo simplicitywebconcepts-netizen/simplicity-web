@@ -21,8 +21,6 @@ const linePositions = [
 export default function AboutHero() {
   return (
     <section className="py-16 relative isolate bg-network-pattern ring-1 ring-primary/20 rounded-lg overflow-hidden">
-      {/* Contrast layer to keep hero copy readable over the global canvas */}
-      <div className="absolute inset-0 z-0 bg-gradient-to-r from-black/90 via-black/75 to-black/30 pointer-events-none" />
 
       {/* Decorative network */}
       <div className="absolute top-0 right-0 z-10 w-1/2 h-full pointer-events-none opacity-[0.06] hidden md:block">

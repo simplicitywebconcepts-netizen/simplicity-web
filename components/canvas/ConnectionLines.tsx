@@ -13,6 +13,7 @@ interface ConnectionLinesProps {
 
 export function ConnectionLines({ nodes, centerNodeIndex = 0, opacity = 0.25 }: ConnectionLinesProps) {
   const lineRef = useRef<THREE.LineSegments>(null);
+  const elapsedRef = useRef(0);
   const { activeSection } = useScrollData();
 
   // Create the line material
@@ -79,8 +80,9 @@ export function ConnectionLines({ nodes, centerNodeIndex = 0, opacity = 0.25 }: 
     return geo;
   }, [pairs, nodes]);
 
-  useFrame((state) => {
+  useFrame((_, delta) => {
       if (!lineRef.current) return;
+      elapsedRef.current += delta;
       
       // Update opacity based on active section
       let targetOpacity = opacity;
@@ -99,7 +101,7 @@ export function ConnectionLines({ nodes, centerNodeIndex = 0, opacity = 0.25 }: 
       // often look visually acceptable and save heavy computation.
       // For a premium feel we will do a subtle global wave effect on the lines themselves
       const positions = lineRef.current.geometry.attributes.position.array as Float32Array;
-      const time = state.clock.getElapsedTime();
+      const time = elapsedRef.current;
       
       for (let i = 0; i < pairs.length; i++) {
           const idx1 = pairs[i][0];

@@ -7,14 +7,9 @@ export interface TeamMember {
 }
 
 export const teamMembers: TeamMember[] = [
-  { id: 1, name: "Sarah Chen", role: "WordPress Developer", image: "/team/member-1.svg" },
-  { id: 2, name: "Mike Johnson", role: "SEO Specialist", image: "/team/member-2.svg" },
-  { id: 3, name: "Jorn Gileen", role: "Mobile App Developer", image: "/team/member-3.svg" },
-  { id: 4, name: "Sarah Sweet", role: "Web Development Lead", image: "/team/member-4.svg" },
-  { id: 5, name: "Alex Rivera", role: "Frontend Developer", image: "/team/member-5.svg" },
-  { id: 6, name: "Jenner Seren", role: "Backend Developer", image: "/team/member-6.svg" },
-  { id: 7, name: "Daniel Moranes", role: "UI/UX Designer", image: "/team/member-7.svg" },
-  { id: 8, name: "Dralle Saslan", role: "Project Manager", image: "/team/member-8.svg" },
+  { id: 1, name: "Steve S.", role: "Founder", image: "/team/member-1.svg" },
+  { id: 2, name: "Anshuman Singh", role: "Head Developer", image: "/team/member-2.svg" },
+  { id: 3, name: "Jaivardhan Singh", role: "Project Coordinator", image: "/team/member-3.svg" },
 ];
 
 // ---- Values ----
