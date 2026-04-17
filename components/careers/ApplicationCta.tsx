@@ -17,9 +17,12 @@ export default function ApplicationCta() {
             <p className="text-lg text-muted mb-10 max-w-2xl mx-auto">
               We&apos;re always on the lookout for talented, passionate people to join our team. Send us your resume and a brief intro, and we&apos;ll keep you in mind for future opportunities.
             </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <Button href={`mailto:${contactInfo.email}?subject=General Application`} variant="primary" size="lg">
-                Submit General Application
+            <div className="flex flex-col sm:flex-row justify-center gap-4">
+              <Button href={`mailto:${contactInfo.email}?subject=Apply Now`} variant="primary" size="lg">
+                Apply Now
+              </Button>
+              <Button href={`mailto:${contactInfo.email}?subject=Send Resume`} variant="outline" size="lg" className="border-border hover:bg-background text-foreground">
+                Send Resume
               </Button>
             </div>
           </div>
