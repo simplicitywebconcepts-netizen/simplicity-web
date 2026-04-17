@@ -246,27 +246,35 @@ export interface JobPosition {
 export const openPositions: JobPosition[] = [
   {
     id: "jp-1",
-    title: "Senior Full Stack Developer",
+    title: "WordPress Developer",
     department: "Engineering",
-    location: "Remote (North America)",
+    location: "Remote",
     type: "Full-Time",
-    description: "Join our core engineering team to build scalable cloud-native applications using React, Next.js, and Node.js. Minimum 5 years experience required. You'll architect high-performance data pipelines and work closely with our design team."
+    description: "Build and optimize custom WordPress solutions. This role is ideal for candidates searching for high-impact WordPress developer jobs."
   },
   {
     id: "jp-2",
-    title: "Product Designer",
-    department: "Design",
-    location: "Toronto, ON / Remote",
+    title: "Frontend Developer (React/Next.js)",
+    department: "Engineering",
+    location: "Remote",
     type: "Full-Time",
-    description: "Shape the future of our premium web experiences. Strong portfolio showcasing UI/UX in Framer Motion, Figma, and modern web apps is essential. Help us create dynamic, highly aesthetic interfaces that wow users."
+    description: "Create accessible and fast interfaces. Advance your career in competitive web development jobs by shipping modern digital products."
   },
   {
     id: "jp-3",
-    title: "Cloud Architect",
-    department: "Infrastructure",
+    title: "Backend Developer (Node.js/Laravel)",
+    department: "Engineering",
     location: "Remote",
     type: "Full-Time",
-    description: "Lead our cloud infrastructure and containerization efforts. Experience with Kubernetes, Terraform, AWS, and GCP is a must. You will own the strategic direction of our cloud services."
+    description: "Design robust APIs and secure backend systems managing our core infrastructure and services."
+  },
+  {
+    id: "jp-4",
+    title: "SEO Specialist",
+    department: "Marketing",
+    location: "Remote",
+    type: "Full-Time",
+    description: "Lead technical and content SEO initiatives. Perfect for professionals exploring strategic SEO jobs."
   }
 ];
 
