@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useCallback } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import AnimatedSection from "@/components/ui/AnimatedSection";
@@ -12,24 +13,24 @@ const testimonials = [
     content: "Simplicity Web Inc transformed our outdated website into a modern, SEO-optimized platform using WordPress. Their expertise in web development helped us improve our Google rankings by 40% and attract 60% more customers. The team's dedication to our startup's growth is evident in every detail.",
     author: "Alex Thompson",
     role: "Founder of TechStart",
-    avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
-    logo: "https://tailwindui.com/plus-assets/img/logos/workcation-logo-indigo-600.svg"
+    avatar: "/testimonials/testimonial-1.jpeg",
+    logo: "/testimonials/user-id-svgrepo-com.svg"
   },
   {
     id: 2,
     content: "As a growing business, we needed a reliable partner for mobile app development and SEO services. Simplicity Web Inc delivered a seamless app that integrates perfectly with our WordPress site, resulting in 50% more downloads. Their strategic approach to digital solutions has been instrumental in our expansion.",
     author: "Maria Gonzalez",
     role: "CEO of InnovateCo",
-    avatar: "https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
-    logo: "https://tailwindui.com/plus-assets/img/logos/tuple-logo-indigo-600.svg"
+    avatar: "/testimonials/testimonial-2.jpeg",
+    logo: "/testimonials/user-id-svgrepo-com.svg"
   },
   {
     id: 3,
     content: "The web development company we chose made all the difference. Simplicity Web Inc's focus on SEO-first design and WordPress expertise helped us establish a strong online presence. Their partnership mindset and transparent communication built the trust we needed for long-term success.",
     author: "David Kim",
     role: "Marketing Director at GrowthLabs",
-    avatar: "https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
-    logo: "https://tailwindui.com/plus-assets/img/logos/statamic-logo-indigo-600.svg"
+    avatar: "/testimonials/testimonial-3.jpeg",
+    logo: "/testimonials/user-id-svgrepo-com.svg"
   }
 ];
 
@@ -65,20 +66,24 @@ export default function Testimonials() {
                transition={{ duration: 0.3 }}
                className="flex flex-col items-center"
              >
-                <img 
-                  className="mx-auto h-12 grayscale opacity-70" 
+                <Image 
+                  className="mx-auto h-12 w-auto grayscale opacity-70" 
                   src={testimonials[currentIndex].logo} 
                   alt="" 
+                  width={200}
+                  height={48}
                 />
                 <figure className="mt-10">
                   <blockquote className="text-center text-xl/8 font-semibold text-foreground sm:text-2xl/9">
                     <p>“{testimonials[currentIndex].content}”</p>
                   </blockquote>
                   <figcaption className="mt-10">
-                    <img
-                      className="mx-auto h-14 w-14 rounded-full border-2 border-primary/20"
+                    <Image
+                      className="mx-auto h-14 w-14 rounded-full border-2 border-primary/20 object-cover"
                       src={testimonials[currentIndex].avatar}
                       alt={testimonials[currentIndex].author}
+                      width={56}
+                      height={56}
                     />
                     <div className="mt-4 flex items-center justify-center space-x-3 text-base">
                       <div className="font-semibold text-foreground">{testimonials[currentIndex].author}</div>
