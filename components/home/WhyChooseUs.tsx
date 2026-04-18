@@ -60,7 +60,7 @@ export default function WhyChooseUs() {
             Why <span className="gradient-text">Simplicity Web Inc</span> Stands Out
           </h2>
           <p className="text-muted mt-4 max-w-2xl mx-auto">
-            We're not just developers—we're partners in your growth, delivering 
+            We&apos;re not just developers-we&apos;re partners in your growth, delivering 
             strategic solutions tailored to your business.
           </p>
         </AnimatedSection>
