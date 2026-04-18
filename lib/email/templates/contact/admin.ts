@@ -4,11 +4,13 @@ import { contactInfo } from "@/lib/data";
 export type AdminEmailPayload = {
   name: string;
   email: string;
+  phone?: string;
+  subject: string;
   message: string;
 };
 
 export function adminContactEmail(payload: AdminEmailPayload): string {
-  const { name, email, message } = payload;
+  const { name, email, phone, subject, message } = payload;
 
   const content = `
     <h2>New Contact Form Submission</h2>
@@ -17,6 +19,8 @@ export function adminContactEmail(payload: AdminEmailPayload): string {
     <div class="info-box">
       <p><strong>Name:</strong> ${name}</p>
       <p><strong>Email:</strong> <a href="mailto:${email}">${email}</a></p>
+      <p><strong>Phone:</strong> ${phone ? phone : "Not provided"}</p>
+      <p><strong>Subject:</strong> ${subject}</p>
     </div>
 
     <h3 style="margin-top: 25px; margin-bottom: 10px; font-size: 16px; color: #1f2937;">Message:</h3>

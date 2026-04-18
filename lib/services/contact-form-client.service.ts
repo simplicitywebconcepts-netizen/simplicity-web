@@ -1,6 +1,8 @@
 export type ContactFormRequest = {
   name: string;
   email: string;
+  phone?: string;
+  subject: string;
   message: string;
 };
 
@@ -10,7 +12,7 @@ type SendMailResponse = {
 };
 
 export async function sendContactFormRequest(payload: ContactFormRequest): Promise<void> {
-  const response = await fetch("/api/send-mail", {
+  const response = await fetch("/api/contact", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

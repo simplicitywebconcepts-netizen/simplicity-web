@@ -5,6 +5,8 @@ import { userContactEmail } from "@/lib/email/templates/contact/user";
 export type ContactEmailPayload = {
   name: string;
   email: string;
+  phone?: string;
+  subject: string;
   message: string;
 };
 
@@ -52,6 +54,8 @@ export async function sendContactFormEmail(payload: ContactEmailPayload): Promis
     const adminHtml = adminContactEmail({
       name: payload.name,
       email: payload.email,
+      phone: payload.phone,
+      subject: payload.subject,
       message: payload.message,
     });
 

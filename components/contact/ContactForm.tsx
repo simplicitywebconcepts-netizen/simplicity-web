@@ -13,6 +13,8 @@ export default function ContactForm() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    phone: "",
+    subject: "Contact Form Submission",
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -29,7 +31,7 @@ export default function ContactForm() {
         type: "success",
         message: "Message sent successfully! We will get back to you soon.",
       });
-      setFormData({ name: "", email: "", message: "" });
+      setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
     } catch (error) {
       const message =
         error instanceof Error ? error.message : "Something went wrong";
@@ -170,6 +172,25 @@ export default function ContactForm() {
                 }
                 required
                 placeholder="your@email.com"
+                className="w-full px-4 py-3 rounded-lg border border-border bg-card-bg/60 text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/10 transition-all duration-300"
+              />
+            </motion.div>
+
+            <motion.div variants={fadeInUp}>
+              <label
+                htmlFor="phone"
+                className="block text-xs font-semibold tracking-wider uppercase text-muted mb-2"
+              >
+                Phone <span className="normal-case font-normal">(optional)</span>
+              </label>
+              <input
+                type="tel"
+                id="phone"
+                value={formData.phone}
+                onChange={(e) =>
+                  setFormData((prev) => ({ ...prev, phone: e.target.value }))
+                }
+                placeholder="(555) 123-4567"
                 className="w-full px-4 py-3 rounded-lg border border-border bg-card-bg/60 text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/10 transition-all duration-300"
               />
             </motion.div>
