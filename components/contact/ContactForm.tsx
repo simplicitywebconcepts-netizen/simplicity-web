@@ -4,7 +4,9 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { staggerContainer, fadeInUp, fadeInRight } from "@/lib/animations";
 import { contactInfo } from "@/lib/data";
+import { sendContactFormRequest } from "@/lib/services/contact-form-client.service";
 import Button from "@/components/ui/Button";
+import { useNotification } from "@/components/ui/NotificationProvider";
 import SectionLabel from "@/components/ui/SectionLabel";
 
 export default function ContactForm() {
@@ -14,17 +16,30 @@ export default function ContactForm() {
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
+  const { notify } = useNotification();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-    setIsSubmitting(false);
-    setSubmitted(true);
-    setFormData({ name: "", email: "", message: "" });
-    setTimeout(() => setSubmitted(false), 4000);
+
+    try {
+      await sendContactFormRequest(formData);
+
+      notify({
+        type: "success",
+        message: "Message sent successfully! We will get back to you soon.",
+      });
+      setFormData({ name: "", email: "", message: "" });
+    } catch (error) {
+      const message =
+        error instanceof Error ? error.message : "Something went wrong";
+      notify({
+        type: "error",
+        message,
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -180,46 +195,37 @@ export default function ContactForm() {
             </motion.div>
 
             <motion.div variants={fadeInUp}>
-              {submitted ? (
-                <motion.div
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  className="px-6 py-3 bg-green-50 border border-green-200 rounded-lg text-green-700 text-sm font-medium"
-                >
-                  ✓ Message sent successfully! We&apos;ll get back to you soon.
-                </motion.div>
-              ) : (
-                <Button
-                  type="submit"
-                  variant="primary"
-                  size="lg"
-                  className="w-full sm:w-auto"
-                >
-                  {isSubmitting ? (
-                    <span className="flex items-center gap-2">
-                      <svg className="animate-spin w-4 h-4" viewBox="0 0 24 24">
-                        <circle
-                          cx="12"
-                          cy="12"
-                          r="10"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="3"
-                          className="opacity-25"
-                        />
-                        <path
-                          fill="currentColor"
-                          d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"
-                          className="opacity-75"
-                        />
-                      </svg>
-                      Sending...
-                    </span>
-                  ) : (
-                    "Submit"
-                  )}
-                </Button>
-              )}
+              <Button
+                type="submit"
+                variant="primary"
+                size="lg"
+                className="w-full sm:w-auto"
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? (
+                  <span className="flex items-center gap-2">
+                    <svg className="animate-spin w-4 h-4" viewBox="0 0 24 24">
+                      <circle
+                        cx="12"
+                        cy="12"
+                        r="10"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="3"
+                        className="opacity-25"
+                      />
+                      <path
+                        fill="currentColor"
+                        d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"
+                        className="opacity-75"
+                      />
+                    </svg>
+                    Sending...
+                  </span>
+                ) : (
+                  "Submit"
+                )}
+              </Button>
             </motion.div>
           </form>
         </motion.div>
