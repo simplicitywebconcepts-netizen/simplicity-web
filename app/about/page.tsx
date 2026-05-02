@@ -8,9 +8,9 @@ import CallToAction from "@/components/home/CallToAction";
 import PageTransition from "@/components/ui/PageTransition";
 
 export const metadata: Metadata = {
-  title: "About Simplicity Web Inc - Leading Web Development Company in Toronto",
+  title: "About Simplicity Web Inc - Full-Service Digital Agency",
   description:
-    "Discover Simplicity Web Inc, your trusted web development company specializing in WordPress development, SEO services, and mobile app development for startups and small businesses in Toronto.",
+    "Simplicity Web Inc. is a full-service digital agency focused on building and scaling modern businesses through strategy, design, and technology.",
 };
 
 export default function AboutPage() {
@@ -25,10 +25,11 @@ export default function AboutPage() {
         bgClass="bg-section-bg/85"
         heading={
           <>
-            Ready to Grow Your <span className="gradient-text">Business?</span>
+            Ready to Build and Scale Your{" "}
+            <span className="gradient-text">Business?</span>
           </>
         }
-        description="Let's discuss how Simplicity Web Inc can help your startup or small business thrive online. Contact us today for a free consultation that includes an SEO audit and discover the difference a dedicated web development company can make."
+        description="Let's create a digital system that not only looks great—but drives real growth. Whether you're starting from scratch or looking to take your business to the next level, we're here to help."
         primaryButtonText="Contact Us"
         primaryButtonHref="/contact"
         secondaryButtonText="View Our Work"

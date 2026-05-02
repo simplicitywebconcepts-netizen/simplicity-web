@@ -13,6 +13,7 @@ interface ButtonProps {
   className?: string;
   onClick?: () => void;
   type?: "button" | "submit";
+  disabled?: boolean;
 }
 
 export default function Button({
@@ -23,9 +24,10 @@ export default function Button({
   className = "",
   onClick,
   type = "button",
+  disabled = false,
 }: ButtonProps) {
   const baseStyles =
-    "inline-flex items-center justify-center font-semibold tracking-wide uppercase text-xs transition-colors duration-300 rounded-sm cursor-pointer";
+    "inline-flex items-center justify-center font-semibold tracking-wide uppercase text-xs transition-colors duration-300 rounded-sm";
 
   const variantStyles = {
     primary:
@@ -42,7 +44,11 @@ export default function Button({
     lg: "px-8 py-4 text-sm",
   };
 
-  const combinedClass = `${baseStyles} ${variantStyles[variant]} ${sizeStyles[size]} ${className}`;
+  const disabledStyles = disabled
+    ? "opacity-60 cursor-not-allowed pointer-events-none"
+    : "cursor-pointer";
+
+  const combinedClass = `${baseStyles} ${variantStyles[variant]} ${sizeStyles[size]} ${disabledStyles} ${className}`;
 
   const motionProps = {
     variants: buttonHover,
@@ -66,6 +72,7 @@ export default function Button({
       {...motionProps}
       type={type}
       onClick={onClick}
+      disabled={disabled}
       className={combinedClass}
     >
       {children}

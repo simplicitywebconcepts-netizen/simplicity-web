@@ -4,6 +4,7 @@ import Script from "next/script";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import { NotificationProvider } from "@/components/ui/NotificationProvider";
 import { ScrollProvider } from "@/components/canvas/ScrollProvider";
 import { CrystalCanvas } from "@/components/canvas/CrystalCanvas";
 import { contactInfo } from "@/lib/data";
@@ -130,16 +131,18 @@ export default function RootLayout({
         suppressHydrationWarning
         className="min-h-full flex flex-col bg-background text-foreground"
       >
-        <ScrollProvider>
-          <CrystalCanvas />
-          <Navbar />
-          <div className="relative z-10 flex-grow">
-            {children}
-          </div>
-          <div className="relative z-10">
-            <Footer />
-          </div>
-        </ScrollProvider>
+        <NotificationProvider>
+          <ScrollProvider>
+            <CrystalCanvas />
+            <Navbar />
+            <div className="relative z-10 flex-grow">
+              {children}
+            </div>
+            <div className="relative z-10">
+              <Footer />
+            </div>
+          </ScrollProvider>
+        </NotificationProvider>
       </body>
     </html>
   );

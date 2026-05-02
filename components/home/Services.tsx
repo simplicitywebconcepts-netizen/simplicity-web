@@ -43,7 +43,7 @@ const iconPaths: Record<string, ReactNode> = {
 
 export default function Services() {
   return (
-    <section data-section="services" className="py-24 bg-section-bg/85 relative overflow-hidden">
+    <section data-section="services" className="py-24 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         <AnimatedSection className="text-center mb-16">
           <SectionLabel label="What We Do" className="justify-center" />
@@ -51,8 +51,9 @@ export default function Services() {
             Our Core <span className="gradient-text">Services</span>
           </h2>
           <p className="text-muted mt-4 max-w-2xl mx-auto">
-            We deliver WordPress development, SEO services, custom web applications, 
-            and mobile solutions that drive real business results and attract qualified leads.
+            We provide web development, custom applications, and digital marketing 
+            services that increase visibility, attract qualified traffic, and convert 
+            visitors into customers.
           </p>
         </AnimatedSection>
 
@@ -61,7 +62,7 @@ export default function Services() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6"
+          className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"
         >
           {services.map((service) => (
             <motion.div

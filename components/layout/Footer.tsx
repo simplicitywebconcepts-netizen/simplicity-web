@@ -11,11 +11,58 @@ export default function Footer() {
 
   return (
     <footer className="bg-card-bg border-t border-border mt-auto">
-      <div className="max-w-7xl mx-auto px-6 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+
+      {/* Top brand strip */}
+      <div className="border-b border-border">
+        <div className="max-w-7xl mx-auto px-6 py-12">
+          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
+            {/* Logo + tagline */}
+            <AnimatedSection delay={0} className="flex flex-col gap-3">
+              <div className="flex items-center gap-3">
+                <div className="w-8 h-8">
+                  <Logo className="w-full h-full" />
+                </div>
+                <span className="font-black tracking-widest text-sm uppercase text-foreground">
+                  Simplicity Web Inc
+                </span>
+              </div>
+              <p className="text-sm text-muted max-w-sm leading-relaxed">
+                We design, build, and grow digital systems that help businesses
+                attract more customers and scale with confidence.
+              </p>
+            </AnimatedSection>
+
+            {/* CTA */}
+            <AnimatedSection delay={0.1} className="flex flex-col gap-3 shrink-0">
+              <p className="text-xs font-semibold tracking-wider uppercase text-muted">
+                Ready to get started?
+              </p>
+              <div className="flex items-center gap-3">
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-primary text-white text-sm font-semibold hover:bg-primary/90 transition-colors duration-300"
+                >
+                  Start a Project →
+                </Link>
+                <a
+                  href={`mailto:${contactInfo.email}`}
+                  className="text-sm text-muted hover:text-primary transition-colors duration-300"
+                >
+                  {contactInfo.email}
+                </a>
+              </div>
+            </AnimatedSection>
+          </div>
+        </div>
+      </div>
+
+      {/* Main links grid */}
+      <div className="max-w-7xl mx-auto px-6 py-14">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-10">
+
           {/* Contact Info */}
-          <AnimatedSection delay={0}>
-            <h4 className="font-bold text-sm tracking-wider uppercase mb-4">
+          <AnimatedSection delay={0} className="col-span-2 md:col-span-1">
+            <h4 className="font-bold text-sm tracking-wider uppercase mb-5">
               Contact Info
             </h4>
             <ul className="space-y-2 text-sm text-muted">
@@ -36,29 +83,22 @@ export default function Footer() {
                 </a>
               </li>
               <li>{contactInfo.website}</li>
+              <li>{contactInfo.address}</li>
             </ul>
-            {/* Social icons */}
-            <div className="flex items-center gap-3 mt-4">
-              {["facebook", "twitter", "instagram", "linkedin"].map((social) => (
-                <a
-                  key={social}
-                  href="#"
-                  className="w-8 h-8 rounded-full bg-foreground/5 flex items-center justify-center text-foreground/50 hover:bg-primary hover:text-white transition-all duration-300"
-                  aria-label={social}
-                >
-                  <FooterSocialIcon name={social} />
-                </a>
-              ))}
-            </div>
           </AnimatedSection>
 
-          {/* Social Links */}
+          {/* Pages */}
           <AnimatedSection delay={0.1}>
-            <h4 className="font-bold text-sm tracking-wider uppercase mb-4">
-              Social Links
+            <h4 className="font-bold text-sm tracking-wider uppercase mb-5">
+              Pages
             </h4>
             <ul className="space-y-2 text-sm">
-              {footerLinks.socialLinks.map((link) => (
+              {[
+                { label: "Services", href: "/services" },
+                { label: "About Us", href: "/about" },
+                { label: "Works", href: "/works" },
+                { label: "Contact Us", href: "/contact" },
+              ].map((link) => (
                 <li key={link.label}>
                   <Link
                     href={link.href}
@@ -73,7 +113,7 @@ export default function Footer() {
 
           {/* Help */}
           <AnimatedSection delay={0.2}>
-            <h4 className="font-bold text-sm tracking-wider uppercase mb-4">
+            <h4 className="font-bold text-sm tracking-wider uppercase mb-5">
               Help
             </h4>
             <ul className="space-y-2 text-sm">
@@ -92,7 +132,7 @@ export default function Footer() {
 
           {/* Sitemap */}
           <AnimatedSection delay={0.3}>
-            <h4 className="font-bold text-sm tracking-wider uppercase mb-4">
+            <h4 className="font-bold text-sm tracking-wider uppercase mb-5">
               Sitemap
             </h4>
             <ul className="space-y-2 text-sm">
@@ -108,6 +148,32 @@ export default function Footer() {
               ))}
             </ul>
           </AnimatedSection>
+
+          {/* Follow Us — merged icons + text links */}
+          <AnimatedSection delay={0.4}>
+            <h4 className="font-bold text-sm tracking-wider uppercase mb-5">
+              Follow Us
+            </h4>
+            <ul className="space-y-3 text-sm">
+              {footerLinks.socialLinks.filter((s) => s.href !== "#").map((social) => (
+                <li key={social.key}>
+                  <a
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2.5 text-muted hover:text-primary transition-colors duration-300 group"
+                    aria-label={social.label}
+                  >
+                    <span className="w-7 h-7 rounded-full bg-foreground/5 flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all duration-300 shrink-0">
+                      <FooterSocialIcon name={social.key} />
+                    </span>
+                    {social.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </AnimatedSection>
+
         </div>
       </div>
 
@@ -120,7 +186,7 @@ export default function Footer() {
             viewport={{ once: true }}
             className="text-xs text-muted"
           >
-            Powered by Simplicity Web Inc
+            © {new Date().getFullYear()} Simplicity Web Inc. All rights reserved.
           </motion.p>
           <motion.div
             initial={{ opacity: 0 }}
@@ -128,7 +194,7 @@ export default function Footer() {
             viewport={{ once: true }}
             className="flex items-center gap-2"
           >
-            <div className="w-6 h-6 flex items-center justify-center grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+            <div className="w-5 h-5 opacity-50">
               <Logo className="w-full h-full" />
             </div>
             <span className="text-[10px] text-muted tracking-widest uppercase">

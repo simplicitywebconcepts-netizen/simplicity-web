@@ -4,6 +4,8 @@ import { motion } from "framer-motion";
 import { staggerContainer, fadeInUp, fadeInRight } from "@/lib/animations";
 import Button from "@/components/ui/Button";
 import SectionLabel from "@/components/ui/SectionLabel";
+import CountUp from "@/components/ui/CountUp";
+import { companyStats } from "@/lib/data";
 
 export default function Hero() {
   return (
@@ -40,22 +42,20 @@ export default function Hero() {
               variants={fadeInUp}
               className="text-4xl md:text-5xl lg:text-6xl text-white font-bold leading-[1.1] tracking-tight mb-6"
             >
-              Toronto Web Development & SEO Services for Growing Businesses
+              Websites, Apps & Growth Systems Built to Scale Your Business
             </motion.h1>
             <motion.p
               variants={fadeInUp}
-              className="text-lg text-white/85 mb-6 font-medium"
+              className="text-lg text-white/85 mb-6 font-medium tracking-widest"
             >
-              Powered by <span className="text-primary">Simplicity Web Inc</span>
+              Build &bull; Brand &bull; Grow &bull; Convert &bull; Scale
             </motion.p>
 
             <motion.p
               variants={fadeInUp}
               className="text-lg text-white/85 leading-relaxed mb-8"
             >
-              We specialize in{" "}
-              <span className="font-semibold text-white">WordPress development</span>,{" "}
-              <span className="font-semibold text-white">SEO services</span>, Custom Web Applications, and Mobile App Development. We craft digital experiences that rank higher, attract leads, build authority, and convert visitors into customers.
+              We design and develop high-performance digital experiences that are built to do more than just look good—they attract the right audience, generate leads, and convert visitors into customers. From custom development and branding to marketing and growth strategies, everything we create is focused on real, measurable results.
             </motion.p>
 
             <motion.div variants={fadeInUp} className="flex flex-wrap gap-4">
@@ -72,14 +72,10 @@ export default function Hero() {
               variants={fadeInUp}
               className="flex gap-10 mt-12 pt-8 border-t border-white/15"
             >
-              {[
-                { value: "5+", label: "WordPress Sites Built" },
-                { value: "2", label: "Active SEO Clients" },
-                { value: "10+", label: "Years Experience" },
-              ].map((stat) => (
+              {companyStats.map((stat) => (
                 <div key={stat.label}>
                   <div className="text-2xl font-bold gradient-text">
-                    {stat.value}
+                    <CountUp to={stat.value} />{stat.suffix}
                   </div>
                   <div className="text-xs text-white/70 mt-1">{stat.label}</div>
                 </div>

@@ -1,55 +1,98 @@
+"use client";
+
+import { motion } from "framer-motion";
+import { staggerContainer, fadeInUp } from "@/lib/animations";
+import AnimatedSection from "@/components/ui/AnimatedSection";
+import SectionLabel from "@/components/ui/SectionLabel";
+
 const serviceHighlights = [
   {
-    title: "Web Design",
+    title: "Web Design & Development",
     description:
-      "Engaging web design built upon user experience strategy that responds to its environment and user behaviour, offering an optimized UX/UI design and browsing experience for all devices.",
+      "Modern, high-performance websites designed for user experience, speed, and conversion across all devices.",
+    icon: "🌐",
   },
   {
-    title: "WordPress Development",
+    title: "Custom Web Applications",
     description:
-      "Hand-crafted, custom WordPress development allowing your marketing team to take full control over the world's most popular CMS platform to power your digital marketing initiatives.",
+      "Tailored platforms built to solve real business challenges and support scalable growth.",
+    icon: "⚙️",
   },
   {
-    title: "Web Development",
+    title: "eCommerce Development",
     description:
-      "A custom-built platform may be best for your business website. Our award-winning web development company has the experience to craft any solution to power your digital strategy.",
+      "Secure, scalable online stores designed to drive sales and support your business growth.",
+    icon: "🛒",
   },
   {
-    title: "eCommerce Design",
+    title: "Brand Identity & Design",
     description:
-      "Whether it's WordPress or any other open source platform, our web design and development services are backed by robust e-commerce development to support small business growth.",
+      "Strategic branding and visual identity systems that create consistency, recognition, and impact.",
+    icon: "🎨",
   },
   {
-    title: "Brand Identity",
+    title: "SEO & Digital Visibility",
     description:
-      "Through our brand identity design process developed over more than 20 years of professional experience, we deliver consistency in our clients' brand experiences that turn heads.",
+      "Increase your online presence with strategies designed to attract qualified traffic and drive long-term growth.",
+    icon: "📈",
   },
   {
-    title: "Generative Engine Optimization",
+    title: "Social Media & Content",
     description:
-      "Your customers are asking ChatGPT and Perplexity which companies to hire. We work with you to make sure your company is the answer.",
+      "Engaging content and social media strategies built to grow your audience and strengthen your brand.",
+    icon: "📣",
+  },
+  {
+    title: "AI Search & Discovery Optimization",
+    description:
+      "Position your business to be found across modern search platforms, including AI-driven tools like ChatGPT and emerging discovery engines.",
+    icon: "🤖",
   },
 ];
 
 export default function ServicesHighlight() {
   return (
-    <section className="bg-section-bg/85 py-24 md:py-28">
+    <section
+      data-section="specializations"
+      className="py-24 md:py-28 relative overflow-hidden">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="grid gap-x-14 gap-y-14 md:grid-cols-2 xl:grid-cols-3">
+        <AnimatedSection className="text-center mb-16">
+          <SectionLabel label="Specializations" className="justify-center" />
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight mt-4">
+            What We <span className="gradient-text">Specialize In</span>
+          </h2>
+          <p className="text-muted mt-4 max-w-2xl mx-auto">
+            From strategy to execution, we cover every angle of your digital presence.
+          </p>
+        </AnimatedSection>
+
+        <motion.div
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-80px" }}
+          className="flex flex-wrap justify-center gap-6"
+        >
           {serviceHighlights.map((item) => (
-            <article
+            <motion.article
               key={item.title}
-              className="max-w-xl rounded-2xl border border-border bg-card-bg/70 p-7 transition-colors duration-300 hover:border-primary/40"
+              variants={fadeInUp}
+              whileHover={{ y: -6, boxShadow: "0 20px 40px rgba(124,58,237,0.12)" }}
+              transition={{ duration: 0.3 }}
+              className="w-full md:w-[calc(50%-12px)] xl:w-[calc(33.333%-16px)] flex flex-col rounded-2xl border border-border bg-card-bg/70 p-7 hover:border-primary/50 transition-colors duration-300 group cursor-default"
             >
-              <h3 className="text-3xl font-semibold tracking-tight text-foreground md:text-4xl">
+              <div className="w-11 h-11 rounded-lg bg-primary/10 flex items-center justify-center text-xl mb-5 group-hover:bg-primary/20 transition-colors duration-300">
+                {item.icon}
+              </div>
+              <h3 className="text-lg font-bold tracking-tight text-foreground mb-3">
                 {item.title}
               </h3>
-              <p className="mt-5 text-base leading-relaxed text-muted md:text-lg">
+              <p className="text-sm leading-relaxed text-muted flex-grow">
                 {item.description}
               </p>
-            </article>
+            </motion.article>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

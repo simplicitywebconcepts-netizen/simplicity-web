@@ -56,23 +56,16 @@ export default function AboutHero() {
           </motion.h1>
 
           <motion.p variants={fadeInUp} className="text-lg text-white/90 leading-relaxed mb-4 font-medium [&_strong]:text-white">
-            At Simplicity Web Inc, a <strong>Toronto-based</strong> web development company, we specialize in <strong>WordPress development</strong> and <strong>SEO services</strong>. With over a year of experience, we help startups and small businesses build exceptional websites and mobile apps that drive real growth.
+            Simplicity Web Inc. is a full-service digital agency focused on building and scaling modern businesses through strategy, design, and technology.
+          </motion.p>
+
+          <motion.p variants={fadeInUp} className="text-base text-white/85 leading-relaxed mb-4 font-medium">
+            We partner with startups and growing companies to create high-performance websites, applications, and digital systems that drive real, measurable results.
           </motion.p>
 
           <motion.p variants={fadeInUp} className="text-base text-white/85 leading-relaxed font-medium">
-            Founded in Toronto, we&apos;ve grown from a startup to a trusted partner, committed to innovation and client success. We simplify digital transformation for growing companies seeking straightforward, effective web solutions.
+            From brand identity and development to marketing and growth, everything we build is designed with one goal in mind—helping your business grow.
           </motion.p>
-
-          <motion.div variants={fadeInUp} className="text-base text-white/85 leading-relaxed mt-4 font-medium [&_strong]:text-white">
-            We specialize in:
-            <ul className="list-disc list-inside mt-2 space-y-1">
-              <li><strong>WordPress development</strong></li>
-              <li><strong>Web application development</strong></li>
-              <li><strong>SEO services</strong></li>
-              <li><strong>Mobile app development</strong></li>
-            </ul>
-            <em className="block mt-2 text-white/70">Crafting digital tools that enhance visibility and user engagement for startups and small businesses.</em>
-          </motion.div>
         </motion.div>
       </div>
     </section>
