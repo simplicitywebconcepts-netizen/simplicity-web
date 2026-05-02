@@ -12,6 +12,19 @@ export const teamMembers: TeamMember[] = [
   { id: 3, name: "Jaivardhan Singh", role: "Project Coordinator", image: "/team/member-3.svg" },
 ];
 
+// ---- Stats ----
+export interface Stat {
+  value: number;
+  suffix: string;
+  label: string;
+}
+
+export const companyStats: Stat[] = [
+  { value: 100, suffix: "+", label: "Projects Delivered" },
+  { value: 20, suffix: "+", label: "Ongoing Partnerships" },
+  { value: 10, suffix: "+", label: "Years Experience" },
+];
+
 // ---- Values ----
 export interface Value {
   id: number;
@@ -25,21 +38,21 @@ export const values: Value[] = [
     id: 1,
     title: "Our Mission",
     description:
-      "Empowering growing companies with reliable digital solutions for accelerated success through transparent partnerships.",
+      "To help businesses at every stage—whether you're just starting out, launching a new idea, or already established—build, grow, and scale through strategic digital solutions.",
     icon: "lightbulb",
   },
   {
     id: 2,
     title: "Our Vision",
     description:
-      "The go-to web development company in Toronto, transforming ideas into scalable digital realities for long-term growth.",
+      "To be a trusted partner for businesses looking to turn ideas into reality and take their growth to the next level through design, technology, and innovation.",
     icon: "users",
   },
   {
     id: 3,
     title: "Our Approach",
     description:
-      "We understand your goals, plan strategically with SEO, develop tailored WordPress solutions, and provide ongoing optimization for sustainable growth.",
+      "We combine strategy, design, and technology into one cohesive system—ensuring everything we create is aligned with performance, growth, and long-term success.",
     icon: "zap",
   },
 ];
@@ -59,7 +72,7 @@ export const projects: Project[] = [
   {
     id: 1,
     title: "ACE Active Zone",
-    description: "A fitness membership website built with WordPress and SEO to drive signups and showcase community.",
+    description: "A sports complex platform designed for drop-in athletes and tournament rentals, featuring integrated digital booking to streamline scheduling and improve user experience.",
     category: "Fitness",
     image: "/case-studies/aceactivezone-screenshot.png",
     website: "https://aceactivezone.com",
@@ -68,7 +81,7 @@ export const projects: Project[] = [
   {
     id: 3,
     title: "SHAMMY'S AUTO",
-    description: "An automotive services website built with WordPress and SEO to improve local visibility and booking conversions.",
+    description: "An automotive services website built to increase local visibility, streamline bookings, and convert visitors into customers.",
     category: "Automotive",
     image: "/case-studies/shammysauto-screenshot.png",
     website: "https://shammysauto.com",
@@ -77,7 +90,7 @@ export const projects: Project[] = [
   {
     id: 2,
     title: "Kerasoft",
-    description: "A beauty and personal care ecommerce website built with WordPress and SEO for product discovery and growth.",
+    description: "A fully branded eCommerce platform, where we developed the complete look and feel from the ground up—designed to enhance product discovery and support scalable growth.",
     category: "Beauty",
     image: "/case-studies/kerasoft-screenshot.png",
     website: "https://kerasoft.com",
@@ -86,7 +99,7 @@ export const projects: Project[] = [
   {
     id: 4,
     title: "Sherfertility Solutions",
-    description: "A fertility healthcare website built with WordPress and SEO foundations for trust and conversions.",
+    description: "A healthcare platform built to establish trust, improve accessibility, and drive patient engagement and conversions.",
     category: "Healthcare",
     image: "/case-studies/sherfertility-solutions-screenshot.png",
     website: "https://sherfertilitysolutions.com",
@@ -196,30 +209,44 @@ export interface Service {
 export const services: Service[] = [
   {
     id: 1,
-    title: "WordPress Development",
+    title: "Web Development & App Development",
     description:
-      "Create a scalable, secure, and beautifully designed WordPress website. Custom themes, e-commerce, membership sites with fast loading times and mobile-first performance.",
+      "Build high-performance websites and applications designed for scalability and results. WordPress, custom web apps, mobile apps, and hosting.",
     icon: "cloud",
   },
   {
     id: 2,
-    title: "Custom Web Development",
+    title: "Design & Branding",
     description:
-      "Tailored web applications that solve real business challenges. From SaaS landing pages to interactive applications with API integrations and performance-focused architecture.",
+      "Create a strong, consistent identity that stands out across all platforms. UI/UX design, logo design, brand identity, and marketing materials.",
     icon: "code",
   },
   {
     id: 3,
-    title: "SEO Services",
+    title: "Social Media & Content",
     description:
-      "Boost visibility and attract qualified traffic. Technical optimization, keyword strategy, local SEO for Toronto, and content optimization for conversion.",
+      "Grow your brand and engage your audience across all major platforms. Social media management, content creation, and community engagement.",
     icon: "shield",
   },
   {
     id: 4,
-    title: "Mobile App Development",
+    title: "SEO & Paid Advertising",
     description:
-      "Extend your business with mobile apps designed for engagement and retention. Cross-platform design, Flutter development, and app store readiness.",
+      "Increase visibility and attract high-quality traffic through search and targeted campaigns. SEO, Google Ads, Meta Ads, and keyword strategy.",
+    icon: "cpu",
+  },
+  {
+    id: 5,
+    title: "Conversion & Lead Generation",
+    description:
+      "Turn traffic into leads and leads into customers. Landing pages, funnel strategy, conversion optimization, and user journey optimization.",
+    icon: "shield",
+  },
+  {
+    id: 6,
+    title: "Automation, CRM & Analytics",
+    description:
+      "Track, manage, and scale your business with smart systems. Analytics, CRM setup, automated follow-ups, and performance reporting.",
     icon: "cpu",
   },
 ];
@@ -228,8 +255,8 @@ export const services: Service[] = [
 export const navLinks = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About Us" },
+  { href: "/services", label: "Services" },
   { href: "/works", label: "Works" },
-  { href: "/careers", label: "Careers" },
   { href: "/contact", label: "Contact Us" },
 ];
 
@@ -315,13 +342,14 @@ export const perks: Perk[] = [
 // ---- Footer ----
 export const footerLinks = {
   socialLinks: [
-    { label: "Facebook", href: "#" },
-    { label: "Instagram", href: "#" },
-    { label: "Contact Us", href: "/contact" },
+    { label: "Facebook", href: "#", key: "facebook" },
+    { label: "Twitter", href: "#", key: "twitter" },
+    { label: "Instagram", href: "#", key: "instagram" },
+    { label: "LinkedIn", href: "https://www.linkedin.com/company/simplicity-web", key: "linkedin" },
   ],
   helpLinks: [
     { label: "About", href: "/about" },
-    { label: "Careers", href: "/careers" },
+    { label: "Services", href: "/services" },
     { label: "Contact", href: "/contact" },
   ],
   sitemapLinks: [

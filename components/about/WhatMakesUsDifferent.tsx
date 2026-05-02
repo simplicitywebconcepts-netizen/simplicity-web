@@ -26,7 +26,7 @@ export default function WhatMakesUsDifferent() {
             variants={fadeInUp}
             className="text-lg text-muted leading-relaxed text-center"
           >
-            What sets Simplicity Web Inc apart is our unwavering focus on performance and scalability, ensuring every website and app we build not only meets current needs but adapts to future demands. We embed SEO-first thinking into every project, helping your business rank higher and attract more organic traffic without compromising on design or functionality. Our partnership mindset means we work closely with you as an extension of your team, prioritizing open communication and collaborative decision-making to deliver results that truly matter. This unique combination of expert WordPress customization, data-driven SEO strategies, and transparent project management creates digital experiences that drive measurable growth and build lasting trust.
+            We don&apos;t just build websites—we build complete digital systems designed to grow your business. Our approach goes beyond design and development. We focus on how every part of your digital presence works together—from branding and user experience to marketing and conversion—to deliver real, measurable results. By combining strategy, creativity, and technology, we help businesses move faster, stand out, and scale with confidence.
           </motion.p>
         </motion.div>
       </div>

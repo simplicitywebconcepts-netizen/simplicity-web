@@ -93,7 +93,7 @@ export default function Navbar() {
           <div className="flex items-center gap-4">
             <div className="hidden lg:block">
               <Button href="/contact" variant="primary" size="sm">
-                Get a Quote
+                Get in Touch
               </Button>
             </div>
 
@@ -170,7 +170,7 @@ export default function Navbar() {
               ))}
               <motion.div variants={menuItemVariants} className="mt-4">
                 <Button href="/contact" variant="outline" className="!border-foreground !text-foreground hover:!bg-foreground hover:!text-background">
-                  Get a Quote
+                  Get in Touch
                 </Button>
               </motion.div>
 

@@ -12,37 +12,43 @@ const faqs = [
     id: 1,
     question: "What makes Simplicity Web Inc different from other agencies?",
     answer:
-      "We combine polished WordPress development with SEO expertise and a clear focus on conversion. Our process is built for startups and growing companies that need results without unnecessary complexity.",
+      "We focus on building complete digital systems—not just websites. From branding and development to marketing and growth, everything we create is designed to work together to generate leads, drive engagement, and support long-term business growth.",
   },
   {
     id: 2,
-    question: "How long does a WordPress website project take?",
+    question: "What services do you offer?",
     answer:
-      "Most WordPress development projects are completed in 4–8 weeks, depending on scope. We provide a transparent timeline after the discovery phase.",
+      "We provide end-to-end digital solutions including web and app development, branding, SEO, paid advertising, social media management, and growth strategy—everything needed to build, launch, and scale your business.",
   },
   {
     id: 3,
-    question: "Do you offer local SEO services in Toronto?",
+    question: "How long does a typical project take?",
     answer:
-      "Yes. Our SEO services include local optimization, keyword strategy, and content improvements tailored to Toronto and Canadian markets.",
+      "Timelines vary depending on the scope, but most website and branding projects are completed within 4–8 weeks. Larger or more complex builds may take longer. We provide a clear timeline after understanding your specific needs.",
   },
   {
     id: 4,
-    question: "Can you support custom web development beyond WordPress?",
+    question: "Do you only build websites, or can you help grow my business too?",
     answer:
-      "Absolutely. We build custom web applications, API integrations, and business tools when a standard WordPress site isn't enough.",
+      "We go beyond development. Our focus is on helping you grow—through SEO, paid ads, social media, and conversion optimization—so your digital presence actually drives results.",
   },
   {
     id: 5,
-    question: "Do you offer mobile app development services?",
+    question: "Can you help if I'm just starting my business?",
     answer:
-      "Yes. We extend your business with mobile apps designed for engagement and retention. We build cross-platform apps using Flutter and native technologies.",
+      "Absolutely. We work with startups and growing businesses to build everything from brand identity and websites to marketing systems that help you launch and gain traction quickly.",
   },
   {
     id: 6,
+    question: "Do you offer ongoing support after launch?",
+    answer:
+      "Yes. We offer ongoing support, maintenance, and growth services to ensure your website and marketing continue to perform and improve over time.",
+  },
+  {
+    id: 7,
     question: "How do I get started?",
     answer:
-      "Reach out for a free consultation and strategy review. We'll discuss your goals, challenges, and the best path to grow your online presence.",
+      "Reach out to us for a consultation. We'll discuss your goals, identify opportunities, and outline the best approach to build and grow your digital presence.",
   },
 ];
 
@@ -124,7 +130,7 @@ export default function FAQ() {
   };
 
   return (
-    <section data-section="faq" className="py-24 bg-section-bg/85 relative overflow-hidden">
+    <section data-section="faq" className="py-24 relative overflow-hidden">
       {/* FAQ Schema Markup */}
       <Script
         id="faq-schema"

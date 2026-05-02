@@ -18,7 +18,7 @@ export default function FeaturedProjects() {
   return (
     <section
       data-section="projects"
-      className="py-24 bg-card-bg/85 relative overflow-hidden"
+      className="py-24 relative overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-6">
         <AnimatedSection className="text-center mb-16">
@@ -27,8 +27,9 @@ export default function FeaturedProjects() {
             Featured <span className="gradient-text">Projects</span>
           </h2>
           <p className="text-muted mt-4 max-w-2xl mx-auto">
-            Explore our recent work across cloud infrastructure, software
-            development, and cybersecurity solutions.
+            Explore a selection of our recent projects—from websites and
+            applications to branding and digital growth solutions—built to
+            deliver real results.
           </p>
         </AnimatedSection>
 
@@ -46,22 +47,22 @@ export default function FeaturedProjects() {
               <Link
                 key={project.id}
                 href={`/works/${project.caseStudySlug ?? defaultCaseStudySlug}`}
-                className="block"
+                className="block h-full"
               >
                 <motion.div
                   variants={fadeInUp}
                   whileHover={{ y: -5 }}
-                  className="group rounded-xl overflow-hidden border border-border bg-card-bg hover:border-primary/50 hover:shadow-xl hover:shadow-primary/5 transition-all duration-500 cursor-pointer"
+                  className="group rounded-xl overflow-hidden border border-border bg-card-bg hover:border-primary/50 hover:shadow-xl hover:shadow-primary/5 transition-all duration-500 cursor-pointer h-full flex flex-col"
                 >
                   {/* Project image */}
-                  <div className="relative h-48 bg-gradient-to-br from-primary/5 to-accent/5 overflow-hidden">
+                  <div className="relative h-56 sm:h-64 md:h-72 bg-gradient-to-br from-primary/5 to-accent/5 overflow-hidden">
                     {hasProjectImage ? (
                       <Image
                         src={project.image}
                         alt={`${project.title} project preview`}
                         fill
                         sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-                        className="object-cover"
+                        className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
                       />
                     ) : (
                       <div className="absolute inset-0 flex items-center justify-center">
@@ -95,16 +96,18 @@ export default function FeaturedProjects() {
                   </div>
 
                   {/* Content */}
-                  <div className="p-6">
-                    <h3 className="font-bold text-lg mb-2 group-hover:text-primary transition-colors">
+                  <div className="p-6 flex flex-col flex-grow">
+                    <h3 className="font-bold text-xl mb-3 group-hover:text-primary transition-colors">
                       {project.title}
                     </h3>
-                    <p className="text-sm text-muted leading-relaxed mb-4">
+                    <p className="text-sm text-muted leading-relaxed mb-6 flex-grow">
                       {project.description}
                     </p>
-                    <span className="text-xs font-semibold tracking-wider uppercase text-primary group-hover:tracking-widest transition-all duration-300">
-                      Case Study →
-                    </span>
+                    <div className="mt-auto">
+                      <span className="text-xs font-semibold tracking-wider uppercase text-primary group-hover:tracking-widest transition-all duration-300">
+                        Case Study →
+                      </span>
+                    </div>
                   </div>
                 </motion.div>
               </Link>

@@ -62,17 +62,16 @@ export default function ContactForm() {
             variants={fadeInUp}
             className="text-4xl md:text-5xl lg:text-5xl font-bold tracking-tight mt-6 leading-[1.1]"
           >
-            Partner with a leading <br />
-            <span className="gradient-text">web development company.</span>
+            Let&apos;s Build Something That{" "}
+            <span className="gradient-text">Grows Your Business</span>
           </motion.h1>
 
           <motion.p
             variants={fadeInUp}
             className="text-muted mt-6 max-w-xl text-lg leading-relaxed"
           >
-            From custom WordPress development to data-driven SEO services, our
-            team connects the dots to grow your online presence. Let&apos;s
-            build tools that move your business forward.
+            Tell us about your project, and we&apos;ll help you map out the
+            best way to build and scale it.
           </motion.p>
 
           <motion.ul variants={fadeInUp} className="mt-8 space-y-4">
