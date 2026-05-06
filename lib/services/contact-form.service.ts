@@ -1,8 +1,3 @@
-// NOTE: Prisma database insertion is temporarily commented out.
-// Prisma v7 no longer exports 'PrismaClient' from "@prisma/client" the same way.
-// Uncomment and update the import once the Prisma client is properly generated/configured.
-// import { prisma } from "@/lib/prisma";
-
 import { sendContactFormEmail, type ContactEmailPayload } from "@/lib/services/email.service";
 
 export class ContactFormValidationError extends Error {
@@ -42,20 +37,6 @@ function parseAndValidateContactPayload(payload: unknown): ContactEmailPayload {
 
 export async function submitContactForm(payload: unknown): Promise<void> {
   const validPayload = parseAndValidateContactPayload(payload);
-
-  // TODO: Re-enable database insertion once Prisma client is properly configured.
-  // Prisma v7 breaking change: 'PrismaClient' is no longer exported from "@prisma/client".
-  // After running `npx prisma generate`, update lib/prisma.ts with the correct import path.
-  //
-  // await prisma.contact.create({
-  //   data: {
-  //     name: validPayload.name,
-  //     email: validPayload.email,
-  //     phone: validPayload.phone ?? null,
-  //     subject: validPayload.subject,
-  //     message: validPayload.message,
-  //   },
-  // });
 
   await sendContactFormEmail(validPayload);
 }
