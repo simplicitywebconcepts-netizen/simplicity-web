@@ -6,11 +6,15 @@ simplicity-web/
 │   ├── about/
 │   │   └── page.tsx
 │   ├── api/
+│   │   ├── contact/
+│   │   │   └── route.ts
 │   │   └── send-mail/
 │   │       └── route.ts
 │   ├── careers/
 │   │   └── page.tsx
 │   ├── contact/
+│   │   └── page.tsx
+│   ├── services/
 │   │   └── page.tsx
 │   ├── tech-stack/
 │   │   └── page.tsx
@@ -48,6 +52,7 @@ simplicity-web/
 │   │   ├── CallToAction.tsx
 │   │   ├── FAQ.tsx
 │   │   ├── FeaturedProjects.tsx
+│   │   ├── GrowthSystem.tsx
 │   │   ├── Hero.tsx
 │   │   ├── Services.tsx
 │   │   ├── ServicesHighlight.tsx
@@ -59,6 +64,11 @@ simplicity-web/
 │   ├── projects/
 │   │   ├── CaseStudyDetail.tsx
 │   │   └── ProjectGrid.tsx
+│   ├── services/
+│   │   ├── OurProcess.tsx
+│   │   ├── ServicesHero.tsx
+│   │   ├── ServicesList.tsx
+│   │   └── WhyWorkWithUs.tsx
 │   ├── showcase/
 │   │   └── ShowCase.tsx
 │   ├── tech-stack/
@@ -66,6 +76,7 @@ simplicity-web/
 │   └── ui/
 │       ├── AnimatedSection.tsx
 │       ├── Button.tsx
+│       ├── CountUp.tsx
 │       ├── Logo.tsx
 │       ├── Notification.tsx
 │       ├── NotificationProvider.tsx
@@ -109,12 +120,17 @@ simplicity-web/
 │   ├── globe.svg
 │   ├── logo.svg
 │   ├── next.svg
+│   ├── robots.txt
+│   ├── sitemap-0.xml
+│   ├── sitemap.xml
 │   ├── vercel.svg
 │   └── window.svg
+├── .env.example
 ├── .gitignore
 ├── AGENTS.md
 ├── CLAUDE.md
 ├── eslint.config.mjs
+├── next-sitemap.config.js
 ├── next.config.ts
 ├── package-lock.json
 ├── package.json

@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import ContactForm from "@/components/contact/ContactForm";
 import PageTransition from "@/components/ui/PageTransition";
-import SectionLabel from "@/components/ui/SectionLabel";
 
 export const metadata: Metadata = {
   title: "Contact Us - Simplicity Web Inc",
