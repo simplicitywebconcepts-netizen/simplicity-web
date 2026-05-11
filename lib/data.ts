@@ -363,6 +363,7 @@ export const footerLinks = {
 export const contactInfo = {
   phone: "+1 (6479)329-688",
   email: "info@simplicityweb.ca",
+  address: "77 King St W\nToronto, ON M5K 2A1, Canada",
+  addressLink: "https://www.google.com/maps/search/?api=1&query=77+King+St+W,+Toronto,+ON+M5K+2A1,+Canada",
   website: "simplicityweb.ca",
-  address: "Toronto, Ontario",
 };

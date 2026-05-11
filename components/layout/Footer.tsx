@@ -6,6 +6,7 @@ import { footerLinks, contactInfo } from "@/lib/data";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import Logo from "@/components/ui/Logo";
 import { ReactNode } from "react";
+import { MapPin, Mail, Phone, Globe } from "lucide-react";
 
 export default function Footer() {
 
@@ -58,32 +59,54 @@ export default function Footer() {
 
       {/* Main links grid */}
       <div className="max-w-7xl mx-auto px-6 py-14">
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-10">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-16">
 
           {/* Contact Info */}
-          <AnimatedSection delay={0} className="col-span-2 md:col-span-1">
+          <AnimatedSection delay={0} className="col-span-2 lg:col-span-1">
             <h4 className="font-bold text-sm tracking-wider uppercase mb-5">
               Contact Info
             </h4>
-            <ul className="space-y-2 text-sm text-muted">
+            <ul className="space-y-3 text-sm text-muted">
               <li>
                 <a
-                  href={`tel:${contactInfo.phone}`}
-                  className="hover:text-primary transition-colors"
+                  href={contactInfo.addressLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-start gap-3 hover:text-primary transition-colors group"
                 >
-                  {contactInfo.phone}
+                  <MapPin className="w-4 h-4 mt-0.5 shrink-0 group-hover:text-primary transition-colors" />
+                  <span className="whitespace-pre-line">{contactInfo.address}</span>
                 </a>
               </li>
               <li>
                 <a
                   href={`mailto:${contactInfo.email}`}
-                  className="hover:text-primary transition-colors"
+                  className="flex items-center gap-3 hover:text-primary transition-colors group"
                 >
-                  {contactInfo.email}
+                  <Mail className="w-4 h-4 shrink-0 group-hover:text-primary transition-colors" />
+                  <span>{contactInfo.email}</span>
                 </a>
               </li>
-              <li>{contactInfo.website}</li>
-              <li>{contactInfo.address}</li>
+              <li>
+                <a
+                  href={`tel:${contactInfo.phone}`}
+                  className="flex items-center gap-3 hover:text-primary transition-colors group"
+                >
+                  <Phone className="w-4 h-4 shrink-0 group-hover:text-primary transition-colors" />
+                  <span>{contactInfo.phone}</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href={`https://${contactInfo.website}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 hover:text-primary transition-colors group"
+                >
+                  <Globe className="w-4 h-4 shrink-0 group-hover:text-primary transition-colors" />
+                  <span>{contactInfo.website}</span>
+                </a>
+              </li>
             </ul>
           </AnimatedSection>
 
@@ -95,8 +118,28 @@ export default function Footer() {
             <ul className="space-y-2 text-sm">
               {[
                 { label: "Services", href: "/services" },
-                { label: "About Us", href: "/about" },
                 { label: "Works", href: "/works" },
+              ].map((link) => (
+                <li key={link.label}>
+                  <Link
+                    href={link.href}
+                    className="text-muted hover:text-primary transition-colors duration-300"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </AnimatedSection>
+
+          {/* Company */}
+          <AnimatedSection delay={0.15}>
+            <h4 className="font-bold text-sm tracking-wider uppercase mb-5">
+              Company
+            </h4>
+            <ul className="space-y-2 text-sm">
+              {[
+                { label: "About Us", href: "/about" },
                 { label: "Contact Us", href: "/contact" },
               ].map((link) => (
                 <li key={link.label}>
@@ -111,46 +154,8 @@ export default function Footer() {
             </ul>
           </AnimatedSection>
 
-          {/* Help */}
-          <AnimatedSection delay={0.2}>
-            <h4 className="font-bold text-sm tracking-wider uppercase mb-5">
-              Help
-            </h4>
-            <ul className="space-y-2 text-sm">
-              {footerLinks.helpLinks.map((link) => (
-                <li key={link.label}>
-                  <Link
-                    href={link.href}
-                    className="text-muted hover:text-primary transition-colors duration-300"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </AnimatedSection>
-
-          {/* Sitemap */}
-          <AnimatedSection delay={0.3}>
-            <h4 className="font-bold text-sm tracking-wider uppercase mb-5">
-              Sitemap
-            </h4>
-            <ul className="space-y-2 text-sm">
-              {footerLinks.sitemapLinks.map((link) => (
-                <li key={link.label}>
-                  <Link
-                    href={link.href}
-                    className="text-muted hover:text-primary transition-colors duration-300"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </AnimatedSection>
-
           {/* Follow Us — merged icons + text links */}
-          <AnimatedSection delay={0.4}>
+          <AnimatedSection delay={0.2}>
             <h4 className="font-bold text-sm tracking-wider uppercase mb-5">
               Follow Us
             </h4>

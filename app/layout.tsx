@@ -45,9 +45,8 @@ export default function RootLayout({
   const websiteUrl = contactInfo.website.startsWith("http")
     ? contactInfo.website
     : `https://${contactInfo.website}`;
-  const [addressLocality = "Toronto", addressRegion = "ON"] = contactInfo.address
-    .split(",")
-    .map((part) => part.trim());
+  const addressLocality = "Toronto";
+  const addressRegion = "ON";
 
   return (
     <html
