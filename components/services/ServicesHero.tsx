@@ -4,48 +4,32 @@ import { motion } from "framer-motion";
 import { staggerContainer, fadeInUp } from "@/lib/animations";
 import SectionLabel from "@/components/ui/SectionLabel";
 
+// Pre-computed deterministic positions for network nodes (matches AboutHero / CareersHero)
+const circlePositions = [
+  [120, 80], [340, 150], [500, 60], [80, 280], [290, 340],
+  [450, 200], [180, 450], [380, 500], [540, 380], [60, 520],
+  [220, 180], [490, 480], [150, 350], [400, 100], [300, 560],
+];
+
+const linePositions = [
+  [120, 80, 340, 150], [340, 150, 500, 60], [80, 280, 290, 340],
+  [290, 340, 450, 200], [180, 450, 380, 500], [540, 380, 490, 480],
+  [60, 520, 150, 350], [400, 100, 220, 180], [300, 560, 180, 450],
+  [500, 60, 540, 380],
+];
+
 export default function ServicesHero() {
   return (
     <section className="py-16 relative isolate bg-network-pattern ring-1 ring-primary/20 rounded-lg overflow-hidden">
-      {/* Decorative network dots */}
-      <div className="absolute inset-0 z-10 pointer-events-none">
-        <svg
-          className="absolute top-20 right-10 w-96 h-96 opacity-[0.06] hidden md:block"
-          viewBox="0 0 400 400"
-        >
-          <g fill="none" stroke="currentColor" strokeWidth="0.5">
-            {[
-              [80, 120],
-              [200, 60],
-              [320, 180],
-              [150, 300],
-              [350, 250],
-              [40, 200],
-              [280, 90],
-            ].map(([cx, cy], i) => (
-              <circle
-                key={i}
-                cx={cx}
-                cy={cy}
-                r="2"
-                fill="currentColor"
-                opacity="0.3"
-              />
+      {/* Decorative network */}
+      <div className="absolute top-0 right-0 z-10 w-1/2 h-full pointer-events-none opacity-[0.06] hidden md:block">
+        <svg width="100%" height="100%" viewBox="0 0 600 600">
+          <g stroke="currentColor" strokeWidth="0.5" fill="none">
+            {circlePositions.map(([cx, cy], i) => (
+              <circle key={i} cx={cx} cy={cy} r="3" fill="currentColor" opacity="0.4" />
             ))}
-            {[
-              [80, 120, 200, 60],
-              [200, 60, 320, 180],
-              [150, 300, 350, 250],
-              [40, 200, 280, 90],
-            ].map(([x1, y1, x2, y2], i) => (
-              <line
-                key={`l${i}`}
-                x1={x1}
-                y1={y1}
-                x2={x2}
-                y2={y2}
-                opacity="0.2"
-              />
+            {linePositions.map(([x1, y1, x2, y2], i) => (
+              <line key={`line-${i}`} x1={x1} y1={y1} x2={x2} y2={y2} opacity="0.15" />
             ))}
           </g>
         </svg>

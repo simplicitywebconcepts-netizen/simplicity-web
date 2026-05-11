@@ -37,54 +37,6 @@ const reasons = [
   },
 ];
 
-const growthSteps = [
-  {
-    number: "01",
-    label: "BUILD",
-    sub: "Websites, Apps & Infrastructure",
-    description:
-      "We craft your core digital foundation — fast, responsive websites, custom web apps, and e-commerce stores built for performance and longevity.",
-    tags: ["Custom Websites", "Web Apps", "eCommerce", "Hosting & Maintenance"],
-    color: "from-violet-500/20 to-purple-500/10",
-  },
-  {
-    number: "02",
-    label: "BRAND",
-    sub: "Design, Identity & Visual Assets",
-    description:
-      "Your brand is your first impression. We develop cohesive visual identities—logos, style guides, UI/UX design—that build trust and recognition at every touchpoint.",
-    tags: ["Logo & Brand Identity", "UI/UX Design", "Marketing Collateral"],
-    color: "from-fuchsia-500/20 to-pink-500/10",
-  },
-  {
-    number: "03",
-    label: "GROW",
-    sub: "SEO, Ads & Social Media",
-    description:
-      "With the foundation in place, we drive qualified traffic through data-driven SEO, targeted paid advertising, and a consistent social media presence.",
-    tags: ["SEO & Content", "Google & Meta Ads", "Social Media Management"],
-    color: "from-blue-500/20 to-cyan-500/10",
-  },
-  {
-    number: "04",
-    label: "CONVERT",
-    sub: "Funnels, Optimization & Lead Systems",
-    description:
-      "Traffic without conversion is just noise. We build high-converting landing pages, optimize user journeys, and implement lead capture systems that turn visitors into customers.",
-    tags: ["Landing Pages", "CRO", "Lead Funnels", "Email Automation"],
-    color: "from-emerald-500/20 to-teal-500/10",
-  },
-  {
-    number: "05",
-    label: "SCALE",
-    sub: "Strategy, Automation & Ongoing Growth",
-    description:
-      "We don't disappear after launch. We analyze data, refine strategies, implement automation, and continuously push your business forward as it evolves and grows.",
-    tags: ["CRM & Automation", "Analytics & Reporting", "Growth Strategy"],
-    color: "from-orange-500/20 to-amber-500/10",
-  },
-];
-
 const iconPaths: Record<string, ReactNode> = {
   rocket: (
     <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">

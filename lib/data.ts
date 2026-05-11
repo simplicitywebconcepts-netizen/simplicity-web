@@ -361,7 +361,7 @@ export const footerLinks = {
 };
 
 export const contactInfo = {
-  phone: "+1 (905)429-9506",
+  phone: "+1 (6479)329-688",
   email: "info@simplicityweb.ca",
   website: "simplicityweb.ca",
   address: "Toronto, Ontario",
