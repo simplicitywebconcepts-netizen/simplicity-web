@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     template: "%s | Simplicity Web Inc",
   },
   description:
-    "Toronto web development company specializing in WordPress development, SEO services, custom web applications, and mobile app development. Trusted by startups and growing businesses.",
+    "Toronto based digital agency delivering custom websites, mobile apps, branding, SEO and scalable business solutions for modern businesses",
   keywords: [
     "WordPress development Toronto",
     "web development company Toronto",
@@ -35,6 +35,12 @@ export const metadata: Metadata = {
     "web design Toronto",
     "digital marketing Toronto",
   ],
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/apple-icon.png",
+  },
+  manifest: "/manifest.json",
 };
 
 export default function RootLayout({
@@ -45,9 +51,8 @@ export default function RootLayout({
   const websiteUrl = contactInfo.website.startsWith("http")
     ? contactInfo.website
     : `https://${contactInfo.website}`;
-  const [addressLocality = "Toronto", addressRegion = "ON"] = contactInfo.address
-    .split(",")
-    .map((part) => part.trim());
+  const addressLocality = "Toronto";
+  const addressRegion = "ON";
 
   return (
     <html
@@ -67,6 +72,23 @@ export default function RootLayout({
               })(window,document,'script','dataLayer','GTM-KKV3682L');`,
           }}
         />
+        {/* Google Analytics (gtag.js) */}
+        <Script
+          strategy="afterInteractive"
+          src="https://www.googletagmanager.com/gtag/js?id=G-P2LZ7D89MN"
+        />
+        <Script
+          id="gtag-init"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-P2LZ7D89MN');
+            `,
+          }}
+        />
         {/* LocalBusiness Schema */}
         <Script
           id="local-business-schema"
@@ -78,7 +100,7 @@ export default function RootLayout({
               name: "Simplicity Web Inc",
               image: `${websiteUrl}/logo.svg`,
               description:
-                "Toronto web development company specializing in WordPress development, SEO services, custom web applications, and mobile app development.",
+                "Toronto based digital agency delivering custom websites, mobile apps, branding, SEO and scalable business solutions for modern businesses",
               address: {
                 "@type": "PostalAddress",
                 addressLocality,
@@ -108,31 +130,43 @@ export default function RootLayout({
               url: websiteUrl,
               logo: `${websiteUrl}/logo.svg`,
               description:
-                "Toronto-based web development company offering WordPress development, SEO services, custom web applications, and mobile app development.",
+                "Toronto based digital agency delivering custom websites, mobile apps, branding, SEO and scalable business solutions for modern businesses",
               service: [
                 {
                   "@type": "Service",
-                  name: "WordPress Development",
+                  name: "Web Development & App Development",
                   description:
-                    "Custom WordPress websites with fast loading times and mobile-first performance.",
+                    "Build high-performance websites and applications designed for scalability and results. WordPress, custom web apps, mobile apps, and hosting.",
                 },
                 {
                   "@type": "Service",
-                  name: "SEO Services",
+                  name: "Design & Branding",
                   description:
-                    "Technical optimization, keyword strategy, and local SEO for Toronto and Canadian markets.",
+                    "Create a strong, consistent identity that stands out across all platforms. UI/UX design, logo design, brand identity, and marketing materials.",
                 },
                 {
                   "@type": "Service",
-                  name: "Custom Web Development",
+                  name: "Social Media & Content",
                   description:
-                    "Tailored web applications and API integrations built for performance and conversions.",
+                    "Grow your brand and engage your audience across all major platforms. Social media management, content creation, and community engagement.",
                 },
                 {
                   "@type": "Service",
-                  name: "Mobile App Development",
+                  name: "SEO & Paid Advertising",
                   description:
-                    "Cross-platform mobile apps designed for engagement and retention.",
+                    "Increase visibility and attract high-quality traffic through search and targeted campaigns. SEO, Google Ads, Meta Ads, and keyword strategy.",
+                },
+                {
+                  "@type": "Service",
+                  name: "Conversion & Lead Generation",
+                  description:
+                    "Turn traffic into leads and leads into customers. Landing pages, funnel strategy, conversion optimization, and user journey optimization.",
+                },
+                {
+                  "@type": "Service",
+                  name: "Automation, CRM & Analytics",
+                  description:
+                    "Track, manage, and scale your business with smart systems. Analytics, CRM setup, automated follow-ups, and performance reporting.",
                 },
               ],
             }),
