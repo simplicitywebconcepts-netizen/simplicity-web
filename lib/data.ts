@@ -340,6 +340,23 @@ export const perks: Perk[] = [
 ];
 
 // ---- Footer ----
+export const footerServices = [
+  { label: "Web & App Development", href: "/services#web-development" },
+  { label: "Design & Branding", href: "/services#design-branding" },
+  { label: "Social Media Management", href: "/services#social-media" },
+  { label: "SEO & Digital Marketing", href: "/services#seo-marketing" },
+  { label: "Conversion Optimization", href: "/services#conversion-optimization" },
+  { label: "Automation & Analytics", href: "/services#analytics" },
+];
+
+export const footerCompanyLinks = [
+  { label: "Our Work", href: "/works" },
+  { label: "About Us", href: "/about" },
+  { label: "Services", href: "/services" },
+  // { label: "Careers", href: "/careers" },
+  { label: "Contact Us", href: "/contact" },
+];
+
 export const footerLinks = {
   socialLinks: [
     { label: "Facebook", href: "#", key: "facebook" },
@@ -347,16 +364,9 @@ export const footerLinks = {
     { label: "Instagram", href: "#", key: "instagram" },
     { label: "LinkedIn", href: "https://www.linkedin.com/company/simplicity-web", key: "linkedin" },
   ],
-  helpLinks: [
-    { label: "About", href: "/about" },
-    { label: "Services", href: "/services" },
-    { label: "Contact", href: "/contact" },
-  ],
-  sitemapLinks: [
-    { label: "Sitemap", href: "#" },
+  legalLinks: [
     { label: "Privacy Policy", href: "#" },
-    { label: "Cookie Consent", href: "#" },
-    { label: "Terms", href: "#" },
+    { label: "Sitemap", href: "/sitemap.xml" },
   ],
 };
 
