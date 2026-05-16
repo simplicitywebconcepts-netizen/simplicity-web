@@ -10,195 +10,205 @@ import { CrystalCanvas } from "@/components/canvas/CrystalCanvas";
 import { contactInfo } from "@/lib/data";
 
 const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
+    variable: "--font-inter",
+    subsets: ["latin"],
 });
 
 const outfit = Outfit({
-  variable: "--font-outfit",
-  subsets: ["latin"],
+    variable: "--font-outfit",
+    subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
-  title: {
-    default: "Toronto Web Development & SEO Services | Simplicity Web Inc",
-    template: "%s | Simplicity Web Inc",
-  },
-  description:
-    "Toronto based digital agency delivering custom websites, mobile apps, branding, SEO and scalable business solutions for modern businesses",
-  keywords: [
-    "WordPress development Toronto",
-    "web development company Toronto",
-    "SEO services Toronto",
-    "custom web development",
-    "mobile app development",
-    "web design Toronto",
-    "digital marketing Toronto",
-  ],
-  icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon.ico",
-    apple: "/apple-icon.png",
-  },
-  manifest: "/manifest.json",
+    title: {
+        default: "Toronto Web Development & SEO Services | Simplicity Web Inc",
+        template: "%s | Simplicity Web Inc",
+    },
+    description:
+        "Toronto based digital agency delivering custom websites, mobile apps, branding, SEO and scalable business solutions for modern businesses",
+    keywords: [
+        "WordPress development Toronto",
+        "web development company Toronto",
+        "SEO services Toronto",
+        "custom web development",
+        "mobile app development",
+        "web design Toronto",
+        "digital marketing Toronto",
+    ],
+    icons: {
+        icon: [
+            {
+                url: "/favicon.ico"
+            },
+            {
+                url: "/web-app-manifest-192x192.png",
+                sizes: "192x192",
+                type: "image/png",
+            },
+        ],
+        shortcut: "/favicon.ico",
+        apple: "/apple-touch-icon.png",
+    },
+    manifest: "/manifest.json",
 };
 
 export default function RootLayout({
-  children,
+    children,
 }: Readonly<{
-  children: React.ReactNode;
+    children: React.ReactNode;
 }>) {
-  const websiteUrl = contactInfo.website.startsWith("http")
-    ? contactInfo.website
-    : `https://${contactInfo.website}`;
-  const addressLocality = "Toronto";
-  const addressRegion = "ON";
+    const websiteUrl = contactInfo.website.startsWith("http")
+        ? contactInfo.website
+        : `https://${contactInfo.website}`;
+    const addressLocality = "Toronto";
+    const addressRegion = "ON";
 
-  return (
-    <html
-      lang="en"
-      className={`${inter.variable} ${outfit.variable} h-full antialiased`}
-    >
-      <head>
-        {/* Google Tag Manager */}
-        <Script
-          id="gtm-script"
-          strategy="beforeInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    return (
+        <html
+            lang="en"
+            className={`${inter.variable} ${outfit.variable} h-full antialiased`}
+            style={{ backgroundColor: "#050505" }}
+        >
+            <head>
+                {/* Google Tag Manager */}
+                <Script
+                    id="gtm-script"
+                    strategy="beforeInteractive"
+                    dangerouslySetInnerHTML={{
+                        __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
               new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
               j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
               })(window,document,'script','dataLayer','GTM-KKV3682L');`,
-          }}
-        />
-        {/* Google Analytics (gtag.js) */}
-        <Script
-          strategy="afterInteractive"
-          src="https://www.googletagmanager.com/gtag/js?id=G-P2LZ7D89MN"
-        />
-        <Script
-          id="gtag-init"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
+                    }}
+                />
+                {/* Google Analytics (gtag.js) */}
+                <Script
+                    strategy="afterInteractive"
+                    src="https://www.googletagmanager.com/gtag/js?id=G-P2LZ7D89MN"
+                />
+                <Script
+                    id="gtag-init"
+                    strategy="afterInteractive"
+                    dangerouslySetInnerHTML={{
+                        __html: `
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
               gtag('config', 'G-P2LZ7D89MN');
             `,
-          }}
-        />
-        {/* LocalBusiness Schema */}
-        <Script
-          id="local-business-schema"
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "LocalBusiness",
-              name: "Simplicity Web Inc",
-              image: `${websiteUrl}/logo.svg`,
-              description:
-                "Toronto based digital agency delivering custom websites, mobile apps, branding, SEO and scalable business solutions for modern businesses",
-              address: {
-                "@type": "PostalAddress",
-                addressLocality,
-                addressRegion,
-                addressCountry: "CA",
-              },
-              telephone: contactInfo.phone,
-              email: contactInfo.email,
-              url: websiteUrl,
-              sameAs: [
-                "https://facebook.com/simplicityweb",
-                "https://instagram.com/simplicityweb",
-              ],
-            }),
-          }}
-        />
+                    }}
+                />
+                {/* LocalBusiness Schema */}
+                <Script
+                    id="local-business-schema"
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify({
+                            "@context": "https://schema.org",
+                            "@type": "LocalBusiness",
+                            name: "Simplicity Web Inc",
+                            image: `${websiteUrl}/logo.svg`,
+                            description:
+                                "Toronto based digital agency delivering custom websites, mobile apps, branding, SEO and scalable business solutions for modern businesses",
+                            address: {
+                                "@type": "PostalAddress",
+                                addressLocality,
+                                addressRegion,
+                                addressCountry: "CA",
+                            },
+                            telephone: contactInfo.phone,
+                            email: contactInfo.email,
+                            url: websiteUrl,
+                            sameAs: [
+                                "https://facebook.com/simplicityweb",
+                                "https://instagram.com/simplicityweb",
+                            ],
+                        }),
+                    }}
+                />
 
-        {/* Organization Schema */}
-        <Script
-          id="organization-schema"
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Organization",
-              name: "Simplicity Web Inc",
-              url: websiteUrl,
-              logo: `${websiteUrl}/logo.svg`,
-              description:
-                "Toronto based digital agency delivering custom websites, mobile apps, branding, SEO and scalable business solutions for modern businesses",
-              service: [
-                {
-                  "@type": "Service",
-                  name: "Web Development & App Development",
-                  description:
-                    "Build high-performance websites and applications designed for scalability and results. WordPress, custom web apps, mobile apps, and hosting.",
-                },
-                {
-                  "@type": "Service",
-                  name: "Design & Branding",
-                  description:
-                    "Create a strong, consistent identity that stands out across all platforms. UI/UX design, logo design, brand identity, and marketing materials.",
-                },
-                {
-                  "@type": "Service",
-                  name: "Social Media & Content",
-                  description:
-                    "Grow your brand and engage your audience across all major platforms. Social media management, content creation, and community engagement.",
-                },
-                {
-                  "@type": "Service",
-                  name: "SEO & Paid Advertising",
-                  description:
-                    "Increase visibility and attract high-quality traffic through search and targeted campaigns. SEO, Google Ads, Meta Ads, and keyword strategy.",
-                },
-                {
-                  "@type": "Service",
-                  name: "Conversion & Lead Generation",
-                  description:
-                    "Turn traffic into leads and leads into customers. Landing pages, funnel strategy, conversion optimization, and user journey optimization.",
-                },
-                {
-                  "@type": "Service",
-                  name: "Automation, CRM & Analytics",
-                  description:
-                    "Track, manage, and scale your business with smart systems. Analytics, CRM setup, automated follow-ups, and performance reporting.",
-                },
-              ],
-            }),
-          }}
-        />
-      </head>
-      <body
-        suppressHydrationWarning
-        className="min-h-full flex flex-col bg-background text-foreground"
-      >
-        {/* Google Tag Manager (noscript) */}
-        <noscript>
-          <iframe
-            src="https://www.googletagmanager.com/ns.html?id=GTM-KKV3682L"
-            height="0"
-            width="0"
-            style={{ display: "none", visibility: "hidden" }}
-          />
-        </noscript>
-        <NotificationProvider>
-          <ScrollProvider>
-            <CrystalCanvas />
-            <Navbar />
-            <div className="relative z-10 flex-grow">
-              {children}
-            </div>
-            <div className="relative z-10">
-              <Footer />
-            </div>
-          </ScrollProvider>
-        </NotificationProvider>
-      </body>
-    </html>
-  );
+                {/* Organization Schema */}
+                <Script
+                    id="organization-schema"
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify({
+                            "@context": "https://schema.org",
+                            "@type": "Organization",
+                            name: "Simplicity Web Inc",
+                            url: websiteUrl,
+                            logo: `${websiteUrl}/logo.svg`,
+                            description:
+                                "Toronto based digital agency delivering custom websites, mobile apps, branding, SEO and scalable business solutions for modern businesses",
+                            service: [
+                                {
+                                    "@type": "Service",
+                                    name: "Web Development & App Development",
+                                    description:
+                                        "Build high-performance websites and applications designed for scalability and results. WordPress, custom web apps, mobile apps, and hosting.",
+                                },
+                                {
+                                    "@type": "Service",
+                                    name: "Design & Branding",
+                                    description:
+                                        "Create a strong, consistent identity that stands out across all platforms. UI/UX design, logo design, brand identity, and marketing materials.",
+                                },
+                                {
+                                    "@type": "Service",
+                                    name: "Social Media & Content",
+                                    description:
+                                        "Grow your brand and engage your audience across all major platforms. Social media management, content creation, and community engagement.",
+                                },
+                                {
+                                    "@type": "Service",
+                                    name: "SEO & Paid Advertising",
+                                    description:
+                                        "Increase visibility and attract high-quality traffic through search and targeted campaigns. SEO, Google Ads, Meta Ads, and keyword strategy.",
+                                },
+                                {
+                                    "@type": "Service",
+                                    name: "Conversion & Lead Generation",
+                                    description:
+                                        "Turn traffic into leads and leads into customers. Landing pages, funnel strategy, conversion optimization, and user journey optimization.",
+                                },
+                                {
+                                    "@type": "Service",
+                                    name: "Automation, CRM & Analytics",
+                                    description:
+                                        "Track, manage, and scale your business with smart systems. Analytics, CRM setup, automated follow-ups, and performance reporting.",
+                                },
+                            ],
+                        }),
+                    }}
+                />
+            </head>
+            <body
+                suppressHydrationWarning
+                className="min-h-full flex flex-col bg-background text-foreground"
+            >
+                {/* Google Tag Manager (noscript) */}
+                <noscript>
+                    <iframe
+                        src="https://www.googletagmanager.com/ns.html?id=GTM-KKV3682L"
+                        height="0"
+                        width="0"
+                        style={{ display: "none", visibility: "hidden" }}
+                    />
+                </noscript>
+                <NotificationProvider>
+                    <ScrollProvider>
+                        <CrystalCanvas />
+                        <Navbar />
+                        <div className="relative z-10 flex-grow">
+                            {children}
+                        </div>
+                        <div className="relative z-10">
+                            <Footer />
+                        </div>
+                    </ScrollProvider>
+                </NotificationProvider>
+            </body>
+        </html>
+    );
 }

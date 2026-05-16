@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect, Component, type ReactNode } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Environment } from "@react-three/drei";
 import * as THREE from "three";
@@ -82,36 +82,90 @@ function SceneController() {
   );
 }
 
+/**
+ * Error boundary that silently catches WebGL/Three.js crashes.
+ * The 3D canvas is purely decorative — if it fails, the site should still work.
+ */
+class CanvasErrorBoundary extends Component<
+  { children: ReactNode },
+  { hasError: boolean }
+> {
+  constructor(props: { children: ReactNode }) {
+    super(props);
+    this.state = { hasError: false };
+  }
+
+  static getDerivedStateFromError(): { hasError: boolean } {
+    return { hasError: true };
+  }
+
+  componentDidCatch(error: Error) {
+    console.warn("[CrystalCanvas] WebGL/3D rendering failed, hiding canvas:", error.message);
+  }
+
+  render() {
+    if (this.state.hasError) {
+      // Render nothing — the 3D background is decorative only
+      return null;
+    }
+    return this.props.children;
+  }
+}
+
+/**
+ * Checks if the browser supports WebGL rendering.
+ */
+function isWebGLAvailable(): boolean {
+  try {
+    const canvas = document.createElement("canvas");
+    const gl =
+      canvas.getContext("webgl2") ||
+      canvas.getContext("webgl") ||
+      canvas.getContext("experimental-webgl");
+    return gl instanceof WebGLRenderingContext || gl instanceof WebGL2RenderingContext;
+  } catch {
+    return false;
+  }
+}
+
 export function CrystalCanvas() {
   const [mounted, setMounted] = useState(false);
+  const [webGLSupported, setWebGLSupported] = useState(true);
 
   useEffect(() => {
     setMounted(true);
+    setWebGLSupported(isWebGLAvailable());
   }, []);
 
-  if (!mounted) return null; // Avoid SSR hydration mismatches
+  // Avoid SSR hydration mismatches
+  if (!mounted) return null;
+
+  // Skip rendering on browsers/devices without WebGL
+  if (!webGLSupported) return null;
 
   return (
-    <div 
-      id="crystal-canvas"
-      className="fixed inset-0 z-0 pointer-events-none"
-      aria-hidden="true"
-    >
-      <Canvas
-        camera={{ position: [0, 0, 10], fov: 45 }}
-        dpr={[1, 2]} // Cap pixel ratio to 2 for performance
-        gl={{ alpha: true, antialias: true, powerPreference: "high-performance" }}
-        style={{ background: "transparent" }}
+    <CanvasErrorBoundary>
+      <div 
+        id="crystal-canvas"
+        className="fixed inset-0 z-0 pointer-events-none"
+        aria-hidden="true"
       >
-        {/* Subtle environment map for realistic glass reflection */}
-        <Environment preset="city" />
-        
-        <SceneLighting />
-        <SceneController />
-        
-        {/* Fog to obscure the back shapes very slightly like the reference image */}
-        <fog attach="fog" args={["#f0f2fa", 5, 20]} />
-      </Canvas>
-    </div>
+        <Canvas
+          camera={{ position: [0, 0, 10], fov: 45 }}
+          dpr={[1, 2]} // Cap pixel ratio to 2 for performance
+          gl={{ alpha: true, antialias: true, powerPreference: "high-performance" }}
+          style={{ background: "transparent" }}
+        >
+          {/* Subtle environment map for realistic glass reflection */}
+          <Environment preset="city" />
+          
+          <SceneLighting />
+          <SceneController />
+          
+          {/* Fog to obscure the back shapes very slightly like the reference image */}
+          <fog attach="fog" args={["#f0f2fa", 5, 20]} />
+        </Canvas>
+      </div>
+    </CanvasErrorBoundary>
   );
 }
