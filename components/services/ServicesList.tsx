@@ -6,6 +6,7 @@ import { staggerContainer, fadeInUp } from "@/lib/animations";
 const serviceDetails = [
   {
     id: 1,
+    anchor: "web-development",
     icon: "monitor",
     title: "Web Development & App Development",
     description:
@@ -21,6 +22,7 @@ const serviceDetails = [
   },
   {
     id: 2,
+    anchor: "design-branding",
     icon: "pen-tool",
     title: "Design & Branding",
     description:
@@ -36,6 +38,7 @@ const serviceDetails = [
   },
   {
     id: 3,
+    anchor: "social-media",
     icon: "share",
     title: "Social Media Management & Content Creation",
     description:
@@ -50,6 +53,7 @@ const serviceDetails = [
   },
   {
     id: 4,
+    anchor: "seo-marketing",
     icon: "trending-up",
     title: "SEO & Digital Marketing",
     description:
@@ -65,6 +69,7 @@ const serviceDetails = [
   },
   {
     id: 5,
+    anchor: "conversion-optimization",
     icon: "target",
     title: "Conversion Optimization & Lead Generation",
     description:
@@ -80,6 +85,7 @@ const serviceDetails = [
   },
   {
     id: 6,
+    anchor: "analytics",
     icon: "cpu",
     title: "Automation, CRM & Analytics",
     description:
@@ -184,8 +190,9 @@ export default function ServicesList() {
           {serviceDetails.map((service) => (
             <motion.div
               key={service.id}
+              id={service.anchor}
               variants={fadeInUp}
-              className="glass border border-card-border rounded-xl p-8 hover:border-primary/50 transition-all duration-300 group flex flex-col"
+              className="glass border border-card-border rounded-xl p-8 hover:border-primary/50 transition-all duration-300 group flex flex-col scroll-mt-24"
             >
               {/* Icon + Title */}
               <div className="flex items-start gap-4 mb-5">
