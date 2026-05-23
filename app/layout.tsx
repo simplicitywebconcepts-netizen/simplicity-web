@@ -21,7 +21,7 @@ const outfit = Outfit({
 
 export const metadata: Metadata = {
     title: {
-        default: "Toronto Web Development & SEO Services | Simplicity Web Inc",
+        default: "Toronto Web Development & Digital Marketing Services | Simplicity Web Inc",
         template: "%s | Simplicity Web Inc",
     },
     description:
@@ -38,18 +38,33 @@ export const metadata: Metadata = {
     icons: {
         icon: [
             {
-                url: "/favicon.ico"
+                url: "/favicon.ico",
+                sizes: "48x48",
+                type: "image/x-icon",
+            },
+            {
+                url: "/favicon.svg",
+                type: "image/svg+xml",
             },
             {
                 url: "/web-app-manifest-192x192.png",
                 sizes: "192x192",
                 type: "image/png",
             },
+            {
+                url: "/web-app-manifest-512x512.png",
+                sizes: "512x512",
+                type: "image/png",
+            },
         ],
-        shortcut: "/favicon.ico",
         apple: "/apple-touch-icon.png",
     },
     manifest: "/manifest.json",
+    appleWebApp: {
+        capable: true,
+        title: "Simplicity Web",
+        statusBarStyle: "black-translucent"
+    }
 };
 
 export default function RootLayout({
