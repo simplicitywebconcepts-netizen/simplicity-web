@@ -30,7 +30,7 @@ export function adminContactEmail(payload: AdminEmailPayload): string {
 
     <div class="divider"></div>
     <p style="font-size: 13px; color: #6b7280;">
-      <strong>Action:</strong> Reply to <a href="mailto:${email}">${email}</a> or use your contact management system to respond.
+      <strong>Action:</strong> You can respond directly by replying to <a href="mailto:${email}">${email}</a>.
     </p>
     <p style="margin-top: 15px; font-size: 12px; color: #9ca3af;">
       <strong>Contact Info:</strong> ${contactInfo.phone} | ${contactInfo.email}
