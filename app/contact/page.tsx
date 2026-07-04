@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: "Contact Us - Simplicity Web Inc",
   description:
     "Partner with a leading web development company. Contact us for custom WordPress development, web applications, and SEO services.",
+  alternates: {
+    canonical: "/contact",
+  },
 };
 
 export default function ContactPage() {

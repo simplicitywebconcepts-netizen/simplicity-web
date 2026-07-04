@@ -20,6 +20,7 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
+    metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://simplicityweb.ca"),
     title: {
         default: "Toronto Web Development & Digital Marketing Services | Simplicity Web Inc",
         template: "%s | Simplicity Web Inc",
@@ -35,6 +36,20 @@ export const metadata: Metadata = {
         "web design Toronto",
         "digital marketing Toronto",
     ],
+    alternates: {
+        canonical: "/",
+    },
+    robots: {
+        index: true,
+        follow: true,
+        googleBot: {
+            index: true,
+            follow: true,
+            'max-video-preview': -1,
+            'max-image-preview': 'large',
+            'max-snippet': -1,
+        },
+    },
     icons: {
         icon: [
             {

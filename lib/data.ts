@@ -355,6 +355,7 @@ export const footerCompanyLinks = [
   { label: "Services", href: "/services" },
   // { label: "Careers", href: "/careers" },
   { label: "Contact Us", href: "/contact" },
+  { label: "Sitemap", href: "/sitemap" },
 ];
 
 export const footerLinks = {
@@ -366,7 +367,6 @@ export const footerLinks = {
   ],
   legalLinks: [
     { label: "Privacy Policy", href: "#" },
-    { label: "Sitemap", href: "/sitemap.xml" },
   ],
 };
 

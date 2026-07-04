@@ -29,6 +29,9 @@ export async function generateMetadata({ params }: CaseStudyPageProps): Promise<
   return {
     title: `${caseStudy.title} Case Study | WordPress Development & SEO`,
     description: `${caseStudy.title} is a healthcare case study showing how WordPress development and SEO optimization improved clarity, performance, and trust for ${caseStudy.client}.`,
+    alternates: {
+      canonical: `/works/${slug}`,
+    },
   };
 }
 

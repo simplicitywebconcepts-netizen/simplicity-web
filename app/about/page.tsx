@@ -11,6 +11,9 @@ export const metadata: Metadata = {
   title: "About Simplicity Web Inc - Full-Service Digital Agency",
   description:
     "Simplicity Web Inc. is a full-service digital agency focused on building and scaling modern businesses through strategy, design, and technology.",
+  alternates: {
+    canonical: "/about",
+  },
 };
 
 export default function AboutPage() {

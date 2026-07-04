@@ -7,6 +7,9 @@ export const metadata: Metadata = {
   title: "Tech Stack",
   description:
     "Explore the Simplicity web innovation stack. From cloud platforms to DevOps tools, we use cutting-edge technology to build robust solutions.",
+  alternates: {
+    canonical: "/tech-stack",
+  },
 };
 
 export default function TechStackPage() {

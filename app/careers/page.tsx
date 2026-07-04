@@ -10,6 +10,9 @@ export const metadata: Metadata = {
   description:
     "Join Simplicity Web Inc. and explore open opportunities in web development, WordPress, and SEO.",
   keywords: ["careers", "jobs", "hiring", "web development jobs", "tech agency jobs"],
+  alternates: {
+    canonical: "/careers",
+  },
 };
 
 export default function CareersPage() {

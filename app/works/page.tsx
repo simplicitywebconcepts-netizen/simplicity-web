@@ -7,6 +7,9 @@ export const metadata: Metadata = {
   title: "Works & Case Studies",
   description:
     "Explore our portfolio and case studies across cloud, healthcare, automotive, and software development.",
+  alternates: {
+    canonical: "/works",
+  },
 };
 
 export default function ProjectsPage() {
