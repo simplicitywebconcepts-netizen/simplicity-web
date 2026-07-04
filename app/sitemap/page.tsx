@@ -30,11 +30,7 @@ export default function SitemapPage() {
       title: "Main Navigation",
       description: "Our primary website sections and information pages.",
       icon: <Compass className="w-6 h-6 text-primary" />,
-      links: [
-        ...navLinks,
-        { href: "/tech-stack", label: "Tech Stack" },
-        { href: "/careers", label: "Careers & Jobs" },
-      ],
+      links: navLinks,
     },
     {
       title: "Our Services",
