@@ -1,6 +1,21 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+    async redirects() {
+        return [
+            {
+                source: "/:path*",
+                has: [
+                    {
+                        type: "host",
+                        value: "www.simplicityweb.ca",
+                    },
+                ],
+                destination: "https://simplicityweb.ca/:path*",
+                permanent: true,
+            },
+        ];
+    },
     headers: async () => [
         {
             source: "/_next/static/:path*",
