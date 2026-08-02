@@ -157,7 +157,7 @@ export function CrystalCanvas() {
           style={{ background: "transparent" }}
         >
           {/* Subtle environment map for realistic glass reflection */}
-          <Environment preset="city" />
+          <Environment files="/potsdamer_platz_1k.hdr" />
           
           <SceneLighting />
           <SceneController />
