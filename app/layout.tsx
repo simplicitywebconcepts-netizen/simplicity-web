@@ -6,12 +6,8 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { NotificationProvider } from "@/components/ui/NotificationProvider";
 import { ScrollProvider } from "@/components/canvas/ScrollProvider";
-import dynamic from "next/dynamic";
 import { contactInfo } from "@/lib/data";
-
-const CrystalCanvas = dynamic(
-    () => import("@/components/canvas/CrystalCanvas").then((mod) => mod.CrystalCanvas)
-);
+import { ViewportBackground } from "@/components/canvas/ViewportBackground";
 
 const inter = Inter({
     variable: "--font-inter",
@@ -105,7 +101,7 @@ export default function RootLayout({
     return (
         <html
             lang="en"
-            className={`${inter.variable} ${outfit.variable} h-full antialiased`}
+            className={`${inter.variable} ${outfit.variable} h-full antialiased scroll-smooth`}
             style={{ backgroundColor: "#050505" }}
         >
             <head>
@@ -238,7 +234,7 @@ export default function RootLayout({
                 </noscript>
                 <NotificationProvider>
                     <ScrollProvider>
-                        <CrystalCanvas />
+                        <ViewportBackground />
                         <Navbar />
                         <div className="relative z-10 flex-grow">
                             {children}
