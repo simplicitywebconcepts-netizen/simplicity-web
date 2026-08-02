@@ -6,8 +6,12 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { NotificationProvider } from "@/components/ui/NotificationProvider";
 import { ScrollProvider } from "@/components/canvas/ScrollProvider";
-import { CrystalCanvas } from "@/components/canvas/CrystalCanvas";
+import dynamic from "next/dynamic";
 import { contactInfo } from "@/lib/data";
+
+const CrystalCanvas = dynamic(
+    () => import("@/components/canvas/CrystalCanvas").then((mod) => mod.CrystalCanvas)
+);
 
 const inter = Inter({
     variable: "--font-inter",
