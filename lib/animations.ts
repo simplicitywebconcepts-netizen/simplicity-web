@@ -173,7 +173,7 @@ export const menuStaggerContainer: Variants = {
 export const pageTransition: Variants = {
   initial: {
     opacity: 0,
-    y: 20,
+    y: 0,
   },
   animate: {
     opacity: 1,
@@ -185,7 +185,7 @@ export const pageTransition: Variants = {
   },
   exit: {
     opacity: 0,
-    y: -10,
+    y: 0,
     transition: {
       duration: 0.3,
       ease: "easeIn",

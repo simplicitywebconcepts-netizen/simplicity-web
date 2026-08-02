@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { staggerContainer, fadeInUp, fadeInRight } from "@/lib/animations";
+import { staggerContainer, fadeIn, fadeInRight } from "@/lib/animations";
 import Button from "@/components/ui/Button";
 import SectionLabel from "@/components/ui/SectionLabel";
 import CountUp from "@/components/ui/CountUp";
@@ -34,31 +34,31 @@ export default function Hero() {
             animate="visible"
             className="max-w-3xl rounded-2xl bg-black/45 backdrop-blur-[2px] ring-1 ring-white/10 p-6 md:p-8"
           >
-            <motion.div variants={fadeInUp}>
+            <motion.div variants={fadeIn}>
               <SectionLabel label="Toronto Web Development" />
             </motion.div>
 
             <motion.h1
-              variants={fadeInUp}
+              variants={fadeIn}
               className="text-4xl md:text-5xl lg:text-6xl text-white font-bold leading-[1.1] tracking-tight mb-6"
             >
               Websites, Apps & Growth Systems Built to Scale Your Business
             </motion.h1>
             <motion.p
-              variants={fadeInUp}
+              variants={fadeIn}
               className="text-lg text-white/85 mb-6 font-medium tracking-widest"
             >
               Build &bull; Brand &bull; Grow &bull; Convert &bull; Scale
             </motion.p>
 
             <motion.p
-              variants={fadeInUp}
+              variants={fadeIn}
               className="text-lg text-white/85 leading-relaxed mb-8"
             >
               We design and develop high-performance digital experiences that are built to do more than just look good—they attract the right audience, generate leads, and convert visitors into customers. From custom development and branding to marketing and growth strategies, everything we create is focused on real, measurable results.
             </motion.p>
 
-            <motion.div variants={fadeInUp} className="flex flex-wrap gap-4">
+            <motion.div variants={fadeIn} className="flex flex-wrap gap-4">
               <Button href="/works" variant="primary" size="lg">
                 View Our Work
               </Button>
@@ -69,7 +69,7 @@ export default function Hero() {
 
             {/* Stats */}
             <motion.div
-              variants={fadeInUp}
+              variants={fadeIn}
               className="flex gap-10 mt-12 pt-8 border-t border-white/15"
             >
               {companyStats.map((stat) => (
