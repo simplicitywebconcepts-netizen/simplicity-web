@@ -225,6 +225,7 @@ export default function RootLayout({
             <body
                 suppressHydrationWarning
                 className="min-h-full flex flex-col bg-background text-foreground"
+                style={{ backgroundColor: "#050505" }}
             >
                 {/* Google Tag Manager (noscript) */}
                 <noscript>
