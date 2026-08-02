@@ -92,9 +92,9 @@ export default function Footer() {
                         delay={0.05}
                         className="order-1 md:order-1 lg:order-2 lg:col-span-2 lg:justify-self-center"
                     >
-                        <h4 className="font-bold text-sm tracking-wider uppercase mb-5">
+                        <h3 className="font-bold text-sm tracking-wider uppercase mb-5">
                             Services
-                        </h4>
+                        </h3>
                         <ul className="space-y-2.5 text-sm">
                             {footerServices.map((link) => (
                                 <li key={link.label}>
@@ -114,9 +114,9 @@ export default function Footer() {
                         delay={0.1}
                         className="order-2 md:order-2 lg:order-3 lg:col-span-2 lg:justify-self-center"
                     >
-                        <h4 className="font-bold text-sm tracking-wider uppercase mb-5">
+                        <h3 className="font-bold text-sm tracking-wider uppercase mb-5">
                             Company
-                        </h4>
+                        </h3>
                         <ul className="space-y-2.5 text-sm">
                             {footerCompanyLinks.map((link) => (
                                 <li key={link.label}>
@@ -142,9 +142,9 @@ export default function Footer() {
                             </Button>
                         </div>
 
-                        <h4 className="font-bold text-sm tracking-wider uppercase mb-3">
+                        <h3 className="font-bold text-sm tracking-wider uppercase mb-3">
                             Contact Simplicity
-                        </h4>
+                        </h3>
                         <ul className="space-y-3 text-sm text-muted">
                              <li>
                                 <a
