@@ -8,9 +8,37 @@ import CallToAction from "@/components/home/CallToAction";
 import PageTransition from "@/components/ui/PageTransition";
 
 export const metadata: Metadata = {
-  title: "About Simplicity Web Inc - Full-Service Digital Agency",
+  title: "About Simplicity Web | Digital Agency in Toronto",
   description:
-    "Simplicity Web Inc. is a full-service digital agency focused on building and scaling modern businesses through strategy, design, and technology.",
+    "Learn about Simplicity Web, a full-service digital agency specializing in web design, web development, branding, SEO, and digital marketing solutions.",
+  keywords: [
+    "Digital Agency Toronto",
+    "Web Design Company",
+    "Web Development Company",
+    "Branding Agency",
+    "Digital Marketing Agency",
+  ],
+  openGraph: {
+    title: "About Simplicity Web | Digital Agency in Toronto",
+    description:
+      "Learn about Simplicity Web, a full-service digital agency specializing in web design, web development, branding, SEO, and digital marketing solutions.",
+    url: "https://simplicityweb.ca/about",
+    images: [
+      {
+        url: "/web-app-manifest-512x512.png",
+        width: 512,
+        height: 512,
+        alt: "About Simplicity Web",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary",
+    title: "About Simplicity Web | Digital Agency in Toronto",
+    description:
+      "Learn about Simplicity Web, a full-service digital agency specializing in web design, web development, branding, SEO, and digital marketing solutions.",
+    images: ["/web-app-manifest-512x512.png"],
+  },
   alternates: {
     canonical: "/about",
   },

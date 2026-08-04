@@ -3,9 +3,36 @@ import ContactForm from "@/components/contact/ContactForm";
 import PageTransition from "@/components/ui/PageTransition";
 
 export const metadata: Metadata = {
-  title: "Contact Us - Simplicity Web Inc",
+  title: "Contact Simplicity Web | Web Design Company Toronto",
   description:
-    "Partner with a leading web development company. Contact us for custom WordPress development, web applications, and SEO services.",
+    "Contact Simplicity Web to discuss your web design, web development, branding, SEO, and digital marketing requirements.",
+  keywords: [
+    "Web Design Company Toronto",
+    "Website Development Company",
+    "Web Development Company",
+    "Digital Marketing Agency",
+  ],
+  openGraph: {
+    title: "Contact Simplicity Web | Web Design Company Toronto",
+    description:
+      "Contact Simplicity Web to discuss your web design, web development, branding, SEO, and digital marketing requirements.",
+    url: "https://simplicityweb.ca/contact",
+    images: [
+      {
+        url: "/web-app-manifest-512x512.png",
+        width: 512,
+        height: 512,
+        alt: "Contact Simplicity Web",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary",
+    title: "Contact Simplicity Web | Web Design Company Toronto",
+    description:
+      "Contact Simplicity Web to discuss your web design, web development, branding, SEO, and digital marketing requirements.",
+    images: ["/web-app-manifest-512x512.png"],
+  },
   alternates: {
     canonical: "/contact",
   },

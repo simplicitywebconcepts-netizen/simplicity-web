@@ -4,9 +4,37 @@ import PageTransition from "@/components/ui/PageTransition";
 import SectionLabel from "@/components/ui/SectionLabel";
 
 export const metadata: Metadata = {
-  title: "Works & Case Studies",
+  title: "Web Design Portfolio | Website Development Projects",
   description:
-    "Explore our portfolio and case studies across cloud, healthcare, automotive, and software development.",
+    "Explore our portfolio featuring website development, branding, SEO, and digital marketing projects delivered across multiple industries.",
+  keywords: [
+    "Web Design Portfolio",
+    "Website Development Portfolio",
+    "Web Development Projects",
+    "Branding Portfolio",
+    "Digital Marketing Case Studies",
+  ],
+  openGraph: {
+    title: "Web Design Portfolio | Website Development Projects",
+    description:
+      "Explore our portfolio featuring website development, branding, SEO, and digital marketing projects delivered across multiple industries.",
+    url: "https://simplicityweb.ca/works",
+    images: [
+      {
+        url: "/web-app-manifest-512x512.png",
+        width: 512,
+        height: 512,
+        alt: "Simplicity Web Works Portfolio",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary",
+    title: "Web Design Portfolio | Website Development Projects",
+    description:
+      "Explore our portfolio featuring website development, branding, SEO, and digital marketing projects delivered across multiple industries.",
+    images: ["/web-app-manifest-512x512.png"],
+  },
   alternates: {
     canonical: "/works",
   },

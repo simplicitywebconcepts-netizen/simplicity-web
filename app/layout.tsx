@@ -22,20 +22,41 @@ const outfit = Outfit({
 export const metadata: Metadata = {
     metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://simplicityweb.ca"),
     title: {
-        default: "Toronto Web Development & Digital Marketing Services | Simplicity Web Inc",
+        default: "Web Design Company | Web Development & Digital Marketing Toronto",
         template: "%s | Simplicity Web Inc",
     },
     description:
-        "Toronto based digital agency delivering custom websites, mobile apps, branding, SEO and scalable business solutions for modern businesses",
+        "Simplicity Web is a leading web design company offering custom web development, branding, SEO, digital marketing, and website solutions for businesses across Toronto.",
     keywords: [
-        "WordPress development Toronto",
-        "web development company Toronto",
-        "SEO services Toronto",
-        "custom web development",
-        "mobile app development",
-        "web design Toronto",
-        "digital marketing Toronto",
+        "Web Design Company",
+        "Web Development Company",
+        "Website Development Company",
+        "Custom Website Development",
+        "Professional Website Design",
+        "Digital Marketing Agency",
     ],
+    openGraph: {
+        title: "Web Design Company | Web Development & Digital Marketing Toronto",
+        description: "Simplicity Web is a leading web design company offering custom web development, branding, SEO, digital marketing, and website solutions for businesses across Toronto.",
+        url: "https://simplicityweb.ca/",
+        siteName: "Simplicity Web Inc",
+        images: [
+            {
+                url: "/web-app-manifest-512x512.png",
+                width: 512,
+                height: 512,
+                alt: "Simplicity Web Inc",
+            },
+        ],
+        locale: "en_US",
+        type: "website",
+    },
+    twitter: {
+        card: "summary",
+        title: "Web Design Company | Web Development & Digital Marketing Toronto",
+        description: "Simplicity Web is a leading web design company offering custom web development, branding, SEO, digital marketing, and website solutions for businesses across Toronto.",
+        images: ["/web-app-manifest-512x512.png"],
+    },
     alternates: {
         canonical: "/",
     },

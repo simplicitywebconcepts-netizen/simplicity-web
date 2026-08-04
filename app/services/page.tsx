@@ -7,9 +7,38 @@ import WhyWorkWithUs from "@/components/services/WhyWorkWithUs";
 import CallToAction from "@/components/home/CallToAction";
 
 export const metadata: Metadata = {
-  title: "Services - Web Development, Branding & Digital Marketing",
+  title: "Website Development Services | Digital Solutions for Business",
   description:
-    "We provide end-to-end digital solutions designed to help businesses build, launch, and scale. From websites and apps to branding, SEO, and marketing strategies.",
+    "Discover our website development, web design, branding, SEO, digital marketing, analytics, and conversion optimization services designed to grow your business.",
+  keywords: [
+    "Website Development Services",
+    "Web Development Services",
+    "Web Design Services",
+    "SEO Services",
+    "Branding Services",
+    "Digital Marketing Services",
+  ],
+  openGraph: {
+    title: "Website Development Services | Digital Solutions for Business",
+    description:
+      "Discover our website development, web design, branding, SEO, digital marketing, analytics, and conversion optimization services designed to grow your business.",
+    url: "https://simplicityweb.ca/services",
+    images: [
+      {
+        url: "/web-app-manifest-512x512.png",
+        width: 512,
+        height: 512,
+        alt: "Simplicity Web Services",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary",
+    title: "Website Development Services | Digital Solutions for Business",
+    description:
+      "Discover our website development, web design, branding, SEO, digital marketing, analytics, and conversion optimization services designed to grow your business.",
+    images: ["/web-app-manifest-512x512.png"],
+  },
   alternates: {
     canonical: "/services",
   },
