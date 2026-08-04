@@ -2,7 +2,6 @@
 
 import { useRef, useState, useEffect, Component, type ReactNode } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { Environment } from "@react-three/drei";
 import * as THREE from "three";
 
 import { CrystalNode } from "./CrystalNode";
@@ -152,12 +151,15 @@ export function CrystalCanvas() {
       >
         <Canvas
           camera={{ position: [0, 0, 10], fov: 45 }}
-          dpr={[1, 2]} // Cap pixel ratio to 2 for performance
+          dpr={[1, 1.2]} // Cap pixel ratio to 1.2 for performance
           gl={{ alpha: true, antialias: true, powerPreference: "high-performance" }}
           style={{ background: "transparent" }}
         >
-          {/* Subtle environment map for realistic glass reflection */}
-          <Environment files="/potsdamer_platz_1k.hdr" />
+          {/* Custom studio lighting replacing the 1.5 MB Environment HDR map */}
+          <ambientLight intensity={0.7} />
+          <directionalLight position={[5, 5, 5]} intensity={1.5} color="#a78bfa" />
+          <directionalLight position={[-5, 5, -5]} intensity={0.8} color="#7c3aed" />
+          <pointLight position={[0, -5, 5]} intensity={1} color="#ffffff" />
           
           <SceneLighting />
           <SceneController />
