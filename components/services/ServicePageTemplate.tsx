@@ -7,11 +7,10 @@ import { IncludedSection } from '@/components/services/sections/IncludedSection'
 import { BenefitsSection } from '@/components/services/sections/BenefitsSection';
 import { ProcessSection } from '@/components/services/sections/ProcessSection';
 import { TechSection } from '@/components/services/sections/TechSection';
-import { IndustriesSection } from '@/components/services/sections/IndustriesSection';
 import { WhyChooseSection } from '@/components/services/sections/WhyChooseSection';
 import { RecentProjectsSection } from '@/components/services/sections/RecentProjectsSection';
 import { TestimonialsSection } from '@/components/services/sections/TestimonialsSection';
-import { CTASection } from '@/components/services/sections/CTASection';
+import CallToAction from '@/components/home/CallToAction';
 
 interface ServicePageTemplateProps {
   data: ServiceContent;
@@ -47,10 +46,6 @@ export function ServicePageTemplate({ data }: ServicePageTemplateProps) {
           <TechSection data={data} />
         </div>
         
-        <div className="bg-section-bg/85">
-          <IndustriesSection data={data} />
-        </div>
-        
         <div className="bg-card-bg/85">
           <WhyChooseSection data={data} />
         </div>
@@ -63,9 +58,22 @@ export function ServicePageTemplate({ data }: ServicePageTemplateProps) {
           <TestimonialsSection data={data} />
         </div>
         
-        <div className="bg-section-bg/85">
-          <CTASection data={data} />
-        </div>
+        <CallToAction
+          bgClass="bg-card-bg/85"
+          heading={
+            <>
+              {data.cta_h2.split(" ").slice(0, -2).join(" ")}{" "}
+              <span className="gradient-text">
+                {data.cta_h2.split(" ").slice(-2).join(" ")}
+              </span>
+            </>
+          }
+          description={data.cta_body}
+          primaryButtonText="Start Your Project"
+          primaryButtonHref="/contact"
+          secondaryButtonText="View Our Work"
+          secondaryButtonHref="/works"
+        />
       </div>
     </PageTransition>
   );
