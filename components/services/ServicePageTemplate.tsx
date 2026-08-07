@@ -47,15 +47,15 @@ export function ServicePageTemplate({ data }: ServicePageTemplateProps) {
           <TechSection data={data} />
         </div>
         
-        <div className="bg-card-bg/85">
+        <div className="bg-section-bg/85">
           <WhyChooseSection data={data} />
         </div>
         
-        <div className="bg-section-bg/85">
+        <div className="bg-card-bg/85">
           <RecentProjectsSection data={data} />
         </div>
         
-        <div className="bg-card-bg/85">
+        <div className="bg-section-bg/85">
           <TestimonialsSection data={data} />
         </div>
         
