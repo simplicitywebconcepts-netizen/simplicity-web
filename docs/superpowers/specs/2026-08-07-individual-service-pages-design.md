@@ -1,15 +1,12 @@
 # Design Specification: Individual Service Pages Integration
 
-We are creating 6 new dynamic root-level service pages using a reusable, section-modular template system to ensure visual consistency, clean maintenance, and high performance.
+We are creating 6 new dynamic service pages under the `/services/[slug]` route using a single dynamic page file and a reusable, section-modular template system to ensure visual consistency, clean maintenance, and high performance.
 
 ## Routing & Paths
-We will register 6 new pages under the `app/` directory:
-- [`app/web-development/page.tsx`](file:///Users/krishnkantrai/Documents/TestProjects/simplicity-web/app/web-development/page.tsx)
-- [`app/design-branding/page.tsx`](file:///Users/krishnkantrai/Documents/TestProjects/simplicity-web/app/design-branding/page.tsx)
-- [`app/social-media-marketing/page.tsx`](file:///Users/krishnkantrai/Documents/TestProjects/simplicity-web/app/social-media-marketing/page.tsx)
-- [`app/seo-marketing/page.tsx`](file:///Users/krishnkantrai/Documents/TestProjects/simplicity-web/app/seo-marketing/page.tsx)
-- [`app/conversion-optimization/page.tsx`](file:///Users/krishnkantrai/Documents/TestProjects/simplicity-web/app/conversion-optimization/page.tsx)
-- [`app/analytics/page.tsx`](file:///Users/krishnkantrai/Documents/TestProjects/simplicity-web/app/analytics/page.tsx)
+We will register a new dynamic page under:
+- [`app/services/[slug]/page.tsx`](file:///Users/krishnkantrai/Documents/TestProjects/simplicity-web/app/services/[slug]/page.tsx)
+
+All 6 service slugs (`web-development`, `design-branding`, `social-media-marketing`, `seo-marketing`, `conversion-optimization`, `analytics`) will be resolved statically at build time.
 
 ## Data Definition (`types/service.ts`)
 We define a shared structure mapping all 13 required sections:
