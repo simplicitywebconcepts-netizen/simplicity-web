@@ -1,5 +1,24 @@
 import { TechIcon } from '@/components/home/TechCarousel';
 import { ServiceContent } from '@/types/service';
+import AnimatedSection from '@/components/ui/AnimatedSection';
+import SectionLabel from '@/components/ui/SectionLabel';
+
+function renderGradientTitle(title: string) {
+  if (!title) return null;
+  const words = title.trim().split(/\s+/);
+  if (words.length <= 2) {
+    return <span className="gradient-text">{title}</span>;
+  }
+  const splitIndex = Math.max(1, words.length - 2);
+  const mainText = words.slice(0, splitIndex).join(' ');
+  const gradientText = words.slice(splitIndex).join(' ');
+  return (
+    <>
+      {mainText}{' '}
+      <span className="gradient-text">{gradientText}</span>
+    </>
+  );
+}
 
 const TECH_ICON_KEYS = new Set([
   "wordpress",
@@ -153,27 +172,36 @@ function RenderTechIcon({ name }: { name: string }) {
 export function TechSection({ data }: { data: ServiceContent }) {
   if (!data.tech || data.tech.length === 0) return null;
   return (
-    <section className="py-24">
-      <div className="container mx-auto px-4 max-w-6xl">
-        <h2 className="text-3xl md:text-5xl font-bold mb-16 text-center">{data.tech_h2}</h2>
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
-          {data.tech.map(([name, role], i) => (
-            <div
-              key={i}
-              className="p-6 bg-black/55 backdrop-blur-[2px] border border-white/10 ring-1 ring-white/10 rounded-2xl flex flex-col items-center justify-center text-center hover:bg-black/75 hover:border-white/20 transition-all duration-300 group"
-            >
-              <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white group-hover:scale-110 transition-all duration-300 mb-3 flex-shrink-0">
-                <div className="w-6 h-6 flex items-center justify-center [&>svg]:w-full [&>svg]:h-full [&>svg]:max-w-full [&>svg]:max-h-full">
-                  <RenderTechIcon name={name} />
+    <section className="py-24 relative">
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
+        <AnimatedSection className="text-center mb-16">
+          <SectionLabel label="Technologies & Tools" className="justify-center" />
+          <h2 className="text-3xl md:text-5xl font-bold">
+            {renderGradientTitle(data.tech_h2)}
+          </h2>
+        </AnimatedSection>
+
+        <AnimatedSection delay={0.2}>
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
+            {data.tech.map(([name, role], i) => (
+              <div
+                key={i}
+                className="p-6 bg-black/55 backdrop-blur-[2px] border border-white/10 ring-1 ring-white/10 rounded-2xl flex flex-col items-center justify-center text-center hover:bg-black/75 hover:border-white/20 transition-all duration-300 group"
+              >
+                <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white group-hover:scale-110 transition-all duration-300 mb-3 flex-shrink-0">
+                  <div className="w-6 h-6 flex items-center justify-center [&>svg]:w-full [&>svg]:h-full [&>svg]:max-w-full [&>svg]:max-h-full">
+                    <RenderTechIcon name={name} />
+                  </div>
                 </div>
+                <h3 className="font-semibold text-white mb-1 group-hover:text-primary transition-colors duration-300">{name}</h3>
+                <p className="text-xs text-zinc-400">{role}</p>
               </div>
-              <h3 className="font-semibold text-white mb-1 group-hover:text-primary transition-colors duration-300">{name}</h3>
-              <p className="text-xs text-zinc-400">{role}</p>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        </AnimatedSection>
       </div>
     </section>
   );
 }
+
 
