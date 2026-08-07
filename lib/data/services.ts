@@ -2,7 +2,7 @@ import { ServiceContent } from '@/types/service';
 
 export const servicesData: ServiceContent[] = [
   {
-    "slug": "web-app-development",
+    "slug": "web-development",
     "nav_label": "Web & App Development",
     "h1": "Custom Web Development Company in Toronto",
     "intro": "Simplicity Web designs and builds custom websites and web applications for growing businesses across Toronto and Canada. Whether you need a brand-new site, a rebuild of an outdated platform, or a custom web application, our team combines strategic planning, clean design, and scalable development to create a digital foundation that performs — fast, mobile-friendly, and built to support your business as it grows.",
@@ -476,7 +476,7 @@ export const servicesData: ServiceContent[] = [
     "cta_body": "Let's create a visual identity that builds trust and makes your business memorable."
   },
   {
-    "slug": "social-media-content",
+    "slug": "social-media-marketing",
     "nav_label": "Social Media & Content",
     "h1": "Social Media Management & Content Creation Agency Toronto",
     "intro": "Growing an audience takes more than occasional posting. Simplicity Web manages social media strategy, content creation, and community engagement so your brand shows up consistently and connects with the right audience. From short-form video to full content calendars, we handle the planning and production so your team doesn't have to.",
@@ -699,7 +699,7 @@ export const servicesData: ServiceContent[] = [
     "cta_body": "Let's build a content strategy that keeps your brand consistent, visible, and engaging."
   },
   {
-    "slug": "seo-digital-marketing",
+    "slug": "seo-marketing",
     "nav_label": "SEO & Digital Marketing",
     "h1": "SEO & Digital Marketing Agency in Toronto",
     "intro": "Being online isn't the same as being found. Simplicity Web helps businesses increase visibility and attract qualified traffic through data-driven SEO and targeted advertising. From technical SEO and keyword strategy to Google and Meta Ads, we build marketing systems that put your business in front of the people actively searching for what you offer.",
@@ -928,7 +928,7 @@ export const servicesData: ServiceContent[] = [
     "cta_body": "Let's build an SEO and marketing strategy focused on real traffic, leads, and growth."
   },
   {
-    "slug": "conversion-optimization-lead-generation",
+    "slug": "conversion-optimization",
     "nav_label": "Conversion Optimization",
     "h1": "Conversion Rate Optimization & Lead Generation Agency",
     "intro": "Traffic alone doesn't grow a business — conversions do. Simplicity Web builds landing pages, funnels, and lead capture systems designed to turn visitors into real leads and customers. We look at every step of the user journey to remove friction and guide visitors toward a clear next action.",
@@ -1157,7 +1157,7 @@ export const servicesData: ServiceContent[] = [
     "cta_body": "Let's build landing pages and funnels designed to convert."
   },
   {
-    "slug": "automation-crm-analytics",
+    "slug": "analytics",
     "nav_label": "Automation, CRM & Analytics",
     "h1": "Marketing Automation & CRM Agency in Toronto",
     "intro": "Growth gets harder to manage manually. Simplicity Web helps businesses set up CRM systems, automated follow-ups, and analytics dashboards that track performance and reduce manual work. From lead management to reporting, we build the systems that let you scale without losing visibility or letting leads fall through the cracks.",
@@ -1387,6 +1387,15 @@ export const servicesData: ServiceContent[] = [
   }
 ];
 
+const aliasMap: Record<string, string> = {
+  "web-app-development": "web-development",
+  "social-media-content": "social-media-marketing",
+  "seo-digital-marketing": "seo-marketing",
+  "conversion-optimization-lead-generation": "conversion-optimization",
+  "automation-crm-analytics": "analytics",
+};
+
 export function getServiceBySlug(slug: string): ServiceContent | undefined {
-  return servicesData.find((service: ServiceContent) => service.slug === slug);
+  const targetSlug = aliasMap[slug] || slug;
+  return servicesData.find((service: ServiceContent) => service.slug === targetSlug || service.slug === slug);
 }
