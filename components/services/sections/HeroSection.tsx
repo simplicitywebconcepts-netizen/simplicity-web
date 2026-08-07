@@ -6,6 +6,22 @@ interface HeroSectionProps {
   data: ServiceContent;
 }
 
+function renderGradientTitle(title: string) {
+  const words = title.trim().split(/\s+/);
+  if (words.length <= 2) {
+    return <span className="gradient-text">{title}</span>;
+  }
+  const splitIndex = Math.max(1, words.length - 2);
+  const mainText = words.slice(0, splitIndex).join(' ');
+  const gradientText = words.slice(splitIndex).join(' ');
+  return (
+    <>
+      {mainText}{' '}
+      <span className="gradient-text">{gradientText}</span>
+    </>
+  );
+}
+
 export function HeroSection({ data }: HeroSectionProps) {
   return (
     <section className="relative min-h-[80vh] flex items-center overflow-hidden py-20 lg:py-32">
@@ -13,11 +29,11 @@ export function HeroSection({ data }: HeroSectionProps) {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           
           {/* Left content card */}
-          <div className="max-w-3xl rounded-2xl bg-black/45 backdrop-blur-[2px] ring-1 ring-white/10 p-6 md:p-8">
+          <div className="w-full rounded-2xl bg-black/45 backdrop-blur-[2px] ring-1 ring-white/10 p-6 md:p-8">
             <SectionLabel label="Services" />
             
             <h1 className="text-4xl md:text-5xl lg:text-6xl text-white font-bold leading-[1.1] tracking-tight mt-4 mb-6">
-              {data.h1}
+              {renderGradientTitle(data.h1)}
             </h1>
             
             <p className="text-base md:text-lg text-zinc-400 leading-relaxed mb-8">
