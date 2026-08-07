@@ -1,23 +1,7 @@
 import { ServiceContent } from '@/types/service';
 import AnimatedSection from '@/components/ui/AnimatedSection';
 import SectionLabel from '@/components/ui/SectionLabel';
-
-function renderGradientTitle(title: string) {
-  if (!title) return null;
-  const words = title.trim().split(/\s+/);
-  if (words.length <= 2) {
-    return <span className="gradient-text">{title}</span>;
-  }
-  const splitIndex = Math.max(1, words.length - 2);
-  const mainText = words.slice(0, splitIndex).join(' ');
-  const gradientText = words.slice(splitIndex).join(' ');
-  return (
-    <>
-      {mainText}{' '}
-      <span className="gradient-text">{gradientText}</span>
-    </>
-  );
-}
+import { renderGradientTitle } from '@/components/ui/GradientTitle';
 
 export function IncludedSection({ data }: { data: ServiceContent }) {
   if (!data.included || data.included.length === 0) return null;

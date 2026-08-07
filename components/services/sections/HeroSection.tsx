@@ -1,25 +1,10 @@
 import { ServiceContent } from '@/types/service';
 import SectionLabel from '@/components/ui/SectionLabel';
 import Button from '@/components/ui/Button';
+import { renderGradientTitle } from '@/components/ui/GradientTitle';
 
 interface HeroSectionProps {
   data: ServiceContent;
-}
-
-function renderGradientTitle(title: string) {
-  const words = title.trim().split(/\s+/);
-  if (words.length <= 2) {
-    return <span className="gradient-text">{title}</span>;
-  }
-  const splitIndex = Math.max(1, words.length - 2);
-  const mainText = words.slice(0, splitIndex).join(' ');
-  const gradientText = words.slice(splitIndex).join(' ');
-  return (
-    <>
-      {mainText}{' '}
-      <span className="gradient-text">{gradientText}</span>
-    </>
-  );
 }
 
 export function HeroSection({ data }: HeroSectionProps) {

@@ -11,6 +11,7 @@ import { WhyChooseSection } from '@/components/services/sections/WhyChooseSectio
 import { RecentProjectsSection } from '@/components/services/sections/RecentProjectsSection';
 import { TestimonialsSection } from '@/components/services/sections/TestimonialsSection';
 import CallToAction from '@/components/home/CallToAction';
+import { renderGradientTitle } from '@/components/ui/GradientTitle';
 
 interface ServicePageTemplateProps {
   data: ServiceContent;
@@ -60,14 +61,7 @@ export function ServicePageTemplate({ data }: ServicePageTemplateProps) {
         
         <CallToAction
           bgClass="bg-card-bg/85"
-          heading={
-            <>
-              {data.cta_h2.split(" ").slice(0, -2).join(" ")}{" "}
-              <span className="gradient-text">
-                {data.cta_h2.split(" ").slice(-2).join(" ")}
-              </span>
-            </>
-          }
+          heading={renderGradientTitle(data.cta_h2)}
           description={data.cta_body}
           primaryButtonText="Start Your Project"
           primaryButtonHref="/contact"
