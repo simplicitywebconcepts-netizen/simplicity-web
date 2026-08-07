@@ -17,7 +17,17 @@ export function RecentProjectsSection({ data }: { data: ServiceContent }) {
                 <span className="text-xs font-semibold tracking-wider uppercase text-zinc-500 mb-2 block">{project.industry}</span>
                 <h3 className="text-2xl font-bold mb-4 text-white">{project.name}</h3>
                 <p className="text-zinc-400 mb-6">{project.overview}</p>
-                <Link href={project.link} className="inline-flex items-center text-sm font-medium text-white hover:text-zinc-300 transition-colors">
+                <Link 
+                  href={
+                    project.link.includes("aceactivezone") ? "/works/ace-active-zone" :
+                    project.link.includes("shammysauto") ? "/works/shammys-auto" :
+                    project.link.includes("kerasoft") ? "/works/kerasoft" :
+                    project.link.includes("sherfertilitysolutions") ? "/works/sherfertility-solutions" :
+                    project.link.includes("torontohypertensionclinic") ? "/works/toronto-hypertension-clinic" :
+                    `/works/${project.link}`
+                  } 
+                  className="inline-flex items-center text-sm font-medium text-white hover:text-zinc-300 transition-colors"
+                >
                   View Case Study
                   <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                 </Link>
