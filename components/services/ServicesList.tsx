@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { staggerContainer, fadeInUp } from "@/lib/animations";
 
@@ -227,24 +228,36 @@ export default function ServicesList() {
                 </ul>
               </div>
 
-              {/* Tagline */}
-              <div className="flex items-center gap-2 pt-4 border-t border-border/50">
-                <svg
-                  width="14"
-                  height="14"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="text-primary shrink-0"
+              {/* Tagline & Link */}
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pt-4 border-t border-border/50">
+                <div className="flex items-center gap-2">
+                  <svg
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="text-primary shrink-0"
+                  >
+                    <polyline points="9 18 15 12 9 6" />
+                  </svg>
+                  <p className="text-xs text-primary font-medium italic">
+                    {service.tagline}
+                  </p>
+                </div>
+                
+                <Link
+                  href={`/services/${
+                    service.anchor === "social-media" ? "social-media-marketing" : service.anchor
+                  }`}
+                  className="text-xs font-bold text-white hover:text-primary transition-colors flex items-center gap-1 group/btn self-end sm:self-auto"
                 >
-                  <polyline points="9 18 15 12 9 6" />
-                </svg>
-                <p className="text-xs text-primary font-medium italic">
-                  {service.tagline}
-                </p>
+                  Explore Details
+                  <span className="group-hover/btn:translate-x-0.5 transition-transform duration-200">&rarr;</span>
+                </Link>
               </div>
             </motion.div>
           ))}

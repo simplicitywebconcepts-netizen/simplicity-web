@@ -11,7 +11,7 @@ interface CountUpProps {
 
 export default function CountUp({ to, duration = 2, className = "" }: CountUpProps) {
   const ref = useRef<HTMLSpanElement>(null);
-  const inView = useInView(ref, { once: true, margin: "-100px" });
+  const inView = useInView(ref, { once: true });
   
   const count = useMotionValue(0);
   const rounded = useTransform(count, (latest) => Math.round(latest));

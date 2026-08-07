@@ -82,7 +82,7 @@ export default function TechCarousel() {
 }
 
 // Simple icon renderer for tech stack
-function TechIcon({ name }: { name: string }) {
+export function TechIcon({ name }: { name: string }) {
   const icons: Record<string, React.ReactNode> = {
     wordpress: (
       <svg

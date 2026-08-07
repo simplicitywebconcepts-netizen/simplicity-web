@@ -44,6 +44,12 @@ export default function Navbar() {
     };
   }, [isMenuOpen]);
 
+  const isActive = (href: string) => {
+    if (pathname === href) return true;
+    if (href !== "/" && pathname.startsWith(`${href}/`)) return true;
+    return false;
+  };
+
   return (
     <>
       <motion.header
@@ -79,7 +85,7 @@ export default function Navbar() {
                 key={link.href}
                 href={link.href}
                 className={`text-sm font-medium transition-colors duration-300 animated-underline ${
-                  pathname === link.href
+                  isActive(link.href)
                     ? "text-primary"
                     : "text-foreground/70 hover:text-foreground"
                 }`}
@@ -158,7 +164,7 @@ export default function Navbar() {
                   <Link
                     href={link.href}
                     className={`text-2xl font-light tracking-wide transition-colors duration-300 ${
-                      pathname === link.href
+                      isActive(link.href)
                         ? "text-primary-light"
                         : "text-foreground/80 hover:text-foreground"
                     }`}
