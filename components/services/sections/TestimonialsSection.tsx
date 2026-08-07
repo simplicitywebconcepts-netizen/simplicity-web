@@ -6,18 +6,27 @@ export function TestimonialsSection({ data }: { data: ServiceContent }) {
   return (
     <section className="py-24">
       <div className="container mx-auto px-4 max-w-4xl">
-        <div className="p-12 md:p-16 rounded-3xl bg-zinc-900/40 border border-zinc-800/50 text-center relative">
-          <div className="absolute top-8 left-8 text-6xl text-zinc-800 select-none">"</div>
-          <blockquote className="text-2xl md:text-3xl font-medium text-white mb-8 leading-relaxed relative z-10">
-            {quote}
-          </blockquote>
-          <div className="flex flex-col items-center justify-center">
-            <div className="w-12 h-12 rounded-full bg-zinc-700 mb-4 flex items-center justify-center font-bold">{author[0]}</div>
-            <div className="font-bold text-lg text-white">{author}</div>
-            <div className="text-sm text-zinc-500">{role}</div>
-          </div>
+        <div className="p-8 md:p-12 rounded-2xl bg-black/55 backdrop-blur-[2px] border border-white/10 ring-1 ring-white/10 text-center relative">
+          <figure className="relative z-10">
+            <blockquote className="text-lg md:text-xl font-medium text-white mb-8 leading-relaxed">
+              “{quote}”
+            </blockquote>
+            <figcaption className="flex flex-col items-center">
+              <div className="w-12 h-12 rounded-full bg-primary/20 border border-primary/30 text-primary font-bold flex items-center justify-center text-lg mb-4 shadow-sm">
+                {author[0]}
+              </div>
+              <div className="flex items-center justify-center space-x-3 text-sm md:text-base">
+                <div className="font-semibold text-white">{author}</div>
+                <svg viewBox="0 0 2 2" width="3" height="3" aria-hidden="true" className="fill-zinc-500">
+                  <circle cx="1" cy="1" r="1" />
+                </svg>
+                <div className="text-zinc-400">{role}</div>
+              </div>
+            </figcaption>
+          </figure>
         </div>
       </div>
     </section>
   );
 }
+
