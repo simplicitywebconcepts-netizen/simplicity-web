@@ -6,7 +6,7 @@ export function IndustriesSection({ data }: { data: ServiceContent }) {
     "Education", "SaaS", "Manufacturing", "Entertainment"
   ];
   return (
-    <section className="py-24 bg-zinc-950 border-t border-zinc-900">
+    <section className="py-24">
       <div className="container mx-auto px-4 max-w-5xl">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-5xl font-bold mb-6">{data.industries_h2}</h2>

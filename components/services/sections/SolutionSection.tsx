@@ -11,7 +11,7 @@ export function SolutionSection({ data }: { data: ServiceContent }) {
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {data.solution_h3.map(([title, desc], i) => (
-            <div key={i} className="p-6 rounded-2xl bg-zinc-900/30 border border-zinc-800/30 hover:border-zinc-700 transition-all duration-300">
+            <div key={i} className="p-6 rounded-2xl bg-black/55 backdrop-blur-[2px] border border-white/10 ring-1 ring-white/10 transition-all duration-300">
               <h3 className="text-xl font-bold mb-4 text-white">{title}</h3>
               <p className="text-zinc-400 leading-relaxed">{desc}</p>
             </div>

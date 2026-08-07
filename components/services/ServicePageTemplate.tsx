@@ -11,7 +11,6 @@ import { IndustriesSection } from '@/components/services/sections/IndustriesSect
 import { WhyChooseSection } from '@/components/services/sections/WhyChooseSection';
 import { RecentProjectsSection } from '@/components/services/sections/RecentProjectsSection';
 import { TestimonialsSection } from '@/components/services/sections/TestimonialsSection';
-import { FAQSection } from '@/components/services/sections/FAQSection';
 import { CTASection } from '@/components/services/sections/CTASection';
 
 interface ServicePageTemplateProps {
@@ -21,19 +20,20 @@ interface ServicePageTemplateProps {
 export function ServicePageTemplate({ data }: ServicePageTemplateProps) {
   return (
     <PageTransition>
-      <HeroSection data={data} />
-      <ChallengesSection data={data} />
-      <SolutionSection data={data} />
-      <IncludedSection data={data} />
-      <BenefitsSection data={data} />
-      <ProcessSection data={data} />
-      <TechSection data={data} />
-      <IndustriesSection data={data} />
-      <WhyChooseSection data={data} />
-      <RecentProjectsSection data={data} />
-      <TestimonialsSection data={data} />
-      <FAQSection data={data} />
-      <CTASection data={data} />
+      <div className="bg-network-pattern min-h-screen">
+        <HeroSection data={data} />
+        <ChallengesSection data={data} />
+        <SolutionSection data={data} />
+        <IncludedSection data={data} />
+        <BenefitsSection data={data} />
+        <ProcessSection data={data} />
+        <TechSection data={data} />
+        <IndustriesSection data={data} />
+        <WhyChooseSection data={data} />
+        <RecentProjectsSection data={data} />
+        <TestimonialsSection data={data} />
+        <CTASection data={data} />
+      </div>
     </PageTransition>
   );
 }
