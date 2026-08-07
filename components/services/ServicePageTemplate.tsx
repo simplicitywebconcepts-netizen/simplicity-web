@@ -22,17 +22,50 @@ export function ServicePageTemplate({ data }: ServicePageTemplateProps) {
     <PageTransition>
       <div className="bg-network-pattern min-h-screen">
         <HeroSection data={data} />
-        <ChallengesSection data={data} />
-        <SolutionSection data={data} />
-        <IncludedSection data={data} />
-        <BenefitsSection data={data} />
-        <ProcessSection data={data} />
-        <TechSection data={data} />
-        <IndustriesSection data={data} />
-        <WhyChooseSection data={data} />
-        <RecentProjectsSection data={data} />
-        <TestimonialsSection data={data} />
-        <CTASection data={data} />
+        
+        <div className="bg-section-bg/85">
+          <ChallengesSection data={data} />
+        </div>
+        
+        <div className="bg-card-bg/85">
+          <SolutionSection data={data} />
+        </div>
+        
+        <div className="bg-section-bg/85">
+          <IncludedSection data={data} />
+        </div>
+        
+        <div className="bg-card-bg/85">
+          <BenefitsSection data={data} />
+        </div>
+        
+        <div className="bg-section-bg/85">
+          <ProcessSection data={data} />
+        </div>
+        
+        <div className="bg-card-bg/85">
+          <TechSection data={data} />
+        </div>
+        
+        <div className="bg-section-bg/85">
+          <IndustriesSection data={data} />
+        </div>
+        
+        <div className="bg-card-bg/85">
+          <WhyChooseSection data={data} />
+        </div>
+        
+        <div className="bg-section-bg/85">
+          <RecentProjectsSection data={data} />
+        </div>
+        
+        <div className="bg-card-bg/85">
+          <TestimonialsSection data={data} />
+        </div>
+        
+        <div className="bg-section-bg/85">
+          <CTASection data={data} />
+        </div>
       </div>
     </PageTransition>
   );
