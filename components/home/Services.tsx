@@ -1,12 +1,24 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { staggerContainer, fadeInUp } from "@/lib/animations";
 import { services } from "@/lib/data";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import SectionLabel from "@/components/ui/SectionLabel";
-
 import { type ReactNode } from "react";
+
+const getSlug = (id: number) => {
+  switch (id) {
+    case 1: return "/services/web-development";
+    case 2: return "/services/design-branding";
+    case 3: return "/services/social-media-marketing";
+    case 4: return "/services/seo-marketing";
+    case 5: return "/services/conversion-optimization";
+    case 6: return "/services/analytics";
+    default: return "/services";
+  }
+};
 
 const iconPaths: Record<string, ReactNode> = {
   cloud: (
@@ -65,24 +77,25 @@ export default function Services() {
           className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"
         >
           {services.map((service) => (
-            <motion.div
-              key={service.id}
-              variants={fadeInUp}
-              whileHover={{
-                y: -8,
-                boxShadow: "0 20px 40px rgba(124, 58, 237, 0.1)",
-              }}
-              transition={{ duration: 0.3 }}
-              className="bg-card-bg rounded-xl p-6 border border-border hover:border-primary/50 transition-colors duration-300 group cursor-pointer"
-            >
-              <div className="w-14 h-14 rounded-lg bg-primary/5 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-300 mb-5">
-                {iconPaths[service.icon]}
-              </div>
-              <h3 className="font-bold text-lg mb-3">{service.title}</h3>
-              <p className="text-sm text-muted leading-relaxed">
-                {service.description}
-              </p>
-            </motion.div>
+            <Link href={getSlug(service.id)} key={service.id} className="block">
+              <motion.div
+                variants={fadeInUp}
+                whileHover={{
+                  y: -8,
+                  boxShadow: "0 20px 40px rgba(124, 58, 237, 0.1)",
+                }}
+                transition={{ duration: 0.3 }}
+                className="bg-card-bg rounded-xl p-6 border border-border hover:border-primary/50 transition-colors duration-300 group cursor-pointer h-full"
+              >
+                <div className="w-14 h-14 rounded-lg bg-primary/5 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-300 mb-5">
+                  {iconPaths[service.icon]}
+                </div>
+                <h3 className="font-bold text-lg mb-3">{service.title}</h3>
+                <p className="text-sm text-muted leading-relaxed">
+                  {service.description}
+                </p>
+              </motion.div>
+            </Link>
           ))}
         </motion.div>
       </div>
