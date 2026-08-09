@@ -4,7 +4,8 @@ import { useState, useEffect, ReactNode } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { navLinks } from "@/lib/data";
+import { navLinks, servicesDropdownLinks } from "@/lib/data";
+import { ChevronDown, ChevronRight } from "lucide-react";
 import {
   navVariants,
   menuOverlay,
@@ -80,19 +81,64 @@ export default function Navbar() {
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={`text-sm font-medium transition-colors duration-300 animated-underline ${
-                  isActive(link.href)
-                    ? "text-primary"
-                    : "text-foreground/70 hover:text-foreground"
-                }`}
-              >
-                {link.label}
-              </Link>
-            ))}
+            {navLinks.map((link) => {
+              const isServices = link.href === "/services";
+              if (isServices) {
+                return (
+                  <div key={link.href} className="relative group/services py-2">
+                    <Link
+                      href={link.href}
+                      className={`text-sm font-medium transition-colors duration-300 animated-underline flex items-center gap-1 ${
+                        isActive(link.href)
+                          ? "text-primary"
+                          : "text-foreground/70 hover:text-foreground"
+                      }`}
+                    >
+                      <span>{link.label}</span>
+                      <ChevronDown className="w-3.5 h-3.5 transition-transform duration-300 group-hover/services:rotate-180 text-foreground/50 group-hover/services:text-primary" />
+                    </Link>
+
+                    {/* Services Hover Dropdown Menu */}
+                    <div className="absolute top-full left-1/2 -translate-x-1/2 pt-2 opacity-0 pointer-events-none group-hover/services:opacity-100 group-hover/services:pointer-events-auto transition-all duration-300 w-80 z-50">
+                      <div className="p-3 rounded-2xl bg-black/90 backdrop-blur-xl border border-white/10 ring-1 ring-white/10 shadow-2xl space-y-1">
+                        <div className="px-3 py-1.5 text-[10px] uppercase font-bold tracking-widest text-primary border-b border-white/10 mb-1">
+                          Our Core Services
+                        </div>
+                        {servicesDropdownLinks.map((item) => (
+                          <Link
+                            key={item.href}
+                            href={item.href}
+                            className="block p-2.5 rounded-xl hover:bg-white/10 transition-colors group/item"
+                          >
+                            <div className="text-sm font-semibold text-white group-hover/item:text-primary transition-colors flex items-center justify-between">
+                              <span>{item.label}</span>
+                              <ChevronRight className="w-3.5 h-3.5 opacity-0 group-hover/item:opacity-100 -translate-x-1 group-hover/item:translate-x-0 transition-all text-primary" />
+                            </div>
+                            <div className="text-xs text-zinc-400 font-normal mt-0.5">
+                              {item.desc}
+                            </div>
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                );
+              }
+
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={`text-sm font-medium transition-colors duration-300 animated-underline ${
+                    isActive(link.href)
+                      ? "text-primary"
+                      : "text-foreground/70 hover:text-foreground"
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              );
+            })}
           </nav>
 
           {/* CTA + Hamburger */}
@@ -150,30 +196,49 @@ export default function Navbar() {
             initial="closed"
             animate="open"
             exit="closed"
-            className="fixed inset-0 z-40 bg-card-bg/95 backdrop-blur-md flex flex-col items-center justify-center"
+            className="fixed inset-0 z-40 bg-card-bg/95 backdrop-blur-md flex flex-col items-center justify-center overflow-y-auto py-12"
           >
             <motion.nav
               variants={menuStaggerContainer}
               initial="closed"
               animate="open"
               exit="closed"
-              className="flex flex-col items-center gap-8"
+              className="flex flex-col items-center gap-6 text-center max-w-sm w-full px-6"
             >
-              {navLinks.map((link) => (
-                <motion.div key={link.href} variants={menuItemVariants}>
-                  <Link
-                    href={link.href}
-                    className={`text-2xl font-light tracking-wide transition-colors duration-300 ${
-                      isActive(link.href)
-                        ? "text-primary-light"
-                        : "text-foreground/80 hover:text-foreground"
-                    }`}
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    {link.label}
-                  </Link>
-                </motion.div>
-              ))}
+              {navLinks.map((link) => {
+                const isServices = link.href === "/services";
+                return (
+                  <motion.div key={link.href} variants={menuItemVariants} className="w-full flex flex-col items-center">
+                    <Link
+                      href={link.href}
+                      className={`text-2xl font-light tracking-wide transition-colors duration-300 ${
+                        isActive(link.href)
+                          ? "text-primary-light"
+                          : "text-foreground/80 hover:text-foreground"
+                      }`}
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      {link.label}
+                    </Link>
+
+                    {/* Sub-services list in mobile menu */}
+                    {isServices && (
+                      <div className="mt-3 space-y-2 w-full pt-2 border-t border-white/10">
+                        {servicesDropdownLinks.map((item) => (
+                          <Link
+                            key={item.href}
+                            href={item.href}
+                            className="block text-sm text-zinc-400 hover:text-primary transition-colors py-1"
+                            onClick={() => setIsMenuOpen(false)}
+                          >
+                            {item.label}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </motion.div>
+                );
+              })}
               <motion.div variants={menuItemVariants} className="mt-4">
                 <Button href="/contact" variant="outline" className="!border-foreground !text-foreground hover:!bg-foreground hover:!text-background">
                   Get in Touch

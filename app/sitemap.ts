@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { caseStudies } from "@/lib/case-studies";
+import { servicesData } from "@/lib/data/services";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://simplicityweb.ca";
@@ -36,7 +37,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly" as const,
       priority: 0.8,
     },
+    {
+      url: `${baseUrl}/sitemap`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.5,
+    },
   ];
+
+  // Dynamic service sub-pages
+  const serviceRoutes = servicesData.map((s) => ({
+    url: `${baseUrl}/services/${s.slug}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly" as const,
+    priority: 0.8,
+  }));
 
   // Dynamic portfolio case study pages
   const caseStudyRoutes = caseStudies.map((cs) => ({
@@ -46,5 +61,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
-  return [...routes, ...caseStudyRoutes];
+  return [...routes, ...serviceRoutes, ...caseStudyRoutes];
 }
