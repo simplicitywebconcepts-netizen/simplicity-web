@@ -339,14 +339,23 @@ export const perks: Perk[] = [
   }
 ];
 
+export const servicesDropdownLinks = [
+  { href: "/services/web-development", label: "Web & App Development", desc: "Custom websites, web apps & e-commerce" },
+  { href: "/services/design-branding", label: "Design & Branding", desc: "Brand identity, logos & UI/UX design" },
+  { href: "/services/social-media-marketing", label: "Social Media & Content", desc: "Content strategy & social management" },
+  { href: "/services/seo-marketing", label: "SEO & Digital Marketing", desc: "Search optimization & paid ad campaigns" },
+  { href: "/services/conversion-optimization", label: "Conversion Optimization", desc: "Landing page & CRO lead optimization" },
+  { href: "/services/analytics", label: "Automation & Analytics", desc: "Performance tracking & analytics setup" },
+];
+
 // ---- Footer ----
 export const footerServices = [
-  { label: "Web & App Development", href: "/services#web-development" },
-  { label: "Design & Branding", href: "/services#design-branding" },
-  { label: "Social Media Management", href: "/services#social-media" },
-  { label: "SEO & Digital Marketing", href: "/services#seo-marketing" },
-  { label: "Conversion Optimization", href: "/services#conversion-optimization" },
-  { label: "Automation & Analytics", href: "/services#analytics" },
+  { label: "Web & App Development", href: "/services/web-development" },
+  { label: "Design & Branding", href: "/services/design-branding" },
+  { label: "Social Media Management", href: "/services/social-media-marketing" },
+  { label: "SEO & Digital Marketing", href: "/services/seo-marketing" },
+  { label: "Conversion Optimization", href: "/services/conversion-optimization" },
+  { label: "Automation & Analytics", href: "/services/analytics" },
 ];
 
 export const footerCompanyLinks = [
