@@ -11,7 +11,7 @@ function isRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === "object" && value !== null;
 }
 
-function parseAndValidateContactPayload(payload: unknown): ContactEmailPayload {
+export function parseAndValidateContactPayload(payload: unknown): ContactEmailPayload {
   if (!isRecord(payload)) {
     throw new ContactFormValidationError("Invalid request body");
   }
@@ -19,11 +19,14 @@ function parseAndValidateContactPayload(payload: unknown): ContactEmailPayload {
   const name = typeof payload.name === "string" ? payload.name.trim() : "";
   const email = typeof payload.email === "string" ? payload.email.trim() : "";
   const phone = typeof payload.phone === "string" ? payload.phone.trim() : "";
+  const company = typeof payload.company === "string" ? payload.company.trim() : "";
+  const service = typeof payload.service === "string" ? payload.service.trim() : "";
+  const budget = typeof payload.budget === "string" ? payload.budget.trim() : "";
   const subject = typeof payload.subject === "string" ? payload.subject.trim() : "";
   const message = typeof payload.message === "string" ? payload.message.trim() : "";
 
-  if (!name || !email || !subject || !message) {
-    throw new ContactFormValidationError("Missing required fields: name, email, subject, and message are required");
+  if (!name || !email || !service || !message) {
+    throw new ContactFormValidationError("Missing required fields: name, email, service, and message are required");
   }
 
   const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -32,7 +35,16 @@ function parseAndValidateContactPayload(payload: unknown): ContactEmailPayload {
     throw new ContactFormValidationError("Please provide a valid email address");
   }
 
-  return { name, email, phone: phone || undefined, subject, message };
+  return {
+    name,
+    email,
+    phone: phone || undefined,
+    company: company || undefined,
+    service,
+    budget: budget || undefined,
+    subject: subject || undefined,
+    message,
+  };
 }
 
 export async function submitContactForm(payload: unknown): Promise<void> {
