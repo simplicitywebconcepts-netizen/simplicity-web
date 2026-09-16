@@ -1,7 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useState, type ChangeEvent, type FormEvent } from "react";
 import { motion } from "framer-motion";
+import { Mail, Phone, ChevronDown, ArrowRight } from "lucide-react";
 import { staggerContainer, fadeInUp, fadeInRight } from "@/lib/animations";
 import { contactInfo } from "@/lib/data";
 import { sendContactFormRequest } from "@/lib/services/contact-form-client.service";
@@ -9,29 +10,86 @@ import Button from "@/components/ui/Button";
 import { useNotification } from "@/components/ui/NotificationProvider";
 import SectionLabel from "@/components/ui/SectionLabel";
 
+const SERVICE_OPTIONS = [
+  "Web Development",
+  "Design & Branding",
+  "Social Media Marketing",
+  "SEO & Marketing",
+  "Conversion Optimization",
+  "Analytics",
+  "Other",
+] as const;
+
+const BUDGET_OPTIONS = [
+  "Under $2,500",
+  "$2,500 – $5,000",
+  "$5,000 – $10,000",
+  "$10,000 – $25,000",
+  "$25,000+",
+  "Flexible / Undecided",
+] as const;
+
+interface FormDataState {
+  name: string;
+  company: string;
+  email: string;
+  phone: string;
+  service: string;
+  budget: string;
+  message: string;
+}
+
+const initialFormData: FormDataState = {
+  name: "",
+  company: "",
+  email: "",
+  phone: "",
+  service: "",
+  budget: "",
+  message: "",
+};
+
 export default function ContactForm() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    subject: "Contact Form Submission",
-    message: "",
-  });
+  const [formData, setFormData] = useState<FormDataState>(initialFormData);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { notify } = useNotification();
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleChange = (
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
+
+    if (!formData.service) {
+      notify({
+        type: "error",
+        message: "Please select a service you are interested in.",
+      });
+      return;
+    }
+
     setIsSubmitting(true);
 
     try {
-      await sendContactFormRequest(formData);
+      await sendContactFormRequest({
+        name: formData.name.trim(),
+        email: formData.email.trim(),
+        phone: formData.phone.trim() || undefined,
+        company: formData.company.trim() || undefined,
+        service: formData.service,
+        budget: formData.budget.trim() || undefined,
+        message: formData.message.trim(),
+      });
 
       notify({
         type: "success",
         message: "Message sent successfully! We will get back to you soon.",
       });
-      setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
+      setFormData(initialFormData);
     } catch (error) {
       const message =
         error instanceof Error ? error.message : "Something went wrong";
@@ -46,184 +104,299 @@ export default function ContactForm() {
 
   return (
     <div className="bg-black/45 backdrop-blur-[2px] rounded-2xl p-8 md:p-12 ring-1 ring-white/10 shadow-xl relative z-10 w-full">
-      <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
-        {/* Left Content */}
+      <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+        {/* Left Column: Hero & Direct Contact */}
         <motion.div
           variants={staggerContainer}
           initial="hidden"
           animate="visible"
-          className="flex flex-col h-full justify-center"
+          className="lg:col-span-5 flex flex-col justify-between h-full"
         >
-          <motion.div variants={fadeInUp}>
-            <SectionLabel label="LET'S TALK" />
-          </motion.div>
+          <div>
+            <motion.div variants={fadeInUp}>
+              <SectionLabel label="LET'S CONNECT" />
+            </motion.div>
 
-          <motion.h1
-            variants={fadeInUp}
-            className="text-4xl md:text-5xl lg:text-5xl font-bold tracking-tight mt-6 leading-[1.1]"
-          >
-            Let&apos;s Build Something That{" "}
-            <span className="gradient-text">Grows Your Business</span>
-          </motion.h1>
+            <motion.h1
+              variants={fadeInUp}
+              className="text-4xl sm:text-5xl font-bold tracking-tight mt-4 leading-[1.15] text-foreground"
+            >
+              Let&apos;s Build Something{" "}
+              <span className="gradient-text">Great Together</span>
+            </motion.h1>
 
-          <motion.p
-            variants={fadeInUp}
-            className="text-muted mt-6 max-w-xl text-lg leading-relaxed"
-          >
-            Tell us about your project, and we&apos;ll help you map out the
-            best way to build and scale it.
-          </motion.p>
+            <motion.p
+              variants={fadeInUp}
+              className="text-muted mt-6 text-base sm:text-lg leading-relaxed"
+            >
+              Have a project in mind? Tell us what you&apos;re looking to
+              achieve and our team will get back to you.
+            </motion.p>
 
-          <motion.ul variants={fadeInUp} className="mt-8 space-y-4">
-            <li className="flex items-center text-foreground/90">
-              <span className="w-1.5 h-1.5 rounded-full bg-primary mr-3"></span>
-              Custom Web Development
-            </li>
-            <li className="flex items-center text-foreground/90">
-              <span className="w-1.5 h-1.5 rounded-full bg-primary mr-3"></span>
-              Modern WordPress Development
-            </li>
-            <li className="flex items-center text-foreground/90">
-              <span className="w-1.5 h-1.5 rounded-full bg-primary mr-3"></span>
-              Strategic SEO Services
-            </li>
-          </motion.ul>
+            <motion.div variants={fadeInUp} className="mt-6">
+              <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-medium text-muted">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                </span>
+                <span>Replies typically within 24 hours</span>
+              </div>
+            </motion.div>
+          </div>
 
           <motion.div
             variants={fadeInUp}
-            className="mt-10 flex flex-col sm:flex-row gap-6"
+            className="mt-12 pt-8 border-t border-white/10 space-y-6"
           >
-            <div className="flex flex-col">
-              <span className="text-xs uppercase tracking-widest text-muted font-semibold mb-1">
-                Email Us
-              </span>
-              <a
-                href={`mailto:${contactInfo.email}`}
-                className="text-foreground hover:text-primary transition-colors font-medium"
-              >
-                {contactInfo.email}
-              </a>
+            <div className="flex items-center gap-4 group">
+              <div className="w-11 h-11 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-primary group-hover:border-primary/50 group-hover:bg-primary/10 transition-colors flex-shrink-0">
+                <Mail className="w-5 h-5" />
+              </div>
+              <div className="flex flex-col min-w-0">
+                <span className="text-xs uppercase tracking-widest text-muted font-semibold mb-0.5">
+                  Email Us
+                </span>
+                <a
+                  href={`mailto:${contactInfo.email}`}
+                  className="text-foreground hover:text-primary transition-colors font-medium text-sm sm:text-base break-all"
+                >
+                  {contactInfo.email}
+                </a>
+              </div>
             </div>
-            <div className="flex flex-col">
-              <span className="text-xs uppercase tracking-widest text-muted font-semibold mb-1">
-                Call Us
-              </span>
-              <a
-                href={`tel:${contactInfo.phone}`}
-                className="text-foreground hover:text-primary transition-colors font-medium"
-              >
-                {contactInfo.phone}
-              </a>
+
+            <div className="flex items-center gap-4 group">
+              <div className="w-11 h-11 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-primary group-hover:border-primary/50 group-hover:bg-primary/10 transition-colors flex-shrink-0">
+                <Phone className="w-5 h-5" />
+              </div>
+              <div className="flex flex-col min-w-0">
+                <span className="text-xs uppercase tracking-widest text-muted font-semibold mb-0.5">
+                  Call Us
+                </span>
+                <a
+                  href={`tel:${contactInfo.phone}`}
+                  className="text-foreground hover:text-primary transition-colors font-medium text-sm sm:text-base"
+                >
+                  {contactInfo.phone}
+                </a>
+              </div>
             </div>
           </motion.div>
         </motion.div>
 
-        {/* Right Form */}
+        {/* Right Column: Inquiry Form */}
         <motion.div
+          id="contact-form"
           variants={fadeInRight}
           initial="hidden"
           animate="visible"
-          className="flex flex-col h-full h-auto w-full"
+          className="lg:col-span-7 flex flex-col h-full w-full scroll-mt-28"
         >
           <div className="mb-8 border-b border-white/10 pb-6">
-            <h2 className="text-3xl font-bold tracking-tight text-foreground">
-              Contact Us
+            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-foreground">
+              Tell Us About Your Project
             </h2>
-            <p className="text-muted mt-2">
-              Ready to launch? Tell us about your project.
+            <p className="text-muted mt-2 text-sm sm:text-base">
+              Fill out the details below and we&apos;ll be in touch.
             </p>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-6">
-            <motion.div variants={fadeInUp}>
-              <label
-                htmlFor="name"
-                className="block text-xs font-semibold tracking-wider uppercase text-muted mb-2"
-              >
-                Name
-              </label>
-              <input
-                type="text"
-                id="name"
-                value={formData.name}
-                onChange={(e) =>
-                  setFormData((prev) => ({ ...prev, name: e.target.value }))
-                }
-                required
-                placeholder="Your full name"
-                className="w-full px-4 py-3 rounded-lg border border-border bg-card-bg/60 text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/10 transition-all duration-300"
-              />
-            </motion.div>
+            <div className="grid sm:grid-cols-2 gap-6">
+              {/* Name */}
+              <motion.div variants={fadeInUp}>
+                <label
+                  htmlFor="name"
+                  className="block text-xs font-semibold tracking-wider uppercase text-muted mb-2"
+                >
+                  Name <span className="text-primary">*</span>
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                  placeholder="Your full name"
+                  className="w-full px-4 py-3 rounded-lg border border-border bg-card-bg/60 text-sm text-foreground placeholder:text-muted/50 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-300"
+                />
+              </motion.div>
 
-            <motion.div variants={fadeInUp}>
-              <label
-                htmlFor="email"
-                className="block text-xs font-semibold tracking-wider uppercase text-muted mb-2"
-              >
-                Email
-              </label>
-              <input
-                type="email"
-                id="email"
-                value={formData.email}
-                onChange={(e) =>
-                  setFormData((prev) => ({ ...prev, email: e.target.value }))
-                }
-                required
-                placeholder="your@email.com"
-                className="w-full px-4 py-3 rounded-lg border border-border bg-card-bg/60 text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/10 transition-all duration-300"
-              />
-            </motion.div>
+              {/* Company */}
+              <motion.div variants={fadeInUp}>
+                <label
+                  htmlFor="company"
+                  className="block text-xs font-semibold tracking-wider uppercase text-muted mb-2"
+                >
+                  Business / Company{" "}
+                  <span className="normal-case font-normal text-muted/60">
+                    (optional)
+                  </span>
+                </label>
+                <input
+                  type="text"
+                  id="company"
+                  name="company"
+                  value={formData.company}
+                  onChange={handleChange}
+                  placeholder="Company name"
+                  className="w-full px-4 py-3 rounded-lg border border-border bg-card-bg/60 text-sm text-foreground placeholder:text-muted/50 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-300"
+                />
+              </motion.div>
+            </div>
 
-            <motion.div variants={fadeInUp}>
-              <label
-                htmlFor="phone"
-                className="block text-xs font-semibold tracking-wider uppercase text-muted mb-2"
-              >
-                Phone <span className="normal-case font-normal">(optional)</span>
-              </label>
-              <input
-                type="tel"
-                id="phone"
-                value={formData.phone}
-                onChange={(e) =>
-                  setFormData((prev) => ({ ...prev, phone: e.target.value }))
-                }
-                placeholder="(555) 123-4567"
-                className="w-full px-4 py-3 rounded-lg border border-border bg-card-bg/60 text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/10 transition-all duration-300"
-              />
-            </motion.div>
+            <div className="grid sm:grid-cols-2 gap-6">
+              {/* Email */}
+              <motion.div variants={fadeInUp}>
+                <label
+                  htmlFor="email"
+                  className="block text-xs font-semibold tracking-wider uppercase text-muted mb-2"
+                >
+                  Email <span className="text-primary">*</span>
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                  placeholder="your@email.com"
+                  className="w-full px-4 py-3 rounded-lg border border-border bg-card-bg/60 text-sm text-foreground placeholder:text-muted/50 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-300"
+                />
+              </motion.div>
 
+              {/* Phone */}
+              <motion.div variants={fadeInUp}>
+                <label
+                  htmlFor="phone"
+                  className="block text-xs font-semibold tracking-wider uppercase text-muted mb-2"
+                >
+                  Phone{" "}
+                  <span className="normal-case font-normal text-muted/60">
+                    (optional)
+                  </span>
+                </label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  placeholder="(555) 123-4567"
+                  className="w-full px-4 py-3 rounded-lg border border-border bg-card-bg/60 text-sm text-foreground placeholder:text-muted/50 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-300"
+                />
+              </motion.div>
+            </div>
+
+            <div className="grid sm:grid-cols-2 gap-6">
+              {/* Service Interested In */}
+              <motion.div variants={fadeInUp}>
+                <label
+                  htmlFor="service"
+                  className="block text-xs font-semibold tracking-wider uppercase text-muted mb-2"
+                >
+                  Service Interested In <span className="text-primary">*</span>
+                </label>
+                <div className="relative">
+                  <select
+                    id="service"
+                    name="service"
+                    value={formData.service}
+                    onChange={handleChange}
+                    required
+                    className={`w-full appearance-none px-4 py-3 pr-10 rounded-lg border border-border bg-card-bg/60 text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-300 cursor-pointer ${
+                      formData.service ? "text-foreground" : "text-muted/60"
+                    }`}
+                  >
+                    <option value="" disabled className="bg-[#121212] text-muted">
+                      Select a service...
+                    </option>
+                    {SERVICE_OPTIONS.map((service) => (
+                      <option
+                        key={service}
+                        value={service}
+                        className="bg-[#121212] text-foreground"
+                      >
+                        {service}
+                      </option>
+                    ))}
+                  </select>
+                  <ChevronDown className="absolute right-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-muted pointer-events-none" />
+                </div>
+              </motion.div>
+
+              {/* Budget */}
+              <motion.div variants={fadeInUp}>
+                <label
+                  htmlFor="budget"
+                  className="block text-xs font-semibold tracking-wider uppercase text-muted mb-2"
+                >
+                  Project Budget{" "}
+                  <span className="normal-case font-normal text-muted/60">
+                    (optional)
+                  </span>
+                </label>
+                <div className="relative">
+                  <select
+                    id="budget"
+                    name="budget"
+                    value={formData.budget}
+                    onChange={handleChange}
+                    className={`w-full appearance-none px-4 py-3 pr-10 rounded-lg border border-border bg-card-bg/60 text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-300 cursor-pointer ${
+                      formData.budget ? "text-foreground" : "text-muted/60"
+                    }`}
+                  >
+                    <option value="" className="bg-[#121212] text-muted">
+                      Select budget range (optional)...
+                    </option>
+                    {BUDGET_OPTIONS.map((budget) => (
+                      <option
+                        key={budget}
+                        value={budget}
+                        className="bg-[#121212] text-foreground"
+                      >
+                        {budget}
+                      </option>
+                    ))}
+                  </select>
+                  <ChevronDown className="absolute right-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-muted pointer-events-none" />
+                </div>
+              </motion.div>
+            </div>
+
+            {/* Message */}
             <motion.div variants={fadeInUp}>
               <label
                 htmlFor="message"
                 className="block text-xs font-semibold tracking-wider uppercase text-muted mb-2"
               >
-                Message
+                Tell Us About Your Project <span className="text-primary">*</span>
               </label>
               <textarea
                 id="message"
+                name="message"
                 rows={5}
                 value={formData.message}
-                onChange={(e) =>
-                  setFormData((prev) => ({ ...prev, message: e.target.value }))
-                }
+                onChange={handleChange}
                 required
-                placeholder="Tell us about your project..."
-                className="w-full px-4 py-3 rounded-lg border border-border bg-card-bg/60 text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/10 transition-all duration-300 resize-none"
+                placeholder="Tell us about your project goals, timeline, and requirements..."
+                className="w-full px-4 py-3 rounded-lg border border-border bg-card-bg/60 text-sm text-foreground placeholder:text-muted/50 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-300 resize-none"
               />
             </motion.div>
 
+            {/* Submit Button */}
             <motion.div variants={fadeInUp}>
               <Button
                 type="submit"
                 variant="primary"
                 size="lg"
-                className="w-full sm:w-auto"
+                className="w-full sm:w-auto min-w-[180px]"
                 disabled={isSubmitting}
               >
                 {isSubmitting ? (
-                  <span className="flex items-center gap-2">
+                  <span className="flex items-center justify-center gap-2">
                     <svg className="animate-spin w-4 h-4" viewBox="0 0 24 24">
                       <circle
                         cx="12"
@@ -243,19 +416,15 @@ export default function ContactForm() {
                     Sending...
                   </span>
                 ) : (
-                  "Submit"
+                  <span className="flex items-center justify-center gap-2">
+                    Send Message
+                    <ArrowRight className="w-4 h-4" />
+                  </span>
                 )}
               </Button>
             </motion.div>
           </form>
         </motion.div>
-      </div>
-      <div className="mt-16 text-center">
-        <p className="text-sm font-medium text-muted">
-          Partner with a trusted web development company that puts your growth
-          first. Experience the difference of dedicated WordPress development
-          and expert SEO services designed to scale your business.
-        </p>
       </div>
     </div>
   );
