@@ -215,6 +215,8 @@ export default function ContactForm() {
                   type="text"
                   id="name"
                   name="name"
+                  autoComplete="name"
+                  aria-required="true"
                   value={formData.name}
                   onChange={handleChange}
                   required
@@ -238,6 +240,7 @@ export default function ContactForm() {
                   type="text"
                   id="company"
                   name="company"
+                  autoComplete="organization"
                   value={formData.company}
                   onChange={handleChange}
                   placeholder="Company name"
@@ -259,6 +262,8 @@ export default function ContactForm() {
                   type="email"
                   id="email"
                   name="email"
+                  autoComplete="email"
+                  aria-required="true"
                   value={formData.email}
                   onChange={handleChange}
                   required
@@ -282,6 +287,7 @@ export default function ContactForm() {
                   type="tel"
                   id="phone"
                   name="phone"
+                  autoComplete="tel"
                   value={formData.phone}
                   onChange={handleChange}
                   placeholder="(555) 123-4567"
@@ -303,6 +309,7 @@ export default function ContactForm() {
                   <select
                     id="service"
                     name="service"
+                    aria-required="true"
                     value={formData.service}
                     onChange={handleChange}
                     required
@@ -378,6 +385,7 @@ export default function ContactForm() {
                 id="message"
                 name="message"
                 rows={5}
+                aria-required="true"
                 value={formData.message}
                 onChange={handleChange}
                 required

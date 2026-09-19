@@ -1,4 +1,4 @@
-import { emailLayout } from "@/lib/email/layout";
+import { emailLayout, escapeHtml } from "@/lib/email/layout";
 import { contactInfo } from "@/lib/data";
 
 export type UserEmailPayload = {
@@ -10,15 +10,19 @@ export type UserEmailPayload = {
 export function userContactEmail(payload: UserEmailPayload): string {
   const { name, message, service } = payload;
 
+  const safeName = escapeHtml(name);
+  const safeService = service ? escapeHtml(service) : undefined;
+  const safeMessage = escapeHtml(message).replace(/\n/g, "<br>");
+
   const content = `
-    <h2>Thanks for reaching out, ${name}!</h2>
-    <p>We received your ${service ? `inquiry regarding <strong>${service}</strong>` : "message"} and appreciate you taking the time to contact us. Our team will review your details and get back to you as soon as possible.</p>
+    <h2>Thanks for reaching out, ${safeName}!</h2>
+    <p>We received your ${safeService ? `inquiry regarding <strong>${safeService}</strong>` : "message"} and appreciate you taking the time to contact us. Our team will review your details and get back to you as soon as possible.</p>
 
     <div class="divider"></div>
 
     <h3 style="margin-top: 25px; margin-bottom: 15px; font-size: 16px; color: #1f2937;">Your Inquiry / Message:</h3>
     <div class="info-box">
-      <p>${message.replace(/\n/g, "<br>")}</p>
+      <p>${safeMessage}</p>
     </div>
 
     <div class="divider"></div>
@@ -37,7 +41,7 @@ export function userContactEmail(payload: UserEmailPayload): string {
 
   return emailLayout({
     title: "We Received Your Inquiry",
-    preheader: service ? `Thank you for your inquiry about ${service}` : "Thank you for contacting us",
+    preheader: safeService ? `Thank you for your inquiry about ${safeService}` : "Thank you for contacting us",
     children: content,
   });
 }
