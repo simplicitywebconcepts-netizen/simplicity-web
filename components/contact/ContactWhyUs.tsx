@@ -62,13 +62,22 @@ export default function ContactWhyUs() {
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* Header */}
         <AnimatedSection className="text-center mb-14 md:mb-18">
-          <SectionLabel label="Why Us" className="justify-center" />
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mt-4">
-            Why Work With <span className="gradient-text">Simplicity Web?</span>
-          </h2>
-          <p className="text-muted mt-4 max-w-2xl mx-auto text-base md:text-lg leading-relaxed">
-            A dedicated partner focused on building digital solutions that generate real business growth.
-          </p>
+          <div className="relative inline-block max-w-2xl mx-auto px-6 sm:px-8 py-5 sm:py-6 rounded-2xl">
+            <div
+              className="absolute inset-0 -z-10 bg-black/50 backdrop-blur-sm rounded-2xl border border-white/10"
+              aria-hidden="true"
+            />
+            <SectionLabel label="Why Us" className="justify-center" />
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mt-4">
+              Why Work With{" "}
+              <span className="bg-[linear-gradient(135deg,#7B2FF7_0%,#3E5FE5_50%,#0EA5E9_100%)] bg-clip-text text-transparent [filter:drop-shadow(0_2px_14px_rgba(0,0,0,0.65))]">
+                Simplicity Web?
+              </span>
+            </h2>
+            <p className="text-muted mt-4 max-w-xl mx-auto text-base md:text-lg leading-relaxed">
+              A dedicated partner focused on building digital solutions that generate real business growth.
+            </p>
+          </div>
         </AnimatedSection>
 
         {/* 4 Trust Points 4-Column Responsive Grid */}
@@ -91,7 +100,7 @@ export default function ContactWhyUs() {
                   boxShadow: "0 20px 40px rgba(124, 58, 237, 0.12)",
                 }}
                 transition={{ duration: 0.3 }}
-                className="glass border border-card-border rounded-xl p-7 hover:border-primary/50 transition-all duration-300 group flex flex-col h-full relative overflow-hidden"
+                className="glass border border-white/15 rounded-xl p-7 hover:border-primary/50 transition-all duration-300 group flex flex-col h-full relative overflow-hidden"
               >
                 {/* Icon Badge with Hover Glow */}
                 <div className="w-12 h-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white group-hover:shadow-[0_0_20px_rgba(124,58,237,0.4)] transition-all duration-300 mb-5 shrink-0">

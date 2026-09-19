@@ -30,7 +30,7 @@ export default function ContactClosingCta() {
 
       <div className="max-w-5xl mx-auto px-6 relative z-10">
         <AnimatedSection className="text-center">
-          <div className="glass relative rounded-3xl p-10 sm:p-14 md:p-16 lg:p-20 border border-card-border hover:border-primary/40 transition-all duration-500 overflow-hidden shadow-2xl">
+          <div className="glass relative rounded-3xl p-10 sm:p-14 md:p-16 lg:p-20 border border-white/15 hover:border-primary/40 transition-all duration-500 overflow-hidden shadow-2xl">
             {/* Subtle inner top glow accent */}
             <div
               className="absolute -top-24 left-1/2 -translate-x-1/2 w-96 h-48 bg-primary/20 blur-[80px] rounded-full pointer-events-none"
@@ -41,7 +41,10 @@ export default function ContactClosingCta() {
               <SectionLabel label="LET'S TALK" className="justify-center mb-6" />
 
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-foreground mb-6">
-                Ready to Build? <span className="gradient-text">Let&apos;s Talk</span>
+                Ready to Build?{" "}
+                <span className="bg-[linear-gradient(135deg,#7B2FF7_0%,#3E5FE5_50%,#0EA5E9_100%)] bg-clip-text text-transparent [filter:drop-shadow(0_2px_14px_rgba(0,0,0,0.65))]">
+                  Let&apos;s Talk
+                </span>
               </h2>
 
               <p className="text-base sm:text-lg text-muted max-w-2xl mx-auto mb-10 leading-relaxed">

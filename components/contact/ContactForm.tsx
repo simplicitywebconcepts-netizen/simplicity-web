@@ -112,7 +112,12 @@ export default function ContactForm() {
           animate="visible"
           className="lg:col-span-5 flex flex-col justify-between h-full"
         >
-          <div>
+          <div className="relative p-6 sm:p-7 -m-6 sm:-m-7 rounded-2xl">
+            <div
+              className="absolute inset-0 -z-10 bg-black/50 backdrop-blur-sm rounded-2xl border border-white/10"
+              aria-hidden="true"
+            />
+
             <motion.div variants={fadeInUp}>
               <SectionLabel label="LET'S CONNECT" />
             </motion.div>
@@ -122,7 +127,9 @@ export default function ContactForm() {
               className="text-4xl sm:text-5xl font-bold tracking-tight mt-4 leading-[1.15] text-foreground"
             >
               Let&apos;s Build Something{" "}
-              <span className="gradient-text">Great Together</span>
+              <span className="bg-[linear-gradient(135deg,#7B2FF7_0%,#3E5FE5_50%,#0EA5E9_100%)] bg-clip-text text-transparent [filter:drop-shadow(0_2px_14px_rgba(0,0,0,0.65))]">
+                Great Together
+              </span>
             </motion.h1>
 
             <motion.p
@@ -146,10 +153,10 @@ export default function ContactForm() {
 
           <motion.div
             variants={fadeInUp}
-            className="mt-12 pt-8 border-t border-white/10 space-y-6"
+            className="mt-12 pt-8 border-t border-white/15 space-y-6"
           >
             <div className="flex items-center gap-4 group">
-              <div className="w-11 h-11 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-primary group-hover:border-primary/50 group-hover:bg-primary/10 transition-colors flex-shrink-0">
+              <div className="w-11 h-11 rounded-lg bg-white/5 border border-white/15 flex items-center justify-center text-primary group-hover:border-primary/50 group-hover:bg-primary/10 transition-colors flex-shrink-0">
                 <Mail className="w-5 h-5" />
               </div>
               <div className="flex flex-col min-w-0">
@@ -166,7 +173,7 @@ export default function ContactForm() {
             </div>
 
             <div className="flex items-center gap-4 group">
-              <div className="w-11 h-11 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-primary group-hover:border-primary/50 group-hover:bg-primary/10 transition-colors flex-shrink-0">
+              <div className="w-11 h-11 rounded-lg bg-white/5 border border-white/15 flex items-center justify-center text-primary group-hover:border-primary/50 group-hover:bg-primary/10 transition-colors flex-shrink-0">
                 <Phone className="w-5 h-5" />
               </div>
               <div className="flex flex-col min-w-0">
@@ -192,7 +199,7 @@ export default function ContactForm() {
           animate="visible"
           className="lg:col-span-7 flex flex-col h-full w-full scroll-mt-28"
         >
-          <div className="mb-8 border-b border-white/10 pb-6">
+          <div className="mb-8 border-b border-white/15 pb-6">
             <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-foreground">
               Tell Us About Your Project
             </h2>
@@ -205,12 +212,14 @@ export default function ContactForm() {
             <div className="grid sm:grid-cols-2 gap-6">
               {/* Name */}
               <motion.div variants={fadeInUp}>
-                <label
-                  htmlFor="name"
-                  className="block text-xs font-semibold tracking-wider uppercase text-muted mb-2"
-                >
-                  Name <span className="text-primary">*</span>
-                </label>
+                <div className="flex items-center justify-between mb-1.5 min-h-[18px]">
+                  <label
+                    htmlFor="name"
+                    className="text-xs font-semibold tracking-wider uppercase"
+                  >
+                    Name <span className="text-primary">*</span>
+                  </label>
+                </div>
                 <input
                   type="text"
                   id="name"
@@ -221,21 +230,23 @@ export default function ContactForm() {
                   onChange={handleChange}
                   required
                   placeholder="Your full name"
-                  className="w-full px-4 py-3 rounded-lg border border-border bg-card-bg/60 text-sm text-foreground placeholder:text-muted/50 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-300"
+                  className="w-full px-4 py-3 rounded-lg border border-white/15 bg-card-bg/60 text-sm text-foreground placeholder:text-[#6E6B7A] focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-300"
                 />
               </motion.div>
 
               {/* Company */}
               <motion.div variants={fadeInUp}>
-                <label
-                  htmlFor="company"
-                  className="block text-xs font-semibold tracking-wider uppercase text-muted mb-2"
-                >
-                  Business / Company{" "}
-                  <span className="normal-case font-normal text-muted/60">
+                <div className="flex items-center justify-between mb-1.5 min-h-[18px]">
+                  <label
+                    htmlFor="company"
+                    className="text-xs font-semibold tracking-wider uppercase"
+                  >
+                    Business / Company
+                  </label>
+                  <span className="text-[11px] text-muted/70 font-normal normal-case">
                     (optional)
                   </span>
-                </label>
+                </div>
                 <input
                   type="text"
                   id="company"
@@ -244,7 +255,7 @@ export default function ContactForm() {
                   value={formData.company}
                   onChange={handleChange}
                   placeholder="Company name"
-                  className="w-full px-4 py-3 rounded-lg border border-border bg-card-bg/60 text-sm text-foreground placeholder:text-muted/50 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-300"
+                  className="w-full px-4 py-3 rounded-lg border border-white/15 bg-card-bg/60 text-sm text-foreground placeholder:text-[#6E6B7A] focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-300"
                 />
               </motion.div>
             </div>
@@ -252,12 +263,14 @@ export default function ContactForm() {
             <div className="grid sm:grid-cols-2 gap-6">
               {/* Email */}
               <motion.div variants={fadeInUp}>
-                <label
-                  htmlFor="email"
-                  className="block text-xs font-semibold tracking-wider uppercase text-muted mb-2"
-                >
-                  Email <span className="text-primary">*</span>
-                </label>
+                <div className="flex items-center justify-between mb-1.5 min-h-[18px]">
+                  <label
+                    htmlFor="email"
+                    className="text-xs font-semibold tracking-wider uppercase"
+                  >
+                    Email <span className="text-primary">*</span>
+                  </label>
+                </div>
                 <input
                   type="email"
                   id="email"
@@ -268,21 +281,23 @@ export default function ContactForm() {
                   onChange={handleChange}
                   required
                   placeholder="your@email.com"
-                  className="w-full px-4 py-3 rounded-lg border border-border bg-card-bg/60 text-sm text-foreground placeholder:text-muted/50 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-300"
+                  className="w-full px-4 py-3 rounded-lg border border-white/15 bg-card-bg/60 text-sm text-foreground placeholder:text-[#6E6B7A] focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-300"
                 />
               </motion.div>
 
               {/* Phone */}
               <motion.div variants={fadeInUp}>
-                <label
-                  htmlFor="phone"
-                  className="block text-xs font-semibold tracking-wider uppercase text-muted mb-2"
-                >
-                  Phone{" "}
-                  <span className="normal-case font-normal text-muted/60">
+                <div className="flex items-center justify-between mb-1.5 min-h-[18px]">
+                  <label
+                    htmlFor="phone"
+                    className="text-xs font-semibold tracking-wider uppercase"
+                  >
+                    Phone
+                  </label>
+                  <span className="text-[11px] text-muted/70 font-normal normal-case">
                     (optional)
                   </span>
-                </label>
+                </div>
                 <input
                   type="tel"
                   id="phone"
@@ -291,7 +306,7 @@ export default function ContactForm() {
                   value={formData.phone}
                   onChange={handleChange}
                   placeholder="(555) 123-4567"
-                  className="w-full px-4 py-3 rounded-lg border border-border bg-card-bg/60 text-sm text-foreground placeholder:text-muted/50 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-300"
+                  className="w-full px-4 py-3 rounded-lg border border-white/15 bg-card-bg/60 text-sm text-foreground placeholder:text-[#6E6B7A] focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-300"
                 />
               </motion.div>
             </div>
@@ -299,12 +314,14 @@ export default function ContactForm() {
             <div className="grid sm:grid-cols-2 gap-6">
               {/* Service Interested In */}
               <motion.div variants={fadeInUp}>
-                <label
-                  htmlFor="service"
-                  className="block text-xs font-semibold tracking-wider uppercase text-muted mb-2"
-                >
-                  Service Interested In <span className="text-primary">*</span>
-                </label>
+                <div className="flex items-center justify-between mb-1.5 min-h-[18px]">
+                  <label
+                    htmlFor="service"
+                    className="text-xs font-semibold tracking-wider uppercase"
+                  >
+                    Service Interested In <span className="text-primary">*</span>
+                  </label>
+                </div>
                 <div className="relative">
                   <select
                     id="service"
@@ -313,11 +330,11 @@ export default function ContactForm() {
                     value={formData.service}
                     onChange={handleChange}
                     required
-                    className={`w-full appearance-none px-4 py-3 pr-10 rounded-lg border border-border bg-card-bg/60 text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-300 cursor-pointer ${
-                      formData.service ? "text-foreground" : "text-muted/60"
+                    className={`w-full appearance-none px-4 py-3 pr-10 rounded-lg border border-white/15 bg-card-bg/60 text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-300 cursor-pointer ${
+                      formData.service ? "text-foreground" : "text-[#6E6B7A]"
                     }`}
                   >
-                    <option value="" disabled className="bg-[#121212] text-muted">
+                    <option value="" disabled className="bg-[#121212] text-[#6E6B7A]">
                       Select a service...
                     </option>
                     {SERVICE_OPTIONS.map((service) => (
@@ -330,32 +347,34 @@ export default function ContactForm() {
                       </option>
                     ))}
                   </select>
-                  <ChevronDown className="absolute right-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-muted pointer-events-none" />
+                  <ChevronDown className="absolute right-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-[#6E6B7A] pointer-events-none" />
                 </div>
               </motion.div>
 
               {/* Budget */}
               <motion.div variants={fadeInUp}>
-                <label
-                  htmlFor="budget"
-                  className="block text-xs font-semibold tracking-wider uppercase text-muted mb-2"
-                >
-                  Project Budget{" "}
-                  <span className="normal-case font-normal text-muted/60">
+                <div className="flex items-center justify-between mb-1.5 min-h-[18px]">
+                  <label
+                    htmlFor="budget"
+                    className="text-xs font-semibold tracking-wider uppercase"
+                  >
+                    Project Budget
+                  </label>
+                  <span className="text-[11px] text-muted/70 font-normal normal-case">
                     (optional)
                   </span>
-                </label>
+                </div>
                 <div className="relative">
                   <select
                     id="budget"
                     name="budget"
                     value={formData.budget}
                     onChange={handleChange}
-                    className={`w-full appearance-none px-4 py-3 pr-10 rounded-lg border border-border bg-card-bg/60 text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-300 cursor-pointer ${
-                      formData.budget ? "text-foreground" : "text-muted/60"
+                    className={`w-full appearance-none px-4 py-3 pr-10 rounded-lg border border-white/15 bg-card-bg/60 text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-300 cursor-pointer ${
+                      formData.budget ? "text-foreground" : "text-[#6E6B7A]"
                     }`}
                   >
-                    <option value="" className="bg-[#121212] text-muted">
+                    <option value="" className="bg-[#121212] text-[#6E6B7A]">
                       Select budget range (optional)...
                     </option>
                     {BUDGET_OPTIONS.map((budget) => (
@@ -368,19 +387,21 @@ export default function ContactForm() {
                       </option>
                     ))}
                   </select>
-                  <ChevronDown className="absolute right-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-muted pointer-events-none" />
+                  <ChevronDown className="absolute right-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-[#6E6B7A] pointer-events-none" />
                 </div>
               </motion.div>
             </div>
 
             {/* Message */}
             <motion.div variants={fadeInUp}>
-              <label
-                htmlFor="message"
-                className="block text-xs font-semibold tracking-wider uppercase text-muted mb-2"
-              >
-                Tell Us About Your Project <span className="text-primary">*</span>
-              </label>
+              <div className="flex items-center justify-between mb-1.5 min-h-[18px]">
+                <label
+                  htmlFor="message"
+                  className="text-xs font-semibold tracking-wider uppercase"
+                >
+                  Tell Us About Your Project <span className="text-primary">*</span>
+                </label>
+              </div>
               <textarea
                 id="message"
                 name="message"
@@ -390,7 +411,7 @@ export default function ContactForm() {
                 onChange={handleChange}
                 required
                 placeholder="Tell us about your project goals, timeline, and requirements..."
-                className="w-full px-4 py-3 rounded-lg border border-border bg-card-bg/60 text-sm text-foreground placeholder:text-muted/50 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-300 resize-none"
+                className="w-full px-4 py-3 rounded-lg border border-white/15 bg-card-bg/60 text-sm text-foreground placeholder:text-[#6E6B7A] focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-300 resize-none"
               />
             </motion.div>
 

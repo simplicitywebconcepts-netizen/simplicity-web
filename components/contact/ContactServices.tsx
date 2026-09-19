@@ -87,13 +87,22 @@ export default function ContactServices() {
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* Header */}
         <AnimatedSection className="text-center mb-14 md:mb-18">
-          <SectionLabel label="Capabilities" className="justify-center" />
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mt-4">
-            How Can We <span className="gradient-text">Help?</span>
-          </h2>
-          <p className="text-muted mt-4 max-w-2xl mx-auto text-base md:text-lg leading-relaxed">
-            Explore our core capabilities to see how we can elevate your digital presence.
-          </p>
+          <div className="relative inline-block max-w-2xl mx-auto px-6 sm:px-8 py-5 sm:py-6 rounded-2xl">
+            <div
+              className="absolute inset-0 -z-10 bg-black/50 backdrop-blur-sm rounded-2xl border border-white/10"
+              aria-hidden="true"
+            />
+            <SectionLabel label="Capabilities" className="justify-center" />
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mt-4">
+              How Can We{" "}
+              <span className="bg-[linear-gradient(135deg,#7B2FF7_0%,#3E5FE5_50%,#0EA5E9_100%)] bg-clip-text text-transparent [filter:drop-shadow(0_2px_14px_rgba(0,0,0,0.65))]">
+                Help?
+              </span>
+            </h2>
+            <p className="text-muted mt-4 max-w-xl mx-auto text-base md:text-lg leading-relaxed">
+              Explore our core capabilities to see how we can elevate your digital presence.
+            </p>
+          </div>
         </AnimatedSection>
 
         {/* 6 Services Responsive Grid */}
@@ -120,7 +129,7 @@ export default function ContactServices() {
                     boxShadow: "0 20px 40px rgba(124, 58, 237, 0.12)",
                   }}
                   transition={{ duration: 0.3 }}
-                  className="glass border border-card-border rounded-xl p-7 hover:border-primary/50 transition-all duration-300 group flex flex-col h-full cursor-pointer relative overflow-hidden"
+                  className="glass border border-white/15 rounded-xl p-7 hover:border-primary/50 transition-all duration-300 group flex flex-col h-full cursor-pointer relative overflow-hidden"
                 >
                   {/* Card Header with Icon & Indicator */}
                   <div className="flex items-center justify-between mb-5">
@@ -128,7 +137,7 @@ export default function ContactServices() {
                       <Icon className="w-6 h-6" />
                     </div>
                     <div
-                      className="w-8 h-8 rounded-lg bg-card-bg/60 border border-card-border flex items-center justify-center text-muted group-hover:text-primary group-hover:border-primary/40 transition-all duration-300"
+                      className="w-8 h-8 rounded-lg bg-card-bg/60 border border-white/15 flex items-center justify-center text-gray-300 group-hover:text-primary group-hover:border-primary/40 transition-all duration-300"
                       aria-hidden="true"
                     >
                       <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -144,9 +153,9 @@ export default function ContactServices() {
                   </p>
 
                   {/* Footer Link Indicator */}
-                  <div className="flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-primary/80 group-hover:text-primary transition-colors duration-200 pt-4 border-t border-card-border/60">
+                  <div className="flex items-center gap-1.5 text-[13px] font-semibold uppercase tracking-wider text-gray-300 group-hover:text-primary transition-colors duration-200 pt-4 border-t border-white/10">
                     <span>Learn more</span>
-                    <ArrowUpRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                    <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                   </div>
                 </motion.div>
               </Link>
