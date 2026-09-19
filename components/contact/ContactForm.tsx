@@ -156,7 +156,7 @@ export default function ContactForm() {
             className="mt-12 pt-8 border-t border-white/15 space-y-6"
           >
             <div className="flex items-center gap-4 group">
-              <div className="w-11 h-11 rounded-lg bg-white/5 border border-white/15 flex items-center justify-center text-primary group-hover:border-primary/50 group-hover:bg-primary/10 transition-colors flex-shrink-0">
+              <div className="w-11 h-11 rounded-lg bg-white/5 border border-white/15 flex items-center justify-center text-[#3E5FE5] group-hover:border-[#3E5FE5]/50 group-hover:bg-[#3E5FE5]/10 transition-colors flex-shrink-0">
                 <Mail className="w-5 h-5" />
               </div>
               <div className="flex flex-col min-w-0">
@@ -165,7 +165,7 @@ export default function ContactForm() {
                 </span>
                 <a
                   href={`mailto:${contactInfo.email}`}
-                  className="text-foreground hover:text-primary transition-colors font-medium text-sm sm:text-base break-all"
+                  className="text-foreground hover:text-[#3E5FE5] transition-colors font-medium text-sm sm:text-base break-all"
                 >
                   {contactInfo.email}
                 </a>
@@ -173,7 +173,7 @@ export default function ContactForm() {
             </div>
 
             <div className="flex items-center gap-4 group">
-              <div className="w-11 h-11 rounded-lg bg-white/5 border border-white/15 flex items-center justify-center text-primary group-hover:border-primary/50 group-hover:bg-primary/10 transition-colors flex-shrink-0">
+              <div className="w-11 h-11 rounded-lg bg-white/5 border border-white/15 flex items-center justify-center text-[#3E5FE5] group-hover:border-[#3E5FE5]/50 group-hover:bg-[#3E5FE5]/10 transition-colors flex-shrink-0">
                 <Phone className="w-5 h-5" />
               </div>
               <div className="flex flex-col min-w-0">
@@ -182,7 +182,7 @@ export default function ContactForm() {
                 </span>
                 <a
                   href={`tel:${contactInfo.phone}`}
-                  className="text-foreground hover:text-primary transition-colors font-medium text-sm sm:text-base"
+                  className="text-foreground hover:text-[#3E5FE5] transition-colors font-medium text-sm sm:text-base"
                 >
                   {contactInfo.phone}
                 </a>
@@ -230,7 +230,7 @@ export default function ContactForm() {
                   onChange={handleChange}
                   required
                   placeholder="Your full name"
-                  className="w-full px-4 py-3 rounded-lg border border-white/15 bg-card-bg/60 text-sm text-foreground placeholder:text-[#6E6B7A] focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-300"
+                  className="w-full px-4 py-3 rounded-lg border border-white/15 bg-card-bg/60 text-sm text-foreground placeholder:text-[#6E6B7A] focus:outline-none focus:border-[#7B2FF7] focus:ring-2 focus:ring-[#7B2FF7]/20 transition-all duration-300"
                 />
               </motion.div>
 
@@ -255,7 +255,7 @@ export default function ContactForm() {
                   value={formData.company}
                   onChange={handleChange}
                   placeholder="Company name"
-                  className="w-full px-4 py-3 rounded-lg border border-white/15 bg-card-bg/60 text-sm text-foreground placeholder:text-[#6E6B7A] focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-300"
+                  className="w-full px-4 py-3 rounded-lg border border-white/15 bg-card-bg/60 text-sm text-foreground placeholder:text-[#6E6B7A] focus:outline-none focus:border-[#7B2FF7] focus:ring-2 focus:ring-[#7B2FF7]/20 transition-all duration-300"
                 />
               </motion.div>
             </div>
@@ -281,7 +281,7 @@ export default function ContactForm() {
                   onChange={handleChange}
                   required
                   placeholder="your@email.com"
-                  className="w-full px-4 py-3 rounded-lg border border-white/15 bg-card-bg/60 text-sm text-foreground placeholder:text-[#6E6B7A] focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-300"
+                  className="w-full px-4 py-3 rounded-lg border border-white/15 bg-card-bg/60 text-sm text-foreground placeholder:text-[#6E6B7A] focus:outline-none focus:border-[#7B2FF7] focus:ring-2 focus:ring-[#7B2FF7]/20 transition-all duration-300"
                 />
               </motion.div>
 
@@ -306,7 +306,7 @@ export default function ContactForm() {
                   value={formData.phone}
                   onChange={handleChange}
                   placeholder="(555) 123-4567"
-                  className="w-full px-4 py-3 rounded-lg border border-white/15 bg-card-bg/60 text-sm text-foreground placeholder:text-[#6E6B7A] focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-300"
+                  className="w-full px-4 py-3 rounded-lg border border-white/15 bg-card-bg/60 text-sm text-foreground placeholder:text-[#6E6B7A] focus:outline-none focus:border-[#7B2FF7] focus:ring-2 focus:ring-[#7B2FF7]/20 transition-all duration-300"
                 />
               </motion.div>
             </div>
@@ -330,7 +330,7 @@ export default function ContactForm() {
                     value={formData.service}
                     onChange={handleChange}
                     required
-                    className={`w-full appearance-none px-4 py-3 pr-10 rounded-lg border border-white/15 bg-card-bg/60 text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-300 cursor-pointer ${
+                    className={`w-full appearance-none px-4 py-3 pr-10 rounded-lg border border-white/15 bg-card-bg/60 text-sm focus:outline-none focus:border-[#7B2FF7] focus:ring-2 focus:ring-[#7B2FF7]/20 transition-all duration-300 cursor-pointer ${
                       formData.service ? "text-foreground" : "text-[#6E6B7A]"
                     }`}
                   >
@@ -370,7 +370,7 @@ export default function ContactForm() {
                     name="budget"
                     value={formData.budget}
                     onChange={handleChange}
-                    className={`w-full appearance-none px-4 py-3 pr-10 rounded-lg border border-white/15 bg-card-bg/60 text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-300 cursor-pointer ${
+                    className={`w-full appearance-none px-4 py-3 pr-10 rounded-lg border border-white/15 bg-card-bg/60 text-sm focus:outline-none focus:border-[#7B2FF7] focus:ring-2 focus:ring-[#7B2FF7]/20 transition-all duration-300 cursor-pointer ${
                       formData.budget ? "text-foreground" : "text-[#6E6B7A]"
                     }`}
                   >
@@ -411,7 +411,7 @@ export default function ContactForm() {
                 onChange={handleChange}
                 required
                 placeholder="Tell us about your project goals, timeline, and requirements..."
-                className="w-full px-4 py-3 rounded-lg border border-white/15 bg-card-bg/60 text-sm text-foreground placeholder:text-[#6E6B7A] focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-300 resize-none"
+                className="w-full px-4 py-3 rounded-lg border border-white/15 bg-card-bg/60 text-sm text-foreground placeholder:text-[#6E6B7A] focus:outline-none focus:border-[#7B2FF7] focus:ring-2 focus:ring-[#7B2FF7]/20 transition-all duration-300 resize-none"
               />
             </motion.div>
 
@@ -421,7 +421,7 @@ export default function ContactForm() {
                 type="submit"
                 variant="primary"
                 size="lg"
-                className="w-full sm:w-auto min-w-[180px]"
+                className="w-full sm:w-auto min-w-[180px] bg-gradient-to-r from-[#7B2FF7] via-[#3E5FE5] to-[#0EA5E9] text-white border-0 hover:opacity-90 shadow-lg shadow-[#7B2FF7]/25 hover:shadow-[#3E5FE5]/40 transition-all rounded-lg"
                 disabled={isSubmitting}
               >
                 {isSubmitting ? (

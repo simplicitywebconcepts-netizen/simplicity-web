@@ -6,9 +6,14 @@ import { lineExpand, fadeInUp } from "@/lib/animations";
 interface SectionLabelProps {
   label: string;
   className?: string;
+  lineClassName?: string;
 }
 
-export default function SectionLabel({ label, className = "" }: SectionLabelProps) {
+export default function SectionLabel({
+  label,
+  className = "",
+  lineClassName = "bg-[#7B2FF7]",
+}: SectionLabelProps) {
   return (
     <div className={`flex items-center gap-4 mb-4 ${className}`}>
       <motion.div
@@ -16,7 +21,7 @@ export default function SectionLabel({ label, className = "" }: SectionLabelProp
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        className="h-[2px] bg-primary"
+        className={`h-[2px] ${lineClassName}`}
       />
       <motion.span
         variants={fadeInUp}

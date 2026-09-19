@@ -97,13 +97,13 @@ export default function ContactWhyUs() {
                 variants={fadeInUp}
                 whileHover={{
                   y: -6,
-                  boxShadow: "0 20px 40px rgba(124, 58, 237, 0.12)",
+                  boxShadow: "0 20px 40px rgba(62, 95, 229, 0.15)",
                 }}
                 transition={{ duration: 0.3 }}
-                className="glass border border-white/15 rounded-xl p-7 hover:border-primary/50 transition-all duration-300 group flex flex-col h-full relative overflow-hidden"
+                className="glass border border-white/15 rounded-xl p-7 hover:border-[#3E5FE5]/50 transition-all duration-300 group flex flex-col h-full relative overflow-hidden"
               >
                 {/* Icon Badge with Hover Glow */}
-                <div className="w-12 h-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white group-hover:shadow-[0_0_20px_rgba(124,58,237,0.4)] transition-all duration-300 mb-5 shrink-0">
+                <div className="w-12 h-12 rounded-xl bg-[#3E5FE5]/10 border border-[#3E5FE5]/20 flex items-center justify-center text-[#3E5FE5] group-hover:bg-[#3E5FE5] group-hover:text-white group-hover:shadow-[0_0_20px_rgba(62,95,229,0.4)] transition-all duration-300 mb-5 shrink-0">
                   <Icon className="w-6 h-6" />
                 </div>
 

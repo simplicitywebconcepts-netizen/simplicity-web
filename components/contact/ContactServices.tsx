@@ -126,18 +126,18 @@ export default function ContactServices() {
                   variants={fadeInUp}
                   whileHover={{
                     y: -6,
-                    boxShadow: "0 20px 40px rgba(124, 58, 237, 0.12)",
+                    boxShadow: "0 20px 40px rgba(62, 95, 229, 0.15)",
                   }}
                   transition={{ duration: 0.3 }}
-                  className="glass border border-white/15 rounded-xl p-7 hover:border-primary/50 transition-all duration-300 group flex flex-col h-full cursor-pointer relative overflow-hidden"
+                  className="glass border border-white/15 rounded-xl p-7 hover:border-[#3E5FE5]/50 transition-all duration-300 group flex flex-col h-full cursor-pointer relative overflow-hidden"
                 >
                   {/* Card Header with Icon & Indicator */}
                   <div className="flex items-center justify-between mb-5">
-                    <div className="w-12 h-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-300 shrink-0">
+                    <div className="w-12 h-12 rounded-xl bg-[#3E5FE5]/10 border border-[#3E5FE5]/20 flex items-center justify-center text-[#3E5FE5] group-hover:bg-[#3E5FE5] group-hover:text-white group-hover:shadow-[0_0_20px_rgba(62,95,229,0.4)] transition-all duration-300 shrink-0">
                       <Icon className="w-6 h-6" />
                     </div>
                     <div
-                      className="w-8 h-8 rounded-lg bg-card-bg/60 border border-white/15 flex items-center justify-center text-gray-300 group-hover:text-primary group-hover:border-primary/40 transition-all duration-300"
+                      className="w-8 h-8 rounded-lg bg-card-bg/60 border border-white/15 flex items-center justify-center text-gray-300 group-hover:text-[#3E5FE5] group-hover:border-[#3E5FE5]/40 transition-all duration-300"
                       aria-hidden="true"
                     >
                       <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -153,7 +153,7 @@ export default function ContactServices() {
                   </p>
 
                   {/* Footer Link Indicator */}
-                  <div className="flex items-center gap-1.5 text-[13px] font-semibold uppercase tracking-wider text-gray-300 group-hover:text-primary transition-colors duration-200 pt-4 border-t border-white/10">
+                  <div className="flex items-center gap-1.5 text-[13px] font-semibold uppercase tracking-wider text-gray-300 group-hover:text-[#3E5FE5] transition-colors duration-200 pt-4 border-t border-white/10">
                     <span>Learn more</span>
                     <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                   </div>

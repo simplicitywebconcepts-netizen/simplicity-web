@@ -30,10 +30,10 @@ export default function ContactClosingCta() {
 
       <div className="max-w-5xl mx-auto px-6 relative z-10">
         <AnimatedSection className="text-center">
-          <div className="glass relative rounded-3xl p-10 sm:p-14 md:p-16 lg:p-20 border border-white/15 hover:border-primary/40 transition-all duration-500 overflow-hidden shadow-2xl">
+          <div className="glass relative rounded-3xl p-10 sm:p-14 md:p-16 lg:p-20 border border-white/15 hover:border-[#3E5FE5]/40 transition-all duration-500 overflow-hidden shadow-2xl">
             {/* Subtle inner top glow accent */}
             <div
-              className="absolute -top-24 left-1/2 -translate-x-1/2 w-96 h-48 bg-primary/20 blur-[80px] rounded-full pointer-events-none"
+              className="absolute -top-24 left-1/2 -translate-x-1/2 w-96 h-48 bg-[#3E5FE5]/20 blur-[80px] rounded-full pointer-events-none"
               aria-hidden="true"
             />
 
@@ -55,7 +55,7 @@ export default function ContactClosingCta() {
                 onClick={handleScrollToForm}
                 size="lg"
                 variant="primary"
-                className="group px-8 py-4 text-xs font-semibold tracking-wider uppercase shadow-lg shadow-primary/20 hover:shadow-primary/40 transition-all duration-300"
+                className="group px-8 py-4 text-xs font-semibold tracking-wider uppercase bg-gradient-to-r from-[#7B2FF7] via-[#3E5FE5] to-[#0EA5E9] text-white border-0 hover:opacity-90 shadow-lg shadow-[#7B2FF7]/25 hover:shadow-[#3E5FE5]/40 transition-all duration-300 rounded-lg"
               >
                 <span className="flex items-center gap-2">
                   Send an Inquiry
