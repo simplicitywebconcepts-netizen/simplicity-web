@@ -114,12 +114,8 @@ export async function sendContactFormEmail(payload: ContactEmailPayload): Promis
 
     const userHtml = userContactEmail({
       name: payload.name,
-      email: payload.email,
-      phone: payload.phone,
-      company: payload.company,
-      service: payload.service,
-      budget: payload.budget,
       message: payload.message,
+      service: payload.service,
     });
 
     await transporter.sendMail({
