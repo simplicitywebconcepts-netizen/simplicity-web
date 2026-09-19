@@ -46,7 +46,7 @@ const services: ContactServiceItem[] = [
     title: "Branding & Design",
     description:
       "Build a stronger, memorable, and more consistent brand identity.",
-    href: "/services#branding-design",
+    href: "/services#design-branding",
     icon: Palette,
   },
   {
