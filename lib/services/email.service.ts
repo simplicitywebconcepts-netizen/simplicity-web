@@ -6,7 +6,10 @@ export type ContactEmailPayload = {
   name: string;
   email: string;
   phone?: string;
-  subject: string;
+  company?: string;
+  service: string;
+  budget?: string;
+  subject?: string;
   message: string;
 };
 
@@ -102,6 +105,9 @@ export async function sendContactFormEmail(payload: ContactEmailPayload): Promis
       name: payload.name,
       email: payload.email,
       phone: payload.phone,
+      company: payload.company,
+      service: payload.service,
+      budget: payload.budget,
       subject: payload.subject,
       message: payload.message,
     });
@@ -109,12 +115,13 @@ export async function sendContactFormEmail(payload: ContactEmailPayload): Promis
     const userHtml = userContactEmail({
       name: payload.name,
       message: payload.message,
+      service: payload.service,
     });
 
     await transporter.sendMail({
       from: config.fromEmail,
       to: config.adminEmail,
-      subject: "New Contact Form Submission",
+      subject: payload.subject || `New Contact Form Submission - ${payload.service}`,
       html: adminHtml,
     });
 
