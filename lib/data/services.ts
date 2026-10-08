@@ -4,8 +4,8 @@ export const servicesData: ServiceContent[] = [
   {
     "slug": "web-development",
     "nav_label": "Web & App Development",
-    "h1": "Custom Web Development Company in Toronto",
-    "intro": "Simplicity Web designs and builds custom websites and web applications for growing businesses across Toronto and Canada. Whether you need a brand-new site, a rebuild of an outdated platform, or a custom web application, our team combines strategic planning, clean design, and scalable development to create a digital foundation that performs — fast, mobile-friendly, and built to support your business as it grows.",
+    "h1": "Custom Web Development Company in North America",
+    "intro": "Simplicity Web designs and builds custom websites and web applications for growing businesses across North America. Whether you need a brand-new site, a rebuild of an outdated platform, or a custom web application, our team combines strategic planning, clean design, and scalable development to create a digital foundation that performs — fast, mobile-friendly, and built to support your business as it grows.",
     "trust": [
       "Custom Solutions",
       "SEO-Friendly Builds",
@@ -160,7 +160,7 @@ export const servicesData: ServiceContent[] = [
     "why": [
       [
         "Experienced Team",
-        "Over 10 years delivering web, design, and marketing projects for growing businesses across Toronto and Canada."
+        "Over 10 years delivering web, design, and marketing projects for growing businesses across North America."
       ],
       [
         "Tailored Solutions",
@@ -249,7 +249,7 @@ export const servicesData: ServiceContent[] = [
   {
     "slug": "design-branding",
     "nav_label": "Design & Branding",
-    "h1": "Brand Identity & Design Agency in Toronto",
+    "h1": "Brand Identity & Design Agency in North America",
     "intro": "Your brand is more than a logo — it's how customers perceive and remember your business. Simplicity Web creates cohesive, professional brand identities that build trust and stand out across every platform. From logo design to complete visual systems and marketing materials, we help your business communicate clearly, consistently, and confidently.",
     "trust": [
       "Custom Visual Identity",
@@ -397,7 +397,7 @@ export const servicesData: ServiceContent[] = [
     "why": [
       [
         "Experienced Team",
-        "Over 10 years delivering web, design, and marketing projects for growing businesses across Toronto and Canada."
+        "Over 10 years delivering web, design, and marketing projects for growing businesses across North America."
       ],
       [
         "Tailored Solutions",
@@ -478,7 +478,7 @@ export const servicesData: ServiceContent[] = [
   {
     "slug": "social-media-marketing",
     "nav_label": "Social Media & Content",
-    "h1": "Social Media Management & Content Creation Agency Toronto",
+    "h1": "Social Media Management & Content Creation Agency North America",
     "intro": "Growing an audience takes more than occasional posting. Simplicity Web manages social media strategy, content creation, and community engagement so your brand shows up consistently and connects with the right audience. From short-form video to full content calendars, we handle the planning and production so your team doesn't have to.",
     "trust": [
       "Consistent Content Calendar",
@@ -626,7 +626,7 @@ export const servicesData: ServiceContent[] = [
     "why": [
       [
         "Experienced Team",
-        "Over 10 years delivering web, design, and marketing projects for growing businesses across Toronto and Canada."
+        "Over 10 years delivering web, design, and marketing projects for growing businesses across North America."
       ],
       [
         "Tailored Solutions",
@@ -701,7 +701,7 @@ export const servicesData: ServiceContent[] = [
   {
     "slug": "seo-marketing",
     "nav_label": "SEO & Digital Marketing",
-    "h1": "SEO & Digital Marketing Agency in Toronto",
+    "h1": "SEO & Digital Marketing Agency in North America",
     "intro": "Being online isn't the same as being found. Simplicity Web helps businesses increase visibility and attract qualified traffic through data-driven SEO and targeted advertising. From technical SEO and keyword strategy to Google and Meta Ads, we build marketing systems that put your business in front of the people actively searching for what you offer.",
     "trust": [
       "Technical SEO Foundation",
@@ -728,7 +728,7 @@ export const servicesData: ServiceContent[] = [
       ],
       [
         "Local SEO",
-        "Structured content and listings that improve visibility for Toronto and Canada-wide searches."
+        "Structured content and listings that improve visibility for North America-wide searches."
       ],
       [
         "Paid Campaign Management",
@@ -746,8 +746,8 @@ export const servicesData: ServiceContent[] = [
         "We research the terms your customers actually use when searching for your products or services, prioritizing keywords with real business value over vanity search volume. Content and page structure are then optimized around these terms, striking a balance between what ranks well and what reads naturally, so pages perform in search without sounding artificial to visitors."
       ],
       [
-        "Local SEO (Toronto & Canada)",
-        "For businesses that rely on local customers, we optimize Google Business Profiles, location-based content, and citation consistency to strengthen visibility in local search results and maps. This is especially valuable for service-based businesses competing for 'near me' searches across Toronto and the wider Canadian market."
+        "Local SEO (North America)",
+        "For businesses that rely on local customers, we optimize Google Business Profiles, location-based content, and citation consistency to strengthen visibility in local search results and maps. This is especially valuable for service-based businesses competing for 'near me' searches across North America."
       ],
       [
         "Google Ads, Bing Ads & Meta Ads",
@@ -849,7 +849,7 @@ export const servicesData: ServiceContent[] = [
     "why": [
       [
         "Experienced Team",
-        "Over 10 years delivering web, design, and marketing projects for growing businesses across Toronto and Canada."
+        "Over 10 years delivering web, design, and marketing projects for growing businesses across North America."
       ],
       [
         "Tailored Solutions",
@@ -913,7 +913,7 @@ export const servicesData: ServiceContent[] = [
       ],
       [
         "Do you offer local SEO specifically?",
-        "Yes, including Google Business Profile optimization and location-based content for Toronto and Canada-wide visibility."
+        "Yes, including Google Business Profile optimization and location-based content for North America-wide visibility."
       ],
       [
         "Is content writing included in SEO services?",
@@ -1078,7 +1078,7 @@ export const servicesData: ServiceContent[] = [
     "why": [
       [
         "Experienced Team",
-        "Over 10 years delivering web, design, and marketing projects for growing businesses across Toronto and Canada."
+        "Over 10 years delivering web, design, and marketing projects for growing businesses across North America."
       ],
       [
         "Tailored Solutions",
@@ -1159,7 +1159,7 @@ export const servicesData: ServiceContent[] = [
   {
     "slug": "analytics",
     "nav_label": "Automation, CRM & Analytics",
-    "h1": "Marketing Automation & CRM Agency in Toronto",
+    "h1": "Marketing Automation & CRM Agency in North America",
     "intro": "Growth gets harder to manage manually. Simplicity Web helps businesses set up CRM systems, automated follow-ups, and analytics dashboards that track performance and reduce manual work. From lead management to reporting, we build the systems that let you scale without losing visibility or letting leads fall through the cracks.",
     "trust": [
       "CRM Setup & Integration",
@@ -1307,7 +1307,7 @@ export const servicesData: ServiceContent[] = [
     "why": [
       [
         "Experienced Team",
-        "Over 10 years delivering web, design, and marketing projects for growing businesses across Toronto and Canada."
+        "Over 10 years delivering web, design, and marketing projects for growing businesses across North America."
       ],
       [
         "Tailored Solutions",

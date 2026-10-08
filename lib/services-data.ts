@@ -37,9 +37,9 @@ export const serviceSlugs = [
 export const serviceDataMap: Record<string, ServiceDetailInfo> = {
   "web-development": {
     slug: "web-development",
-    metaTitle: "Web Development Company | Custom Website Development Services",
+    metaTitle: "Web Development Company | Simplicity Web",
     metaDescription:
-      "Build scalable and high-performing websites with our web development company offering custom website development solutions for businesses across Toronto.",
+      "Build scalable and high-performing websites with our web development company offering custom website development solutions for businesses across North America.",
     keywords: [
       "Web Development Company",
       "Website Development Company",
@@ -56,7 +56,7 @@ export const serviceDataMap: Record<string, ServiceDetailInfo> = {
       "Build high-speed, secure, and modern websites tailored to your business goals. From custom WordPress architectures to Next.js web applications.",
     overviewTitle: "Comprehensive Website Development",
     overviewDescription:
-      "Our web development company specializes in crafting custom digital solutions for businesses in Toronto and beyond. We build responsive, search-engine-optimized, and lightning-fast websites that drive engagement and convert visitors into long-term customers.",
+      "Our web development company specializes in crafting custom digital solutions for businesses in North America and beyond. We build responsive, search-engine-optimized, and lightning-fast websites that drive engagement and convert visitors into long-term customers.",
     features: [
       {
         title: "Custom Web Application Development",
@@ -247,7 +247,7 @@ export const serviceDataMap: Record<string, ServiceDetailInfo> = {
   },
   "seo-marketing": {
     slug: "seo-marketing",
-    metaTitle: "Digital Marketing Agency | SEO Services Toronto",
+    metaTitle: "Digital Marketing Agency | SEO Services North America",
     metaDescription:
       "Generate more leads with our digital marketing agency offering SEO services, local SEO, Google Ads management, and online marketing strategies.",
     keywords: [
@@ -266,7 +266,7 @@ export const serviceDataMap: Record<string, ServiceDetailInfo> = {
       "Get found by potential customers when they search for your services. Data-driven search engine optimization, local SEO, and paid digital campaigns.",
     overviewTitle: "Search Engine Optimization & Digital Marketing",
     overviewDescription:
-      "As a premier digital marketing agency in Toronto, we implement comprehensive SEO strategies that drive sustainable organic growth. From technical SEO audits to Google Ads management, we help your business capture high-intent traffic.",
+      "As a premier digital marketing agency in North America, we implement comprehensive SEO strategies that drive sustainable organic growth. From technical SEO audits to Google Ads management, we help your business capture high-intent traffic.",
     features: [
       {
         title: "Technical & On-Page SEO",
@@ -276,7 +276,7 @@ export const serviceDataMap: Record<string, ServiceDetailInfo> = {
       {
         title: "Local SEO & Google Business Profile",
         description:
-          "Dominate local map packs and local searches across Toronto and target service areas.",
+          "Dominate local map packs and search rankings across North America and target service areas.",
       },
       {
         title: "Keyword Research & Strategy",
@@ -317,7 +317,7 @@ export const serviceDataMap: Record<string, ServiceDetailInfo> = {
   },
   "conversion-optimization": {
     slug: "conversion-optimization",
-    metaTitle: "Conversion Rate Optimization Services | Increase Website Leads",
+    metaTitle: "Conversion Rate Optimization Services in North America | Simplicity Web",
     metaDescription:
       "Improve website performance and maximize conversions with data-driven conversion rate optimization and landing page optimization services.",
     keywords: [
@@ -387,7 +387,7 @@ export const serviceDataMap: Record<string, ServiceDetailInfo> = {
   },
   "analytics": {
     slug: "analytics",
-    metaTitle: "Website Analytics Services | Measure Website Performance",
+    metaTitle: "Website Analytics & Performance Services | Simplicity Web",
     metaDescription:
       "Understand user behaviour and improve business decisions with comprehensive website analytics, performance tracking, and reporting services.",
     keywords: [

@@ -62,7 +62,7 @@ const serviceDetails = [
     items: [
       "Search Engine Optimization (SEO)",
       "Keyword Strategy & Optimization",
-      "Local SEO (Toronto & Canada)",
+      "Local SEO (North America)",
       "Google Ads, Bing Ads & Meta Ads",
       "Campaign Management & Performance Tracking",
     ],

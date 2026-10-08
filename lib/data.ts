@@ -382,7 +382,7 @@ export const footerLinks = {
 export const contactInfo = {
   phone: "+1 (647)932-9688",
   email: "info@simplicityweb.ca",
-  address: "77 King St W\nToronto, ON M5K 2A1, Canada",
-  addressLink: "https://www.google.com/maps/search/?api=1&query=77+King+St+W,+Toronto,+ON+M5K+2A1,+Canada",
+  address: "115 E Market St\nLong Beach, NY 11561",
+  addressLink: "https://www.google.com/maps/search/?api=1&query=115+E+Market+St,+Long+Beach,+NY+11561",
   website: "simplicityweb.ca",
 };

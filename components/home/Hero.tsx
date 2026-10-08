@@ -35,7 +35,7 @@ export default function Hero() {
             className="max-w-3xl rounded-2xl bg-black/45 backdrop-blur-[2px] ring-1 ring-white/10 p-6 md:p-8"
           >
             <motion.div variants={fadeIn}>
-              <SectionLabel label="Toronto Web Development" />
+              <SectionLabel label="North American Web Development" />
             </motion.div>
 
             <motion.h1

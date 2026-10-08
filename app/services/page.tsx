@@ -7,7 +7,9 @@ import WhyWorkWithUs from "@/components/services/WhyWorkWithUs";
 import CallToAction from "@/components/home/CallToAction";
 
 export const metadata: Metadata = {
-  title: "Website Development Services | Digital Solutions for Business",
+  title: {
+    absolute: "Digital Marketing & Web Services in North America | Simplicity Web",
+  },
   description:
     "Discover our website development, web design, branding, SEO, digital marketing, analytics, and conversion optimization services designed to grow your business.",
   keywords: [
@@ -19,7 +21,7 @@ export const metadata: Metadata = {
     "Digital Marketing Services",
   ],
   openGraph: {
-    title: "Website Development Services | Digital Solutions for Business",
+    title: "Digital Marketing & Web Services in North America | Simplicity Web",
     description:
       "Discover our website development, web design, branding, SEO, digital marketing, analytics, and conversion optimization services designed to grow your business.",
     url: "https://simplicityweb.ca/services",
@@ -34,7 +36,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary",
-    title: "Website Development Services | Digital Solutions for Business",
+    title: "Digital Marketing & Web Services in North America | Simplicity Web",
     description:
       "Discover our website development, web design, branding, SEO, digital marketing, analytics, and conversion optimization services designed to grow your business.",
     images: ["/web-app-manifest-512x512.png"],
@@ -59,9 +61,11 @@ export default function ServicesPage() {
       "email": "info@simplicityweb.ca",
       "address": {
         "@type": "PostalAddress",
-        "addressLocality": "Toronto",
-        "addressRegion": "ON",
-        "addressCountry": "CA"
+        "streetAddress": "115 E Market St",
+        "addressLocality": "Long Beach",
+        "addressRegion": "NY",
+        "postalCode": "11561",
+        "addressCountry": "US"
       }
     },
     "serviceType": "Web Development, SEO, Branding & Digital Marketing",

@@ -12,8 +12,8 @@ interface ServicePageProps {
 
 const seoDataMap: Record<string, { title: string; description: string; keywords: string[] }> = {
   "web-development": {
-    title: "Web Development Company | Custom Website Development Services",
-    description: "Build scalable and high-performing websites with our web development company offering custom website development solutions for businesses across Toronto.",
+    title: "Web Development Company | Simplicity Web",
+    description: "Build scalable and high-performing websites with our web development company offering custom website development solutions for businesses across North America.",
     keywords: [
       "Web Development Company",
       "Website Development Company",
@@ -48,7 +48,7 @@ const seoDataMap: Record<string, { title: string; description: string; keywords:
     ],
   },
   "seo-marketing": {
-    title: "Digital Marketing Agency | SEO Services Toronto",
+    title: "Digital Marketing Agency | SEO Services North America",
     description: "Generate more leads with our digital marketing agency offering SEO services, local SEO, Google Ads management, and online marketing strategies.",
     keywords: [
       "Digital Marketing Agency",
@@ -60,7 +60,7 @@ const seoDataMap: Record<string, { title: string; description: string; keywords:
     ],
   },
   "conversion-optimization": {
-    title: "Conversion Rate Optimization Services | Increase Website Leads",
+    title: "Conversion Rate Optimization Services in North America | Simplicity Web",
     description: "Improve website performance and maximize conversions with data-driven conversion rate optimization and landing page optimization services.",
     keywords: [
       "Conversion Rate Optimization",
@@ -72,7 +72,7 @@ const seoDataMap: Record<string, { title: string; description: string; keywords:
     ],
   },
   "analytics": {
-    title: "Website Analytics Services | Measure Website Performance",
+    title: "Website Analytics & Performance Services | Simplicity Web",
     description: "Understand user behaviour and improve business decisions with comprehensive website analytics, performance tracking, and reporting services.",
     keywords: [
       "Website Analytics Services",
@@ -102,9 +102,12 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
   }
 
   const canonicalUrl = `https://simplicityweb.ca/services/${slug}`;
+  const pageTitle = seo.title.includes("Simplicity Web")
+    ? { absolute: seo.title }
+    : seo.title;
 
   return {
-    title: seo.title,
+    title: pageTitle,
     description: seo.description,
     keywords: seo.keywords,
     openGraph: {
@@ -155,9 +158,11 @@ export default async function ServicePage({ params }: ServicePageProps) {
       "email": "info@simplicityweb.ca",
       "address": {
         "@type": "PostalAddress",
-        "addressLocality": "Toronto",
-        "addressRegion": "ON",
-        "addressCountry": "CA",
+        "streetAddress": "115 E Market St",
+        "addressLocality": "Long Beach",
+        "addressRegion": "NY",
+        "postalCode": "11561",
+        "addressCountry": "US",
       },
     },
     "url": `https://simplicityweb.ca/services/${slug}`,

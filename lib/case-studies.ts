@@ -16,6 +16,7 @@ export interface CaseStudyMetaItem {
 export interface CaseStudy {
   slug: string;
   title: string;
+  metaTitle?: string;
   tagline: string;
   client: string;
   industry: string;
@@ -46,6 +47,7 @@ export const caseStudies: CaseStudy[] = [
   {
     slug: "sherfertility-solutions",
     title: "Sherfertility Solutions",
+    metaTitle: "Sher Fertility Solutions Case Study | Web Development & SEO | Simplicity Web Inc",
     tagline:
       "A clearer fertility care website built to improve trust, organic visibility, and patient action.",
     client: "Sherfertility Solutions",
@@ -367,6 +369,7 @@ export const caseStudies: CaseStudy[] = [
   {
     slug: "ace-active-zone",
     title: "ACE Active Zone",
+    metaTitle: "ACE Active Zone Case Study | Web Development | Simplicity Web",
     tagline:
       "A membership-driven fitness website that increased signups and simplified class booking.",
     client: "ACE Active Zone",
@@ -474,6 +477,7 @@ export const caseStudies: CaseStudy[] = [
   {
     slug: "toronto-hypertension-clinic",
     title: "Toronto Hypertension Clinic",
+    metaTitle: "Toronto Hypertension Clinic Case Study | Web Development & SEO | Simplicity Web Inc",
     tagline:
       "A clearer patient journey for a healthcare website focused on trust, education, and search visibility.",
     client: "Toronto Hypertension Clinic",

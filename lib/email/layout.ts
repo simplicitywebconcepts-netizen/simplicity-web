@@ -132,7 +132,7 @@ export function emailLayout({ title, preheader = "", children }: LayoutProps): s
         </div>
         <div class="email-footer">
           <p>&copy; 2024 Simplicity Web Inc. All rights reserved.</p>
-          <p>Toronto-based web development company specializing in WordPress, SEO, and custom web applications.</p>
+          <p>North American-based web development company specializing in WordPress, SEO, and custom web applications.</p>
         </div>
       </div>
     </body>

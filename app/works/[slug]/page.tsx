@@ -26,9 +26,24 @@ export async function generateMetadata({ params }: CaseStudyPageProps): Promise<
     };
   }
 
+  const rawTitle = caseStudy.metaTitle || `${caseStudy.title} Case Study | WordPress Development & SEO`;
+  const pageTitle = rawTitle.includes("Simplicity Web")
+    ? { absolute: rawTitle }
+    : rawTitle;
+
   return {
-    title: `${caseStudy.title} Case Study | WordPress Development & SEO`,
+    title: pageTitle,
     description: `${caseStudy.title} is a healthcare case study showing how WordPress development and SEO optimization improved clarity, performance, and trust for ${caseStudy.client}.`,
+    openGraph: {
+      title: rawTitle,
+      description: `${caseStudy.title} is a healthcare case study showing how WordPress development and SEO optimization improved clarity, performance, and trust for ${caseStudy.client}.`,
+      url: `https://simplicityweb.ca/works/${slug}`,
+    },
+    twitter: {
+      card: "summary",
+      title: rawTitle,
+      description: `${caseStudy.title} is a healthcare case study showing how WordPress development and SEO optimization improved clarity, performance, and trust for ${caseStudy.client}.`,
+    },
     alternates: {
       canonical: `/works/${slug}`,
     },

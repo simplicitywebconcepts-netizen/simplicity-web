@@ -6,17 +6,17 @@ import ContactClosingCta from "@/components/contact/ContactClosingCta";
 import PageTransition from "@/components/ui/PageTransition";
 
 export const metadata: Metadata = {
-  title: "Contact Simplicity Web | Web Design Company Toronto",
+  title: "Contact Simplicity Web | Web Design Company North America",
   description:
     "Contact Simplicity Web to discuss your web design, web development, branding, SEO, and digital marketing requirements.",
   keywords: [
-    "Web Design Company Toronto",
+    "Web Design Company North America",
     "Website Development Company",
     "Web Development Company",
     "Digital Marketing Agency",
   ],
   openGraph: {
-    title: "Contact Simplicity Web | Web Design Company Toronto",
+    title: "Contact Simplicity Web | Web Design Company North America",
     description:
       "Contact Simplicity Web to discuss your web design, web development, branding, SEO, and digital marketing requirements.",
     url: "https://simplicityweb.ca/contact",
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary",
-    title: "Contact Simplicity Web | Web Design Company Toronto",
+    title: "Contact Simplicity Web | Web Design Company North America",
     description:
       "Contact Simplicity Web to discuss your web design, web development, branding, SEO, and digital marketing requirements.",
     images: ["/web-app-manifest-512x512.png"],

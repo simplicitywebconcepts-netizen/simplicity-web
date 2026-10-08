@@ -8,18 +8,18 @@ import CallToAction from "@/components/home/CallToAction";
 import PageTransition from "@/components/ui/PageTransition";
 
 export const metadata: Metadata = {
-  title: "About Simplicity Web | Digital Agency in Toronto",
+  title: "About Simplicity Web | Digital Agency in North America",
   description:
     "Learn about Simplicity Web, a full-service digital agency specializing in web design, web development, branding, SEO, and digital marketing solutions.",
   keywords: [
-    "Digital Agency Toronto",
+    "Digital Agency North America",
     "Web Design Company",
     "Web Development Company",
     "Branding Agency",
     "Digital Marketing Agency",
   ],
   openGraph: {
-    title: "About Simplicity Web | Digital Agency in Toronto",
+    title: "About Simplicity Web | Digital Agency in North America",
     description:
       "Learn about Simplicity Web, a full-service digital agency specializing in web design, web development, branding, SEO, and digital marketing solutions.",
     url: "https://simplicityweb.ca/about",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary",
-    title: "About Simplicity Web | Digital Agency in Toronto",
+    title: "About Simplicity Web | Digital Agency in North America",
     description:
       "Learn about Simplicity Web, a full-service digital agency specializing in web design, web development, branding, SEO, and digital marketing solutions.",
     images: ["/web-app-manifest-512x512.png"],

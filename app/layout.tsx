@@ -22,11 +22,11 @@ const outfit = Outfit({
 export const metadata: Metadata = {
     metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://simplicityweb.ca"),
     title: {
-        default: "Web Design Company | Web Development & Digital Marketing Toronto",
+        default: "Web Design Company | Web Development & Digital Marketing",
         template: "%s | Simplicity Web Inc",
     },
     description:
-        "Simplicity Web is a leading web design company offering custom web development, branding, SEO, digital marketing, and website solutions for businesses across Toronto.",
+        "Simplicity Web is a leading web design company offering custom web development, branding, SEO, digital marketing, and website solutions for businesses across North America.",
     keywords: [
         "Web Design Company",
         "Web Development Company",
@@ -36,8 +36,8 @@ export const metadata: Metadata = {
         "Digital Marketing Agency",
     ],
     openGraph: {
-        title: "Web Design Company | Web Development & Digital Marketing Toronto",
-        description: "Simplicity Web is a leading web design company offering custom web development, branding, SEO, digital marketing, and website solutions for businesses across Toronto.",
+        title: "Web Design Company | Web Development & Digital Marketing",
+        description: "Simplicity Web is a leading web design company offering custom web development, branding, SEO, digital marketing, and website solutions for businesses across North America.",
         url: "https://simplicityweb.ca/",
         siteName: "Simplicity Web Inc",
         images: [
@@ -53,8 +53,8 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: "summary",
-        title: "Web Design Company | Web Development & Digital Marketing Toronto",
-        description: "Simplicity Web is a leading web design company offering custom web development, branding, SEO, digital marketing, and website solutions for businesses across Toronto.",
+        title: "Web Design Company | Web Development & Digital Marketing",
+        description: "Simplicity Web is a leading web design company offering custom web development, branding, SEO, digital marketing, and website solutions for businesses across North America.",
         images: ["/web-app-manifest-512x512.png"],
     },
     alternates: {
@@ -116,8 +116,8 @@ export default function RootLayout({
     const websiteUrl = contactInfo.website.startsWith("http")
         ? contactInfo.website
         : `https://${contactInfo.website}`;
-    const addressLocality = "Toronto";
-    const addressRegion = "ON";
+    const addressLocality = "Long Beach";
+    const addressRegion = "NY";
 
     return (
         <html
@@ -166,12 +166,14 @@ export default function RootLayout({
                             name: "Simplicity Web Inc",
                             image: `${websiteUrl}/logo.svg`,
                             description:
-                                "Toronto based digital agency delivering custom websites, mobile apps, branding, SEO and scalable business solutions for modern businesses",
+                                "North American based digital agency delivering custom websites, mobile apps, branding, SEO and scalable business solutions for modern businesses",
                             address: {
                                 "@type": "PostalAddress",
+                                streetAddress: "115 E Market St",
                                 addressLocality,
                                 addressRegion,
-                                addressCountry: "CA",
+                                postalCode: "11561",
+                                addressCountry: "US",
                             },
                             telephone: contactInfo.phone,
                             email: contactInfo.email,
@@ -196,7 +198,7 @@ export default function RootLayout({
                             url: websiteUrl,
                             logo: `${websiteUrl}/logo.svg`,
                             description:
-                                "Toronto based digital agency delivering custom websites, mobile apps, branding, SEO and scalable business solutions for modern businesses",
+                                "North American based digital agency delivering custom websites, mobile apps, branding, SEO and scalable business solutions for modern businesses",
                             service: [
                                 {
                                     "@type": "Service",
