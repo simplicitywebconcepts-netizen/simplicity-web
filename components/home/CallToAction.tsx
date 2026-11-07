@@ -26,8 +26,8 @@ export default function CallToAction({
   description = "Let's discuss your next project and explore how Simplicity Web Inc can transform your digital presence with cutting-edge technology.",
   primaryButtonText = "Get in Touch",
   primaryButtonHref = "/contact",
-  secondaryButtonText = "View Our Work",
-  secondaryButtonHref = "/works",
+  secondaryButtonText,
+  secondaryButtonHref,
 }: CallToActionProps) {
   return (
     <section data-section="cta" className={`py-24 text-foreground border-t border-border relative overflow-hidden ${bgClass || 'bg-card-bg/85'}`}>
@@ -58,12 +58,14 @@ export default function CallToAction({
             >
               {primaryButtonText}
             </a>
-            <a
-              href={secondaryButtonHref}
-              className="inline-flex items-center justify-center px-8 py-4 text-xs font-bold tracking-widest uppercase rounded-sm border-2 border-foreground/30 text-foreground hover:border-foreground hover:bg-foreground/10 transition-all duration-300"
-            >
-              {secondaryButtonText}
-            </a>
+            {secondaryButtonText && secondaryButtonHref && (
+              <a
+                href={secondaryButtonHref}
+                className="inline-flex items-center justify-center px-8 py-4 text-xs font-bold tracking-widest uppercase rounded-sm border-2 border-foreground/30 text-foreground hover:border-foreground hover:bg-foreground/10 transition-all duration-300"
+              >
+                {secondaryButtonText}
+              </a>
+            )}
           </motion.div>
         </motion.div>
       </div>

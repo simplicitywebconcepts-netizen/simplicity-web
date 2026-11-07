@@ -255,7 +255,6 @@ export const navLinks = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About Us" },
   { href: "/services", label: "Services" },
-  { href: "/works", label: "Works" },
   { href: "/contact", label: "Contact Us" },
 ];
 
@@ -358,7 +357,7 @@ export const footerServices = [
 ];
 
 export const footerCompanyLinks = [
-  { label: "Our Work", href: "/works" },
+  // { label: "Our Work", href: "/works" },
   { label: "About Us", href: "/about" },
   { label: "Services", href: "/services" },
   // { label: "Careers", href: "/careers" },

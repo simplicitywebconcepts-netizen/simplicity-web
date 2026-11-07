@@ -150,8 +150,6 @@ export default function ServicesPage() {
         description="Partner with us for expert WordPress development and comprehensive SEO services that deliver measurable results."
         primaryButtonText="Start Your Project"
         primaryButtonHref="/contact"
-        secondaryButtonText="View Our Work"
-        secondaryButtonHref="/works"
       />
     </PageTransition>
   );

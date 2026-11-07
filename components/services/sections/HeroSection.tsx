@@ -29,9 +29,6 @@ export function HeroSection({ data }: HeroSectionProps) {
               <Button href="/contact" variant="primary" size="lg">
                 Get a Free Consultation
               </Button>
-              <Button href="/works" variant="outline" size="lg">
-                View Our Work
-              </Button>
             </div>
 
             {data.trust && data.trust.length > 0 && (

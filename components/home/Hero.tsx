@@ -57,10 +57,7 @@ export default function Hero() {
             </motion.p>
 
             <motion.div variants={fadeIn} className="flex flex-wrap gap-4">
-              <Button href="/works" variant="primary" size="lg">
-                View Our Work
-              </Button>
-              <Button href="/contact" variant="outline" size="lg">
+              <Button href="/contact" variant="primary" size="lg">
                 Get in Touch
               </Button>
             </motion.div>

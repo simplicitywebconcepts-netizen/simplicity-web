@@ -8,8 +8,6 @@ import { BenefitsSection } from '@/components/services/sections/BenefitsSection'
 import { ProcessSection } from '@/components/services/sections/ProcessSection';
 import { TechSection } from '@/components/services/sections/TechSection';
 import { WhyChooseSection } from '@/components/services/sections/WhyChooseSection';
-import { RecentProjectsSection } from '@/components/services/sections/RecentProjectsSection';
-import { TestimonialsSection } from '@/components/services/sections/TestimonialsSection';
 import CallToAction from '@/components/home/CallToAction';
 import { renderGradientTitle } from '@/components/ui/GradientTitle';
 
@@ -51,22 +49,12 @@ export function ServicePageTemplate({ data }: ServicePageTemplateProps) {
           <WhyChooseSection data={data} />
         </div>
         
-        <div className="bg-card-bg/85">
-          <RecentProjectsSection data={data} />
-        </div>
-        
-        <div className="bg-section-bg/85">
-          <TestimonialsSection data={data} />
-        </div>
-        
         <CallToAction
           bgClass="bg-card-bg/85"
           heading={renderGradientTitle(data.cta_h2)}
           description={data.cta_body}
           primaryButtonText="Start Your Project"
           primaryButtonHref="/contact"
-          secondaryButtonText="View Our Work"
-          secondaryButtonHref="/works"
         />
       </div>
     </PageTransition>
