@@ -1,5 +1,4 @@
 import type { MetadataRoute } from "next";
-import { caseStudies } from "@/lib/case-studies";
 import { servicesData } from "@/lib/data/services";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -26,12 +25,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/works`,
-      lastModified: new Date(),
-      changeFrequency: "weekly" as const,
-      priority: 0.8,
-    },
-    {
       url: `${baseUrl}/contact`,
       lastModified: new Date(),
       changeFrequency: "weekly" as const,
@@ -53,13 +46,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  // Dynamic portfolio case study pages
-  const caseStudyRoutes = caseStudies.map((cs) => ({
-    url: `${baseUrl}/works/${cs.slug}`,
-    lastModified: new Date(),
-    changeFrequency: "monthly" as const,
-    priority: 0.6,
-  }));
-
-  return [...routes, ...serviceRoutes, ...caseStudyRoutes];
+  return [...routes, ...serviceRoutes];
 }

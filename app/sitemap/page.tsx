@@ -2,23 +2,18 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import PageTransition from "@/components/ui/PageTransition";
 import SectionLabel from "@/components/ui/SectionLabel";
-import { caseStudies } from "@/lib/case-studies";
 import { navLinks, footerServices } from "@/lib/data";
 import { 
   Compass, 
   Settings, 
-  Briefcase, 
   ArrowRight,
-  Sparkles,
-  MapPin,
-  Mail,
-  Phone
+  Sparkles
 } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Sitemap | Simplicity Web Inc",
   description:
-    "Navigate through our services, core pages, and detailed healthcare, beauty, and automotive website case studies.",
+    "Navigate through our specialized services and core company pages.",
   alternates: {
     canonical: "/sitemap",
   },
@@ -38,16 +33,6 @@ export default function SitemapPage() {
       icon: <Settings className="w-6 h-6 text-primary" />,
       links: footerServices,
     },
-    {
-      title: "Case Studies & Work",
-      description: "Our comprehensive portfolio of client success stories.",
-      icon: <Briefcase className="w-6 h-6 text-primary" />,
-      links: caseStudies.map((cs) => ({
-        href: `/works/${cs.slug}`,
-        label: cs.title,
-        badge: cs.industry,
-      })),
-    },
   ];
 
   return (
@@ -65,13 +50,12 @@ export default function SitemapPage() {
               WEBSITE <span className="gradient-text">STRUCTURE</span>
             </h1>
             <p className="text-muted mt-4 text-lg">
-              Navigate easily through our web pages, specialized services, and active 
-              client case studies. Find everything you need in one place.
+              Navigate easily through our web pages and specialized services. Find everything you need in one place.
             </p>
           </div>
 
           {/* Grid Layout */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 max-w-4xl mx-auto gap-8">
             {sections.map((section, idx) => (
               <div
                 key={idx}
@@ -95,30 +79,19 @@ export default function SitemapPage() {
 
                 {/* Links List */}
                 <ul className="space-y-4 flex-grow">
-                  {section.links.map((link, linkIdx) => {
-                    const hasBadge = "badge" in link;
-                    const badgeText = hasBadge ? (link as any).badge : undefined;
-                    return (
-                      <li key={linkIdx} className="border-b border-border/30 pb-3 last:border-b-0 last:pb-0">
-                        <Link
-                          href={link.href}
-                          className="flex items-center justify-between text-foreground/80 hover:text-primary transition-all duration-300 group/link"
-                        >
-                          <div className="flex items-center gap-3">
-                            <span className="text-sm font-medium leading-none">
-                              {link.label}
-                            </span>
-                            {hasBadge && (
-                              <span className="text-[10px] uppercase tracking-wider px-2 py-0.5 rounded-full bg-primary/10 border border-primary/20 text-primary-light font-semibold">
-                                {badgeText}
-                              </span>
-                            )}
-                          </div>
-                          <ArrowRight className="w-4 h-4 text-muted group-hover/link:text-primary group-hover/link:translate-x-1 transition-all duration-300" />
-                        </Link>
-                      </li>
-                    );
-                  })}
+                  {section.links.map((link, linkIdx) => (
+                    <li key={linkIdx} className="border-b border-border/30 pb-3 last:border-b-0 last:pb-0">
+                      <Link
+                        href={link.href}
+                        className="flex items-center justify-between text-foreground/80 hover:text-primary transition-all duration-300 group/link"
+                      >
+                        <span className="text-sm font-medium leading-none">
+                          {link.label}
+                        </span>
+                        <ArrowRight className="w-4 h-4 text-muted group-hover/link:text-primary group-hover/link:translate-x-1 transition-all duration-300" />
+                      </Link>
+                    </li>
+                  ))}
                 </ul>
               </div>
             ))}

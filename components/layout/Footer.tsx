@@ -12,7 +12,7 @@ import AnimatedSection from "@/components/ui/AnimatedSection";
 import Logo from "@/components/ui/Logo";
 import Button from "@/components/ui/Button";
 import { ReactNode } from "react";
-import { MapPin, Phone, Mail, Globe } from "lucide-react";
+import { Phone, Mail, Globe } from "lucide-react";
 
 export default function Footer() {
     return (
@@ -154,19 +154,6 @@ export default function Footer() {
                                 >
                                     <Globe className="w-4 h-4 shrink-0 group-hover:text-primary transition-colors" />
                                     <span>Simplicity Web Inc.</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a
-                                    href={contactInfo.addressLink}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="flex items-start gap-3 hover:text-foreground transition-colors group"
-                                >
-                                    <MapPin className="w-4 h-4 mt-0.5 shrink-0 group-hover:text-primary transition-colors" />
-                                    <span className="whitespace-pre-line">
-                                        {contactInfo.address}
-                                    </span>
                                 </a>
                             </li>
                             <li>
