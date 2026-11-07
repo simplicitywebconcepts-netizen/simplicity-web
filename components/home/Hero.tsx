@@ -4,8 +4,6 @@ import { motion } from "framer-motion";
 import { staggerContainer, fadeIn, fadeInRight } from "@/lib/animations";
 import Button from "@/components/ui/Button";
 import SectionLabel from "@/components/ui/SectionLabel";
-import CountUp from "@/components/ui/CountUp";
-import { companyStats } from "@/lib/data";
 
 export default function Hero() {
   return (
@@ -65,21 +63,6 @@ export default function Hero() {
               <Button href="/contact" variant="outline" size="lg">
                 Get in Touch
               </Button>
-            </motion.div>
-
-            {/* Stats */}
-            <motion.div
-              variants={fadeIn}
-              className="flex gap-10 mt-12 pt-8 border-t border-white/15"
-            >
-              {companyStats.map((stat) => (
-                <div key={stat.label}>
-                  <div className="text-2xl font-bold gradient-text">
-                    <CountUp to={stat.value} />{stat.suffix}
-                  </div>
-                  <div className="text-xs text-white/70 mt-1">{stat.label}</div>
-                </div>
-              ))}
             </motion.div>
           </motion.div>
 

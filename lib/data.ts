@@ -22,7 +22,6 @@ export interface Stat {
 export const companyStats: Stat[] = [
   { value: 100, suffix: "+", label: "Projects Delivered" },
   { value: 20, suffix: "+", label: "Ongoing Partnerships" },
-  { value: 10, suffix: "+", label: "Years Experience" },
 ];
 
 // ---- Values ----

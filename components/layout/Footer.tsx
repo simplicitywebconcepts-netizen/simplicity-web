@@ -64,9 +64,8 @@ export default function Footer() {
                         </div>
                         <p className="text-sm text-muted leading-relaxed mb-6 max-w-sm">
                             Simplicity Web is a digital agency based in North America
-                            with over 10 years of professional experience in web
-                            design, custom development, branding, SEO, and
-                            scalable business solutions.
+                            specializing in web design, custom development, branding, SEO,
+                            and scalable business solutions.
                         </p>
                         {/* Social icons row */}
                         <div className="flex items-center gap-3">

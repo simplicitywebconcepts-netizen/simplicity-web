@@ -160,7 +160,7 @@ export const servicesData: ServiceContent[] = [
     "why": [
       [
         "Experienced Team",
-        "Over 10 years delivering web, design, and marketing projects for growing businesses across North America."
+        "Delivering web, design, and marketing projects for growing businesses across North America."
       ],
       [
         "Tailored Solutions",
@@ -397,7 +397,7 @@ export const servicesData: ServiceContent[] = [
     "why": [
       [
         "Experienced Team",
-        "Over 10 years delivering web, design, and marketing projects for growing businesses across North America."
+        "Delivering web, design, and marketing projects for growing businesses across North America."
       ],
       [
         "Tailored Solutions",
@@ -626,7 +626,7 @@ export const servicesData: ServiceContent[] = [
     "why": [
       [
         "Experienced Team",
-        "Over 10 years delivering web, design, and marketing projects for growing businesses across North America."
+        "Delivering web, design, and marketing projects for growing businesses across North America."
       ],
       [
         "Tailored Solutions",
@@ -849,7 +849,7 @@ export const servicesData: ServiceContent[] = [
     "why": [
       [
         "Experienced Team",
-        "Over 10 years delivering web, design, and marketing projects for growing businesses across North America."
+        "Delivering web, design, and marketing projects for growing businesses across North America."
       ],
       [
         "Tailored Solutions",
@@ -1078,7 +1078,7 @@ export const servicesData: ServiceContent[] = [
     "why": [
       [
         "Experienced Team",
-        "Over 10 years delivering web, design, and marketing projects for growing businesses across North America."
+        "Delivering web, design, and marketing projects for growing businesses across North America."
       ],
       [
         "Tailored Solutions",
@@ -1307,7 +1307,7 @@ export const servicesData: ServiceContent[] = [
     "why": [
       [
         "Experienced Team",
-        "Over 10 years delivering web, design, and marketing projects for growing businesses across North America."
+        "Delivering web, design, and marketing projects for growing businesses across North America."
       ],
       [
         "Tailored Solutions",
